@@ -1,0 +1,855 @@
+body,html {
+	height:100%;
+	color:#fff;
+}
+body.site-login > .container-message {
+	position:relative;
+}
+body.site-login > .container-message > div {
+	position:absolute;
+	width:calc(100% - 30px);
+	margin-top:20px;
+}
+.header-logo {
+	position:absolute;
+}
+.main-logo {
+	width:auto;
+	margin-top:2px;
+	height:50px;
+}
+.bg-black {
+	background: rgb(0,0,0);
+	background: linear-gradient(0deg, rgba(0,0,0,1) 25%, rgba(44,44,47,1) 100%);
+}
+.login-page-content, .forgotpassword-page-content, .register-page-content, .changepassword-page-content, .site-login-bottom {
+	width:400px;
+	margin:auto;
+}
+.main-container {
+	padding-top:80px;
+	padding-bottom:150px;
+}
+body.login-class {
+	background:url('../images/site/background.jpg') no-repeat top center;
+	background-size:cover;
+	background-attachment: fixed;
+}
+.error-message > .error {
+	margin-bottom:0px;
+	color:#ff0000;
+}
+.langauge-banner {
+	position:absolute;
+	top:15px;
+	right:15px;
+}
+.langauge-banner button.btn {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	color:#fff;
+}
+.site-login-backbutton {
+	position:absolute;
+	top:22px;
+	left:20px;
+}
+.site-login-bottom {
+	position:absolute;
+	padding-left:0;
+	padding-right:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+.site-login-bottom .btn {
+	width:100%;
+}
+.site-login-bottom > div > div:first-child {
+	padding-right:5px !important;
+}
+.site-login-bottom > div > div + div {
+	padding-left:5px !important;;
+}
+.profile-background {
+	background: rgb(44,44,47);
+	background: linear-gradient(0deg, rgba(44,44,47,1) 2%, rgba(66,66,66,1) 100%);
+	padding:15px 10px;
+	border-radius:8px;
+	position:relative;
+	margin-top:50px;
+}
+.profile-background .profile_img {
+	position:absolute;
+	top:-60px;
+	left:0;
+	right:0;
+	margin:auto;
+	width:120px;
+}
+.profile-background .profile_img_background_color {
+	background-color:rgba(66,66,66,1);
+	height:120px;
+	z-index:-1;
+	position:absolute;
+	top:-60px;
+	left:0;
+	right:0;
+	margin:auto;
+	width:120px;
+}
+.profile-background .profile_img > img {
+	width:100%;
+}
+.profile-background .uid {
+	margin-top:45px;
+}
+.profile-background .money-btn {
+	margin-top:10px;
+}
+.profile-background .money-btn .btn {
+	width:100%;
+	font-size:13px;	
+}
+.profile-background .money-btn > div > div {
+	padding-right:3px;
+}
+.profile-background .money-btn > div > div + div {
+	padding-left:3px;
+}
+.profile-background .main-wallet-balance {
+	background-color:#2b2b2b;
+	padding-top:5px;
+	padding-bottom:5px;
+	border-radius:20px;
+	font-size:22px;
+	position:relative;
+}
+.profile-background .addbtn{
+	position:absolute;
+	right:30px;
+	top:0;
+	height:20px;
+	width:20px;
+}
+.profile-background .addbtn > a, .profile-background .addbtn > a:hover, .profile-background .addbtn > a:link, .profile-background .addbtn > a:visited, .profile-background .addbtn > a:active {
+	background: rgb(255,246,138);
+	background: linear-gradient(265deg, rgba(255,246,138,1) 10%, rgba(222,159,23,1) 100%);
+	border-radius:50%;
+	height:20px;
+	width:20px;
+	display:block;
+	line-height:0.7;
+	color:#000;
+	margin-top:12px;
+}
+.profile-background .dologout {
+	position:absolute;
+	right:12px;
+	top:10px;
+	font-size:24px;
+	color:#fff;
+}
+.game-profile-lists {
+	border:1px solid #fff68a;
+	background-color:rgb(56,56,56, 0.9);
+	padding:10px 15px;
+	margin-top: 20px;
+	border-radius:8px;
+}
+.game-profile-lists .btn {
+	width:60px;
+	font-size:12px;
+	float:left;
+}
+.game-profile-lists .btn + .btn {
+	margin-left:5px;
+}
+.text-adjust {
+	margin-top:5px;
+}
+.game-profile-lists .row {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.game-profile-lists .row:first-child {
+	padding-top:10px;
+	padding-bottom:5px;
+}
+#qrshareModal .modal-content, #gameModal .modal-content {
+	color:#000000;
+	background-color:transparent;
+}
+#qrshareModal .close, #gameModal .close{
+	position: absolute;
+    right: 15px;
+    top: 10px;
+	z-index:100;
+	color:#ffffff;
+	opacity:1;
+	outline:0;
+	border:none;
+}
+.referral-input {
+	position:relative;
+	background-color:#fff;
+	border-radius:26px;
+	height:46px;
+	padding-top:5px;
+	border:1px solid #fff68a;
+}
+.referral-input input {
+	background-color: transparent !important;
+	border:none;
+	color:#000000;
+	outline: none;
+    box-shadow:none !important;
+}
+.referral-input .btn {
+	position:absolute;
+	top:5px;
+	right:5px;
+	width:70px;
+}
+.social-media-box {
+	background-color:#595959;
+	border-radius:10px;
+	padding:20px;
+}
+
+/* header */
+div.top-right-menu {
+	position:relative;
+	height:55px;
+	width:230px;
+}
+div.top-right-menu > div {
+	position:absolute;
+	background-size:45px auto !important;
+	z-index:10;
+	width:20%;
+}
+div.top-right-menu > div > a {
+	width:100%;
+	height:55px;
+	display:block;
+	margin:auto;
+}
+div.top-right-menu > div.qrcodepage_en {
+	right:40%;
+	background:url('../images/site/menu/en/qrcode.png') no-repeat bottom center;
+}
+div.top-right-menu > div.bonuspage_en {
+	right:20%;
+	background:url('../images/site/menu/en/bonus.png') no-repeat bottom center;
+}
+div.top-right-menu > div.statuspage_en {
+	right:0%;
+	background:url('../images/site/menu/en/status.png') no-repeat bottom center;
+}
+div.top-right-menu > div.statuspage_en-selected {
+	right:0%;
+	background:url('../images/site/menu/en/status_a.png') no-repeat bottom center;
+}
+div.top-right-menu > div.qrcodepage_cn {
+	right:40%;
+	background:url('../images/site/menu/cn/qrcode.png') no-repeat bottom center;
+}
+div.top-right-menu > div.bonuspage_cn {
+	right:20%;
+	background:url('../images/site/menu/cn/bonus.png') no-repeat bottom center;
+}
+div.top-right-menu > div.statuspage_cn {
+	right:0%;
+	background:url('../images/site/menu/cn/status.png') no-repeat bottom center;
+}
+div.top-right-menu > div.statuspage_cn-selected {
+	right:0%;
+	background:url('../images/site/menu/cn/status_a.png') no-repeat bottom center;
+}
+div.top-right-menu > div.qrcodepage_my {
+	right:40%;
+	background:url('../images/site/menu/my/qrcode.png') no-repeat bottom center;
+}
+div.top-right-menu > div.bonuspage_my {
+	right:20%;
+	background:url('../images/site/menu/my/bonus.png') no-repeat bottom center;
+}
+div.top-right-menu > div.statuspage_my {
+	right:0%;
+	background:url('../images/site/menu/my/status.png') no-repeat bottom center;
+}
+div.top-right-menu > div.statuspage_my-selected {
+	right:0%;
+	background:url('../images/site/menu/my/status_a.png') no-repeat bottom center;
+}
+/* header end */
+
+/* footer */
+div.bottom-menu {
+	position:relative;
+	height:150px;
+}
+div.bottom-menu > div {
+	position:absolute;
+	height:150px;
+	z-index:10;
+}
+div.bottom-menu > div.footer-left {
+	background:url('../images/site/bottom-left.png') no-repeat bottom left;
+	background-size:auto 150px !important;
+	width:14px;
+	left:0;
+}
+div.bottom-menu > div.footer-right {
+	background:url('../images/site/bottom-right.png') no-repeat bottom right;
+	background-size:auto 150px !important;
+	width:15px;
+	right:0;
+}
+div.bottom-menu > div.footer-row-left, div.bottom-menu > div.footer-row-right {
+	background:url('../images/site/bottom-row.png') repeat-x bottom center;
+	background-size:auto 150px !important;
+}
+div.bottom-menu > div.footer-row-left {
+	left:14px;
+	width:calc(50% - 114px);
+}
+div.bottom-menu > div.footer-row-right {
+	right:15px;
+	width:calc(50% - 115px);
+}
+div.bottom-menu > div.footer-middle {
+	background:url('../images/site/bottom-middle.png') no-repeat bottom center;
+	background-size:auto 156px !important;
+	width:200px;
+	margin:auto;
+	left:0;
+	right:0;
+	z-index:11;
+}
+div.bottom-menu .container {
+	margin:auto;
+	height:100px;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:30;
+}
+div.bottom-menu .container .fbtn {
+	position:absolute;
+	bottom:0px;
+	height:80px;
+	width:20%;
+}
+div.bottom-menu .container .fbtn > a {
+	height:90px;
+	width:100%;
+	display:block;
+}
+div.bottom-menu .container .fbtn.depositPage_en > a, div.bottom-menu .container .fbtn.depositPage_en-selected > a,
+div.bottom-menu .container .fbtn.depositPage_cn > a, div.bottom-menu .container .fbtn.depositPage_cn-selected > a,
+div.bottom-menu .container .fbtn.depositPage_my > a, div.bottom-menu .container .fbtn.depositPage_my-selected > a {
+	height:140px;
+}
+div.bottom-menu .container .fbtn.gamePage_en {
+	left:0;
+	background:url('../images/site/menu/en/game.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.chatPage_en {
+	left:20%;
+	background:url('../images/site/menu/en/chat.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.depositPage_en {
+	left:40%;
+	height:130px;
+	background:url('../images/site/menu/en/deposit.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.withdrawPage_en {
+	right:20%;
+	background:url('../images/site/menu/en/withdrawal.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.profilePage_en {
+	right:0%;
+	background:url('../images/site/menu/en/me.png') no-repeat bottom center;
+}
+
+div.bottom-menu .container .fbtn.gamePage_cn {
+	left:0;
+	background:url('../images/site/menu/cn/game.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.chatPage_cn {
+	left:20%;
+	background:url('../images/site/menu/cn/chat.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.depositPage_cn {
+	left:40%;
+	height:130px;
+	background:url('../images/site/menu/cn/deposit.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.withdrawPage_cn {
+	right:20%;
+	background:url('../images/site/menu/cn/withdrawal.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.profilePage_cn {
+	right:0%;
+	background:url('../images/site/menu/cn/me.png') no-repeat bottom center;
+}
+
+div.bottom-menu .container .fbtn.gamePage_my {
+	left:0;
+	background:url('../images/site/menu/my/game.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.chatPage_my {
+	left:20%;
+	background:url('../images/site/menu/my/chat.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.depositPage_my {
+	left:40%;
+	height:130px;
+	background:url('../images/site/menu/my/deposit.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.withdrawPage_my {
+	right:20%;
+	background:url('../images/site/menu/my/withdrawal.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.profilePage_my {
+	right:0%;
+	background:url('../images/site/menu/my/me.png') no-repeat bottom center;
+}
+
+div.bottom-menu .container .fbtn {
+	background-size:contain !important;
+}
+div.bottom-menu .container .fbtn.gamePage_en-selected {
+	left:0;
+	background:url('../images/site/menu/en/game_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.chatPage_en-selected {
+	left:20%;
+	background:url('../images/site/menu/en/chat_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.depositPage_en-selected {
+	left:40%;
+	height:130px;
+	background:url('../images/site/menu/en/deposit_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.withdrawPage_en-selected {
+	right:20%;
+	background:url('../images/site/menu/en/withdrawal_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.profilePage_en-selected {
+	right:0;
+	background:url('../images/site/menu/en/me_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.gamePage_cn-selected {
+	left:0;
+	background:url('../images/site/menu/cn/game_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.chatPage_cn-selected {
+	left:20%;
+	background:url('../images/site/menu/cn/chat_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.depositPage_cn-selected {
+	left:40%;
+	height:130px;
+	background:url('../images/site/menu/cn/deposit_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.withdrawPage_cn-selected {
+	right:20%;
+	background:url('../images/site/menu/cn/withdrawal_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.profilePage_cn-selected {
+	right:0;
+	background:url('../images/site/menu/cn/me_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.gamePage_my-selected {
+	left:0;
+	background:url('../images/site/menu/my/game_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.chatPage_my-selected {
+	left:20%;
+	background:url('../images/site/menu/my/chat_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.depositPage_my-selected {
+	left:40%;
+	height:130px;
+	background:url('../images/site/menu/my/deposit_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.withdrawPage_my-selected {
+	right:20%;
+	background:url('../images/site/menu/my/withdrawal_a.png') no-repeat bottom center;
+}
+div.bottom-menu .container .fbtn.profilePage_my-selected {
+	right:0;
+	background:url('../images/site/menu/my/me_a.png') no-repeat bottom center;
+}
+/* footer end */
+
+/* login */
+body.login-class #username .login-phone, body.login-class #password .login-pass {
+	height:20px;
+}
+body.login-class #username .input-group-text, body.login-class #password .input-group-text {
+	padding-left:18px;
+}
+body.login-class #username .input-group-text, body.login-class #password .input-group-text, body.login-class #username .form-control, body.login-class #password .form-control {
+	background-color: transparent;
+	border:none;
+	color:#ffffff;
+	outline: none;
+    box-shadow:none !important;
+}
+body.login-class #username .form-control::placeholder, body.login-class #password .form-control::placeholder {
+	color:#ffffff;
+	opacity:0.5;
+}
+body.login-class #username > div.input-group, body.login-class #password > div.input-group {
+	background: rgb(89,89,89);
+	background: linear-gradient(0deg, rgba(89,89,89,1) 34%, rgba(37,37,37,1) 100%);
+	border-radius:20px;
+}
+body.login-class .login-logo-box {
+	text-align:center;
+}
+body.login-class img.login-logo {
+	width:150px;
+	margin-bottom:20px;
+}
+/* login end */
+
+#otpinput {
+	display:none;
+}
+
+.promotionlists .promotion-banner > img {
+	width:100%;
+}
+.white-text, a.white-text, a.white-text:link, a.white-text:hover, a.white-text:visited, a.white-text:active {
+	color:#fff;
+	text-decoration:none;
+}
+.gold-text, a.gold-text, a.gold-text:link, a.gold-text:hover, a.gold-text:visited, a.gold-text:active {
+	color:#EDCD3E;
+	text-decoration:none;
+}
+.grey-text, a.grey-text, a.grey-text:link, a.grey-text:hover, a.grey-text:visited, a.grey-text:active {
+	color:#cccccc;
+	text-decoration:none;
+}
+.btn-gold{
+	color:#000;
+	background: rgb(255,246,138);
+	background: linear-gradient(265deg, rgba(255,246,138,1) 10%, rgba(222,159,23,1) 100%);
+	border:none;
+	border-radius:20px;
+	font-weight:600;
+	outline: none !important;
+	box-shadow: none;
+}
+.btn-gold:focus {
+	outline: none !important;
+	box-shadow: none;
+}
+.black-form-control::placeholder {
+	color:#ffffff;
+	opacity:0.5;
+}
+.error-message {
+	margin-bottom:10px;
+}
+.black-form-control {
+	background: rgb(89,89,89);
+	background: linear-gradient(0deg, rgba(89,89,89,1) 34%, rgba(37,37,37,1) 100%);
+	border-radius:20px;
+	border:none;
+	color:#ffffff !important;
+	outline: none;
+    box-shadow:none !important;
+}
+.gold-form-control {
+	background: rgb(255,246,138);
+	background: linear-gradient(0deg, rgba(255,246,138,1) 10%, rgba(222,159,23,1) 100%);
+	border-radius:20px;
+	border:none;
+	outline: none;
+    box-shadow:none !important;
+}
+select.gold-form-control {
+	background: url('../images/site/arrow-down.png') no-repeat center right 15px, linear-gradient(0deg, rgba(255,246,138,1) 10%, rgba(222,159,23,1) 100%);
+	background-size:15px;
+	border-radius:20px;
+	border:none;
+	outline: none;
+    box-shadow:none !important;
+	-moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
+.gold-custom-file {
+	background: rgb(255,246,138);
+	background: linear-gradient(0deg, rgba(255,246,138,1) 10%, rgba(222,159,23,1) 100%);
+	border-radius:20px;
+}
+.dropdown-item.active, .dropdown-item:active {
+	background: rgb(255,246,138);
+	background: linear-gradient(265deg, rgba(255,246,138,1) 10%, rgba(222,159,23,1) 100%);
+}
+.withdrawform-big {
+	background: rgb(89,89,89);
+	background: linear-gradient(180deg, rgba(89,89,89,1) 5%, rgba(37,37,37,1) 100%);
+	border:1px solid #de9f17;
+	padding:10px;
+	border-radius:15px;
+}
+.depositform-big {
+	background: rgb(89,89,89);
+	background: linear-gradient(180deg, rgba(89,89,89,1) 5%, rgba(37,37,37,1) 100%);
+	padding:15px;
+	border-radius:15px;
+}
+.fileuploadbtn {
+	position:absolute;
+	right:-1000000px;
+}
+#deposit_type label {
+	background: rgb(89,89,89);
+	background: linear-gradient(180deg, rgba(89,89,89,1) 5%, rgba(37,37,37,1) 100%);
+	padding:10px;
+	border-radius:20px;
+	display:block;
+	cursor:pointer;
+}
+#deposit_type div > div {
+	padding-right:5px;
+}
+#deposit_type div > div + div {
+	padding-left:5px;
+}
+#deposit_type label > input {
+	display:none;
+}
+#deposit_type label > input:checked + div {
+	background: rgb(255,246,138);
+	background: linear-gradient(0deg, rgba(255,246,138,1) 10%, rgba(222,159,23,1) 100%);
+}
+#deposit_type label > span {
+	position: absolute;
+    padding-left:5px;
+	line-height:1.1;
+	height:50px;
+}
+#deposit_type .text {
+	float: right;
+	width: calc(100% - 60px);
+	height:50px;
+	line-height:1.1;
+}
+#deposit_type .text > span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 100%;
+}
+#deposit_type .deposit-btn {
+	border: 1px solid #EDCD3E;
+	padding: 10px;
+	width: 50px;
+	float:left;
+}
+#deposit_type .deposit-btn > img{
+	width: 30px;
+}
+.deposit-line {
+	background:url('../images/site/deposit-line.png') no-repeat 33% center;
+	background-size:auto 130px;
+}
+
+.black-modal {
+	background-color:#4e4e4e;
+	color:#ffffff;
+	border-radius:10px;
+}
+.left-form-control-radius {
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+	outline: none;
+    box-shadow:none !important;
+}
+
+#gamelists img {
+	width:100%;
+}
+#gamelists .game {
+	position:relative;
+	display:block;
+}
+#gamelists .game > button.info {
+	position:absolute;
+	margin:auto;
+	left:0;
+	right:0;
+	bottom:28px;
+	padding-left:20px;
+	padding-right:20px;
+}
+.st-wechat {
+	color:transparent;
+}
+.statusform {
+	background: rgb(89,89,89);
+	background: linear-gradient(180deg, rgba(89,89,89,1) 5%, rgba(37,37,37,1) 100%);
+	padding:10px;
+	border-radius:40px;
+}
+.statusform .form-control {
+	width:120px;
+	font-size:14px;
+	display:inline-block;
+}
+.statusform .fa-calendar {
+	top:10px;
+	right:15px;
+	z-index:100;
+}
+ul.statuspage_type {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul.statuspage_type li {
+	float:left;
+	padding:5px 10px;
+}
+ul.statuspage_type li > a:link, ul.statuspage_type li > a:visited, ul.statuspage_type li > a:hover, ul.statuspage_type li > a:active {
+	text-decoration:none;
+	font-weight:bold;
+	color:#ccc;
+}
+ul.statuspage_type li a.current {
+	color:#fff;
+	border-bottom:2px solid #fff68a;
+	padding-bottom:2px;
+}
+
+@media (max-width:990px) {
+	#gamelists .game > button.info {
+		bottom:20px;
+	}
+}
+@media (max-width:767px) {
+	div.bottom-menu .container {
+		max-width:100%;
+	}
+	#gamelists .game > button.info {
+		bottom:15px;
+	}
+}
+@media (max-width:700px) {
+	div.bottom-menu .container {
+		max-width:100%;
+	}
+}
+@media (max-width:575px) {
+	.deposit-line {
+		background:url('../images/site/deposit-line.png') no-repeat center center;
+		background-size:auto 130px;
+	}
+	#gamelists .game > button.info {
+		font-size:12px;
+	}
+}
+@media (max-width:500px) {
+	body.login-class img.login-logo {
+		width:200px;
+	}
+	.d-flex > .flew-row-fix {
+		width:100%;
+	}
+	.login-page-content, .forgotpassword-page-content, .register-page-content, .changepassword-page-content, .site-login-bottom {
+		width:100%;
+	}
+	.site-login-bottom {
+		padding-left:15px;
+		padding-right:15px;
+	}
+	.fixed-bottom .container {
+		padding-left:0px;
+		padding-right:0px;
+	}
+	.main-logo {
+		width:140px;
+		margin-top:10px;
+	}
+	.main-container {
+		padding-bottom: 90px;
+	}
+	div.bottom-menu {
+		height:100px;
+	}
+	div.bottom-menu > div {
+		height:100px;
+	}
+	div.bottom-menu .container {
+		height:75px;
+	}
+	div.bottom-menu .container .fbtn, div.bottom-menu .container .fbtn > a {
+		height:55px;
+	}
+	div.bottom-menu > div.footer-row-left, div.bottom-menu > div.footer-row-right, div.bottom-menu > div.footer-right, div.bottom-menu > div.footer-left {
+		background-size:auto 100px !important;
+	}
+	div.bottom-menu > div.footer-row-left {
+		left:10px;
+		width:calc(50% - 91.5px);
+	}
+	div.bottom-menu > div.footer-row-right {
+		right:10px;
+		width:calc(50% - 91.5px);
+	}
+	div.bottom-menu > div.footer-middle {
+		background-size:auto 102px !important;
+	}
+	div.bottom-menu .container .fbtn.depositPage_en, div.bottom-menu .container .fbtn.depositPage_en-selected, 
+	div.bottom-menu .container .fbtn.depositPage_cn, div.bottom-menu .container .fbtn.depositPage_cn-selected,
+	div.bottom-menu .container .fbtn.depositPage_my, div.bottom-menu .container .fbtn.depositPage_my-selected {
+		height:85px;
+		width:40%;
+		left:0;
+		right:0;
+		margin:auto;
+	}
+	div.bottom-menu .container .fbtn.depositPage_en > a, div.bottom-menu .container .fbtn.depositPage_en-selected > a,
+	div.bottom-menu .container .fbtn.depositPage_cn > a, div.bottom-menu .container .fbtn.depositPage_cn-selected > a,
+	div.bottom-menu .container .fbtn.depositPage_my > a, div.bottom-menu .container .fbtn.depositPage_my-selected > a {
+		height:85px;
+		width:100%;
+	}
+	#gamelists .game > button.info {
+		font-size:12px;
+		bottom:10px;
+	}
+	.statusform .btn {
+		float:right;
+	}
+	ul.statuspage_type li {
+		padding:5px 8px;
+	}
+}
+@media (max-width:380px) {
+	.main-logo {
+		width:110px;
+		margin-top:15px;
+	}
+}
+@media (max-width:360px) {
+	.main-logo {
+		width:100px;
+		margin-top:15px;
+	}
+	.game-profile-lists .btn {
+		width:50px;
+	}
+}

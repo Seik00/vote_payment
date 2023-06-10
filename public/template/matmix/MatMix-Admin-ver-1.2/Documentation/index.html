@@ -1,0 +1,2962 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>MatMix - A Components Mix Bootstarp 3 Admin Dashboard</title>
+	
+	<meta name="description" content="MatMix is a powerful and clean admin panel template for web entrepreneurs, app developers and site owners as this can be used for the admin part of any WEB ADMIN, CMS, CRM, ERP, WEB APPLICATION, APPLICATION SOFTWARE, ACCOUNTING SOFTWARE, SCHOOL MANAGEMENT, PAYROLL MANAGEMENT, POINT OF SALE any web based software’s admin panels. It is very easy to use and extremely easy to integrate.">
+	<meta name="author" content="Kamrujaman Shohel">
+	<meta name="copyright" content="Kamrujaman Shohel">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-07-12T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#333636;color:#00DFFC;}
+		::selection{background:#333636;color:#00DFFC;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_34.png);}
+		a{color:#008C9E;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #008C9E, #006673);
+			  background-image: -ms-linear-gradient(top, #008C9E, #006673);
+			  background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#343838), to(#006673));
+			  background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+			  background-image: -o-linear-gradient(top, #008C9E, #006673);
+			  background-image: linear-gradient(top, #008C9E, #006673);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+			  border-color: #006673 #006673 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #008C9E #008C9E #bfbfbf;
+		  background-color: #006673;
+		}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#343838;color:#FFFFFF;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+		#documenter_sidebar ul{border-top:1px solid #212424;}
+		#documenter_sidebar ul a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+		#documenter_sidebar ul a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_sidebar ul a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-matmix">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#getting_started" title="Getting Started">Getting Started</a></li>
+			<li><a href="#files_folders_structure" title="Files & Folders Structure">Files & Folders Structure</a></li>
+			<li><a href="#html_structure" title="Html Structure">Html Structure</a></li>
+			<li><a href="#box_widgets" title="Box Widgets">Box Widgets</a></li>
+			<li><a href="#css_structure" title="Css Structure">Css Structure</a></li>
+			<li><a href="#how_to_use_less" title="How to use less?">How to use less?</a></li>
+			<li><a href="#tags_input" title="Tags Input">Tags Input</a></li>
+			<li><a href="#input_mask" title="Input Mask">Input Mask</a></li>
+			<li><a href="#icheck" title="iCheck">iCheck</a></li>
+			<li><a href="#select2_bootstrap" title="Select2 Bootstrap">Select2 Bootstrap</a></li>
+			<li><a href="#selectize_selectbox" title="Selectize Selectbox">Selectize Selectbox</a></li>
+			<li><a href="#spinner" title="Spinner">Spinner</a></li>
+			<li><a href="#bootstrap_filestyle" title="Bootstrap Filestyle">Bootstrap Filestyle</a></li>
+			<li><a href="#basic_form_validation" title="Basic Form Validation">Basic Form Validation</a>
+				<ul>
+					<li><a href="#basic_form_validation_strongform_better_documentation_you_can_check_a_href"http_jqueryvalidationorg_documentation_"_target"_blank"http_jqueryvalidationorg_documentation_a_strong">Form better documentation you can check http://jqueryvalidation.org/documentation/</a>
+				</ul>
+			</li>
+			<li><a href="#bootstrap_form_validation" title="Bootstrap Form Validation">Bootstrap Form Validation</a>
+				<ul>
+					<li><a href="#bootstrap_form_validation_strongi_have_purchased_developer_licensed_of_this_plugin_so_you_no_need_to_purchase_license_unless_you_use_your_work_commercially_for_better_documentation_you_can_check_nbsp_stronga_href"http_formvalidationio_"_target"_blank"http_formvalidationio_a">I have purchased developer licensed of this plugin so you no need to purchase license unless you use your work commercially. for better documentation you can check&nbsp;http://formvalidation.io/</a>
+				</ul>
+			</li>
+			<li><a href="#colors_pickers" title="Colors Pickers">Colors Pickers</a></li>
+			<li><a href="#date_pickers" title="Date Pickers">Date Pickers</a></li>
+			<li><a href="#summernote" title="Summernote">Summernote</a></li>
+			<li><a href="#tables" title="Tables">Tables</a>
+				<ul>
+					<li><a href="#tables_for_styled_checkbox">For styled checkbox</a>
+					<li><a href="#tables_for_edit">For Edit</a>
+					<li><a href="#tables_for_delete">For Delete</a>
+				</ul>
+			</li>
+			<li><a href="#notifications_noty" title="Notifications (Noty)">Notifications (Noty)</a></li>
+			<li><a href="#switchery" title="Switchery">Switchery</a></li>
+			<li><a href="#slider" title="Slider">Slider</a></li>
+			<li><a href="#bootbox" title="Bootbox">Bootbox</a></li>
+			<li><a href="#sweet_alert" title="Sweet Alert">Sweet Alert</a></li>
+			<li><a href="#chart" title="Chart">Chart</a></li>
+			<li><a href="#sources_credits" title="Sources & Credits">Sources & Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Kamrujaman Shohel 2015<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>MatMix</h1>
+	<h2>A Components Mix Bootstarp 3 Admin Dashboard</h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 06/14/2015</li>
+	<li>latest update: 07/12/2015</li>
+	<li>by: Kamrujaman Shohel</li>
+	<li><a href="http://jaman.me/">jaman.me/</a></li>
+	<li>email: <a href="mailto:&#105;&#110;&#102;&#111;&#64;&#106;&#97;&#109;&#97;&#110;&#46;&#109;&#101;">&#105;&#110;&#102;&#111;&#64;&#106;&#97;&#109;&#97;&#110;&#46;&#109;&#101;</a></li>
+	</ul>
+	<p>MatMix is a powerful and clean admin panel template for web entrepreneurs, app developers and site owners as this can be used for the admin part of any WEB ADMIN, CMS, CRM, ERP, WEB APPLICATION, APPLICATION SOFTWARE, ACCOUNTING SOFTWARE, SCHOOL MANAGEMENT, PAYROLL MANAGEMENT, POINT OF SALE any web based software’s admin panels. It is very easy to use and extremely easy to integrate.
+
+Being powered by jQuery, less with cool plugins implemented in lots of separated HTML files and having 1000+ Font Icons with different styles, different widgets, customized charts, Notifications, tooltips this has become a complete admin panel for any kind of web presence.
+
+Finally, as this has been developed keeping ‘easy to integrate’ method in mind, it surely won’t bother you whether you are skilled user of not implementing it into your admin part.Try MatMix Admin to make your admin panel powerful with lots of smart features and to get an optimized look for any simple or critical admin functionality.</p>
+	</section>
+	
+	<section id="getting_started">
+	<div class="page-header"><h3>Getting Started</h3><hr class="notop"></div>
+<p>
+	This template is developed by well structured way. You can use following any step to get started with this template. &nbsp;You can use full template or you can use only layout and style of this template. I have included both version that you can easily use this tamplate.&nbsp;</p>
+<h2>
+	Complete Premade Copy</h2>
+<hr>
+<p>
+	<img alt="Matmix" src="assets/images/image_28.png" style="width: 345px; height: 40px;"></p>
+<p>
+	All Js, css, images files are included there&nbsp;</p>
+<p>
+	&nbsp;</p>
+<h2>
+	Only Blank Layouts</h2>
+<hr>
+<p>
+	<img alt="Matmix" src="assets/images/image_29.png" style="width: 349px; height: 20px;"></p>
+<p>
+	Only template layouts related js and css file are include there. No extra plugins are there.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<div>
+	<h2>
+		Mandatory JS files</h2>
+	<hr>
+	<p>
+		Following js files must require because those files have dependencies in layout</p>
+	<pre class="prettyprint lang-html linenums">
+&lt;script src=&quot;js/jquery-1.11.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jRespond.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/nav-accordion.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/hoverintent.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/waves.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.loadmask.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/easypie/jquery.easypiechart.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/sparkline/jquery.sparkline.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/smart-resize.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/layout.init.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/retina.min.js&quot;&gt;&lt;/script&gt; </pre>
+	<h2>
+		Mandatory CSS files</h2>
+	<hr>
+	<p>
+		You can normally use following stylesheet</p>
+	<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; type=&quot;text/css&quot;&gt; </pre>
+	<p>
+		If you include this file then no need to add any others css file&nbsp;</p>
+	<p>
+		<strong>OR&nbsp;</strong></p>
+	<p>
+		You can individually include following files unless&nbsp;<span style="line-height: 19px;">style.css</span></p>
+	<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/font-awesome.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/animate.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/waves.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/layout.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/components.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/plugins.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/common-styles.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/pages.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/responsive.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/matmix-iconfont.css&quot; type=&quot;text/css&quot;&gt;</pre>
+</div>
+<p>
+	If you use above files then no need to add style.css file. And if you add any additional css code then simple add it in&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/common-styles.css&quot; type=&quot;text/css&quot;&gt;</pre>
+<p>
+	Above css file.&nbsp;</p>
+</section>
+<section id="files_folders_structure">
+	<div class="page-header"><h3>Files & Folders Structure</h3><hr class="notop"></div>
+<p>
+	<img alt="Matmix" src="assets/images/image_1.png" style="width: 339px; height: 365px;"></p>
+<p>
+	|- Swf &nbsp;folder contains Data Table export files<br>
+	|- Data&nbsp;&nbsp;folder contains all example data related on template<br>
+	|- Images &nbsp;folder contains all all images of this template<br>
+	|- js &nbsp;folder contains all javascripts of this template<br>
+	|- fonts &nbsp;folder contains all iconic fonts<br>
+	|- less &nbsp;folder contains all less files<br>
+	|- css &nbsp;folder contains all stylesheets</p>
+</section>
+<section id="html_structure">
+	<div class="page-header"><h3>Html Structure</h3><hr class="notop"></div>
+<h2>
+	Basic Html Structure&nbsp;</h2>
+<hr>
+<pre class="prettyprint lang-html linenums">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;A Components Mix Bootstarp 3 Admin Dashboard Template&quot;&gt;
+&lt;meta name=&quot;author&quot; content=&quot;Westilian&quot;&gt;
+&lt;title&gt;MatMix - A Components Mix Admin Dashboard Template&lt;/title&gt;
+&lt;!-- All Stylesheets Here --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;page-container list-menu-view&quot;&gt;
+&lt;!--Leftbar Start Here --&gt;
+&lt;div class=&quot;left-aside desktop-view&quot;&gt;
+        &lt;div class=&quot;aside-branding&quot;&gt;
+            &lt;!-- Left bar Logo Here --&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;left-navigation&quot;&gt;
+            &lt;!-- Left Nav Here --&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+    <span class="Apple-tab-span" style="white-space:pre"> </span>&lt;div class=&quot;page-content&quot;&gt;
+        &lt;!--Topbar Start Here --&gt;
+        &lt;header class=&quot;top-bar&quot;&gt;
+            &lt;!-- Top Bar Here --&gt;
+        &lt;/header&gt;
+     &lt;div class=&quot;main-container&quot;&gt;
+    <span class="Apple-tab-span" style="white-space:pre"> </span>   &lt;div class=&quot;container-fluid&quot;&gt;
+    <span class="Apple-tab-span" style="white-space:pre"> </span>    &lt;!-- Page Content Here --&gt;
+    <span class="Apple-tab-span" style="white-space:pre"> </span>   &lt;/div&gt;
+    <span class="Apple-tab-span" style="white-space:pre"> </span>&lt;/div&gt;
+         &lt;!--Footer Start Here --&gt;
+        <span class="Apple-tab-span" style="white-space:pre"> </span>&lt;footer class=&quot;footer-container&quot;&gt;
+        <span class="Apple-tab-span" style="white-space:pre"> </span>    &lt;!-- Footer Here  --&gt;
+        <span class="Apple-tab-span" style="white-space:pre"> </span>&lt;/footer&gt;
+    <span class="Apple-tab-span" style="white-space:pre"> </span>&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--Rightbar Start Here --&gt;
+&lt;div class=&quot;right-aside&quot;&gt;
+&lt;!-- Rightbar Content--&gt;
+&lt;/div&gt;
+&lt;!-- Js files here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</section>
+<section id="box_widgets">
+	<div class="page-header"><h3>Box Widgets</h3><hr class="notop"></div>
+<p>
+	This template contains two type box widgets. One is boerdered box widget and another is without border. You can use any widget even you can use both any where in the template</p>
+<h2>
+	Box Widget</h2>
+<hr>
+<h3>
+	Dependent files:</h3>
+<p>
+	<strong>Css</strong></p>
+<pre class="prettyprint lang-html linenums">
+  |---components.css
+  |   |---box-widgets.css</pre>
+<p>
+	<strong>Less</strong></p>
+<pre class="prettyprint lang-html linenums">
+  |---components.less
+  |   |---box-widgets.less</pre>
+<p>
+	<img alt="" src="assets/images/image_26.png" style="width: 534px; height: 128px;"></p>
+<h3>
+	Html Structure</h3>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;box-widget widget-module&quot;&gt;                            
+                            &lt;div class=&quot;widget-head clearfix&quot;&gt;
+                                &lt;span class=&quot;h-icon&quot;&gt;&lt;i class=&quot;fa fa-users&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                &lt;h4&gt;Heading&lt;/h4&gt;
+                                &lt;ul class=&quot;widget-action-bar pull-right&quot;&gt;
+                                    &lt;!-- Close/Collapse/loader/Check on/off acton button here --&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;widget-container&quot;&gt;
+                                &lt;!-- CONTENT  --&gt;
+                            &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>
+	<img alt="" src="assets/images/image_25.png" style="width: 641px; height: 282px;"></p>
+<p>
+	Please do not delete above marked classes becuase if you remove any class of them then widget collape,close, onn/Off option will not work.</p>
+<h2>
+	Box Widget Without Border</h2>
+<p>
+	<img alt="" src="assets/images/image_27.png" style="width: 461px; height: 124px;"></p>
+<p>
+	Everything will be same just add a&nbsp;<strong>.no-border&nbsp;</strong>Class here</p>
+<p>
+	<img alt="" src="assets/images/image_33.png" style="width: 336px; height: 16px;"></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;box-widget widget-module no-border&quot;&gt;</pre>
+</section>
+<section id="css_structure">
+	<div class="page-header"><h3>Css Structure</h3><hr class="notop"></div>
+<h2>
+	Table of Contents</h2>
+<hr>
+<p>
+	You will get full table of contents in&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; type=&quot;text/css&quot;&gt; </pre>
+<p>
+	<strong>OR</strong></p>
+<pre class="prettyprint lang-html linenums">
+less/style.less</pre>
+<p>
+	All css are well structured and components base you can easily add, remove and edit any styles. You can use less or css as you own choice.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+/*=========================
+Template Name: MatMix - A Components Mix Admin Dashboard Template
+Author: Westilian - Kamrujaman Shohel
+Author URI: http://jaman.me/
+===========================*/
+/*--------------------------------------------------------------
+&gt;&gt;&gt; TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Layout Styles
+    1.1 Leftbar / .left-aside
+    1.2 Iconic Left Nav / .iconic-view .left-aside
+    1.3 Top Bar / .top-bar
+        1.3.0 Search Bar / .desktop-search
+        1.3.1 Notification / .notification-nav
+        1.3.2 Admin User Drop Down / .user-nav
+    1.4 Right Bar / .right-aside
+2.0 Widgets and Components
+    ===========    
+    BOX WIDGETS
+    ===========
+    2.1 Box Widget / .box-widget
+        2.1.0 Border Less Box Widget / .box-widget.no-border
+    ===========    
+    TAB WIDGETS
+    ===========
+    2.2 Main Tab / .main-tab
+        2.2.0 Section Tab / .tab-widget
+        2.2.1 Box Tab / .box-tab
+        2.2.2 Bottom Tab / .tab-bottom
+        2.2.3 Left Tab / .tab-widget
+    2.3 Bootstrap Elements
+    2.4 Progress / .progress
+    2.5 Breadcrumb / .page-breadcrumb
+    2.6 Notifications / .activity-item
+    2.7 switchery On/Off Switch / .switchery
+    2.8 No UI slider / .noUi-target
+    2.9 Sweet Alert / .sweet-alert
+    2.10 MatMix Widgets
+    2.11 Full Calendar
+    2.12 Timeline
+    2.13 Login Page
+    2.14 Error Page
+    2.15 Invoice
+3.0 Plugins
+    3.1 Forms
+        3.1.1 Basic Forms / .input-instruction
+        3.1.2 iCheck / .icheckbox_minimal
+        3.1.3 select2-bootstrap / .select2-container
+        3.1.4 MentionsInput / .mentions-input-box
+        3.1.5 wysiwyg / .note-editor
+        3.1.6 TagsInput / div.tagsinput
+        3.1.7 Spinner / .bootstrap-touchspin
+        3.1.8 Selectize / .selectize-dropdown
+        3.1.9 Datepicker / .datepicker
+        3.1.10 DateRangePicker / .daterangepicker.dropdown-menu
+        3.1.11 Colorpicker / Bootstrap Colorpicker
+    3.2 Tables
+        7.2.1 Data Tables
+        7.2.2 Responsive Stack Tables
+    3.3 Loadmask
+4.0 Common Styles
+5.0 Pages
+    5.1 Inbox / .inbox-container
+        5.1.1 Compose Form / .compose-form
+    5.2 Note / .inbox-container
+    5.3 Task / .task-container
+    5.4 Forum / .forum-container
+6.0 Responsive
+7.0 Matmix Theme Colors
+--------------------------------------------------------------*/</pre>
+<h2>
+	CSS files</h2>
+<pre class="prettyprint lang-html linenums">
+css/
+    |---font-awesome.css
+    |---bootstrap.css
+    |---animate.css
+    |---waves.css<span class="Apple-tab-span"> </span>   
+    |---layout.css
+    |---components.css
+    |---plugins.css
+    |---common-styles.css
+    |---pages.css
+    |---responsive.css
+    |---theme.css
+    |---matmix-iconfont.css</pre>
+<p>
+	&nbsp;</p>
+<div>
+	<h2>
+		All individual CSS files</h2>
+	<p>
+		Normally you have no need to add following files because all code are already in above files. Following file may need you to understand the dependencies and structure well. If you want to use any individula componets for any other purpose then it may help you.</p>
+</div>
+<pre class="prettyprint lang-html linenums">
+all-css/
+  |---font-awesome.css
+  |---bootstrap.css
+  |---animate.css
+  |---waves.css<span class="Apple-tab-span"> </span>   
+  |---layout.css
+  |   |---/layout/leftbar.css
+  |   |---/layout/iconicview.css
+  |   |---/layout/topbar.css
+  |   |---/layout/rightbar.css
+  |---components.css
+  |   |---box-widgets.css
+  |   |---tabs.css
+  |   |---buttons.css
+  |   |---progress.css
+  |   |---breadcrumb.css
+  |   |---noty.css
+  |   |---switchery.css
+  |   |---jquery.nouislider.css
+  |   |---sweetalert.css
+  |   |---matmix-widgets.css
+  |   |---calendar.css
+  |   |---timeline.css
+  |   |---login.css
+  |   |---error-page.css
+  |   |---invoice.css
+  |---plugins.css
+  |   |---forms.css
+  |   |   |---all-forms.css
+  |   |   |---icheck.css
+  |   |   |---select2-bootstrap.css
+  |   |   |---jquery.mentionsInput.css
+  |   |   |---text-editor.css
+  |   |   |---tagsinput.css
+  |   |   |---spinner.css
+  |   |   |---selectize.css
+  |   |   |---datepicker.css
+  |   |   |---daterangepicker.css
+  |   |   |---colorpicker.css
+  |   |---tables.css
+  |   |---loadmask.css
+  |---common-styles.css
+  |---pages.css
+  |   |---inbox.css
+  |   |---note.css
+  |   |---task.css
+  |   |---forum.css
+  |---responsive.css
+  |---theme.css
+  |---matmix-iconfont.css</pre>
+<div>
+	&nbsp;</div>
+</section>
+<section id="how_to_use_less">
+	<div class="page-header"><h3>How to use less?</h3><hr class="notop"></div>
+<p>
+	You can use any less compiler to use less. all less file is less folder</p>
+<h3>
+	Less Folder Structure&nbsp;</h3>
+<p>
+	<img alt="" src="assets/images/image_32.png" style="width: 328px; height: 473px;"></p>
+<h3>
+	Variable and Mixins</h3>
+<p>
+	All variable and mixins of this template is in following files</p>
+<pre class="prettyprint lang-html linenums">
+less/
+      variables.less
+      mixins.less</pre>
+<p>
+	&nbsp;</p>
+<p>
+	Simply just open <strong>style.less&nbsp;</strong>then you will get the structures of less. After make any changes just compile the files and use the files. If you want to use only one style.css file then just compile style.less only. Or you can compile following files for individul use.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+less/style.less
+    |---font-awesome.less
+    |---bootstrap.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+    |---animate.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+    |---waves.<span style="font-family: Arial, Verdana, sans-serif;">less</span><span style="font-family: Arial, Verdana, sans-serif;">  </span>
+    |---layout.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+    |---components.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+    |---plugins.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+    |---common-styles.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+    |---pages.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+    |---responsive.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+    |---theme.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+    |---matmix-iconfont.<span style="font-family: Arial, Verdana, sans-serif;">less</span></pre>
+<h3>
+	&nbsp;<strong>style.less file</strong></h3>
+<div>
+	<pre class="prettyprint lang-html linenums">
+/*=========================
+Template Name: MatMix - A Components Mix Admin Dashboard Template
+Author: Westilian - Kamrujaman Shohel
+Author URI: http://jaman.me/
+===========================*/
+
+/*--------------------------------------------------------------
+&gt;&gt;&gt; TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Layout Styles
+    1.1 Leftbar / .left-aside
+    1.2 Iconic Left Nav / .iconic-view .left-aside
+    1.3 Top Bar / .top-bar
+        1.3.0 Search Bar / .desktop-search
+        1.3.1 Notification / .notification-nav
+        1.3.2 Admin User Drop Down / .user-nav
+    1.4 Right Bar / .right-aside
+
+2.0 Widgets and Components
+    ===========    
+    BOX WIDGETS
+    ===========
+    2.1 Box Widget / .box-widget
+        2.1.0 Border Less Box Widget / .box-widget.no-border
+
+    ===========    
+    TAB WIDGETS
+    ===========
+    2.2 Main Tab / .main-tab
+        2.2.0 Section Tab / .tab-widget
+        2.2.1 Box Tab / .box-tab
+        2.2.2 Bottom Tab / .tab-bottom
+        2.2.3 Left Tab / .tab-widget
+    2.3 Bootstrap Elements
+    2.4 Progress / .progress
+    2.5 Breadcrumb / .page-breadcrumb
+    2.6 Notifications / .activity-item
+    2.7 switchery On/Off Switch / .switchery
+    2.8 No UI slider / .noUi-target
+    2.9 Sweet Alert / .sweet-alert
+    2.10 MatMix Widgets
+    2.11 Full Calendar
+    2.12 Timeline
+    2.13 Login Page
+    2.14 Error Page
+    2.15 Invoice
+3.0 Plugins
+    3.1 Forms
+        3.1.1 Basic Forms / .input-instruction
+        3.1.2 iCheck / .icheckbox_minimal
+        3.1.3 select2-bootstrap / .select2-container
+        3.1.4 MentionsInput / .mentions-input-box
+        3.1.5 wysiwyg / .note-editor
+        3.1.6 TagsInput / div.tagsinput
+        3.1.7 Spinner / .bootstrap-touchspin
+        3.1.8 Selectize / .selectize-dropdown
+        3.1.9 Datepicker / .datepicker
+        3.1.10 DateRangePicker / .daterangepicker.dropdown-menu
+        3.1.11 Colorpicker / Bootstrap Colorpicker
+    3.2 Tables
+        7.2.1 Data Tables
+        7.2.2 Responsive Stack Tables
+    3.3 Loadmask
+4.0 Common Styles
+5.0 Pages
+    5.1 Inbox / .inbox-container
+        5.1.1 Compose Form / .compose-form
+    5.2 Note / .inbox-container
+    5.3 Task / .task-container
+    5.4 Forum / .forum-container
+6.0 Responsive
+7.0 Matmix Theme Colors
+--------------------------------------------------------------*/
+@import &quot;variables.less&quot;;
+@import &quot;mixins.less&quot;;
+
+/*-- 1.0 Layout Styles--*/
+@import &quot;layout.less&quot;;
+
+/*-- 2.0 Widgets and Components --*/
+@import &quot;components.less&quot;;
+
+/*-- 3.0 Plugins --*/
+@import &quot;plugins.less&quot;;
+
+/*-- 4.0 Custom Styles --*/
+@import &quot;common-styles&quot;;
+
+/*-- 5.0 Pages --*/
+@import &quot;pages.less&quot;;
+
+/*-- 6.0 Responsive --*/
+@import &quot;responsive.less&quot;;
+
+/*-- 7.0 Matmix Theme Colors --*/
+@import &quot;theme.less&quot;;</pre>
+	<div>
+		&nbsp;</div>
+</div>
+<div>
+	You can compile all files.</div>
+<h3>
+	Less files structure &nbsp;</h3>
+<pre class="prettyprint lang-html linenums">
+less/
+  |---font-awesome.less
+  |---bootstrap.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |---animate.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |---waves.<span style="font-family: Arial, Verdana, sans-serif;">less</span><span class="Apple-tab-span" style="font-family: Arial, Verdana, sans-serif;"> </span><span style="font-family: Arial, Verdana, sans-serif;">   </span>
+  |---layout.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---/layout/leftbar.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---/layout/iconicview.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---/layout/topbar.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---/layout/rightbar.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |---components.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---box-widgets.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---tabs.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---buttons.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---progress.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---breadcrumb.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---noty.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---switchery.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---jquery.nouislider.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---sweetalert.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---matmix-widgets.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---calendar.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---timeline.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---login.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---error-page.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---invoice.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |---plugins.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---forms.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---all-forms.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---icheck.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---select2-bootstrap.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---jquery.mentionsInput.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---text-editor.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---tagsinput.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---spinner.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---selectize.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---datepicker.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---daterangepicker.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |   |---colorpicker.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---tables.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---loadmask.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |---common-styles.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |---pages.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---inbox.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---note.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---task.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |   |---forum.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |---responsive.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |---theme.<span style="font-family: Arial, Verdana, sans-serif;">less</span>
+  |---matmix-iconfont.<span style="font-family: Arial, Verdana, sans-serif;">less</span></pre>
+<div>
+	&nbsp;</div>
+</section>
+<section id="tags_input">
+	<div class="page-header"><h3>Tags Input</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_2.png" style="width: 554px; height: 121px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/tagsinput.css
+js/jquery.tagsinput.js
+</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/tagsinput.css file. Because all styles already there in css/forms.css file. You need to add only css/tagsinput.css file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/tagsinput.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/tagsinput.css&quot; /&gt;
+&lt;script src=&quot;js/jquery.tagsinput.js&quot;&gt;&lt;/script&gt;</pre>
+<div class="alert alert-info">
+	<em style="color: rgb(58, 135, 173);">All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/tagsinput.css file. Because all styles already there in css/forms.css file. You need to add only css/tagsinput.css file if you use it individually.</em></div>
+<p>
+	Create a real input in your form that will contain a comma-separated list of tags. You can put any default or existing tags in the value attribute, and they&#39;ll be handled properly</p>
+<pre class="prettyprint lang-html linenums">
+&lt;input name=&quot;tags&quot; class=&quot;tags-input&quot; value=&quot;foo,bar,baz&quot; /&gt;</pre>
+<p>
+	Then, simply call the tagsInput function on any field that should be treated as a list of tags.</p>
+<pre class="prettyprint lang-js linenums">
+$(&#39;.tags-input&#39;).tagsInput();</pre>
+<p>
+	You can use id=&quot;&quot; instead of class=&quot;&quot;&nbsp;</p>
+<h3>
+	Options</h3>
+<pre class="prettyprint lang-js linenums">
+$(selector).tagsInput({
+   &#39;autocomplete_url&#39;: url_to_autocomplete_api,
+   &#39;autocomplete&#39;: { option: value, option: value},
+   &#39;height&#39;:&#39;100px&#39;,
+   &#39;width&#39;:&#39;300px&#39;,
+   &#39;interactive&#39;:true,
+   &#39;defaultText&#39;:&#39;add a tag&#39;,
+   &#39;onAddTag&#39;:callback_function,
+   &#39;onRemoveTag&#39;:callback_function,
+   &#39;onChange&#39; : callback_function,
+   &#39;delimiter&#39;: [&#39;,&#39;,&#39;;&#39;],   // Or a string with a single delimiter. Ex: &#39;;&#39;
+   &#39;removeWithBackspace&#39; : true,
+   &#39;minChars&#39; : 0,
+   &#39;maxChars&#39; : 0, // if not provided there is no limit
+   &#39;placeholderColor&#39; : &#39;#666666&#39;
+});</pre>
+<h3>
+	Where called the function in this tmeplate?</h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.fn.tagsInput) {
+        $(&#39;.tags-input&#39;).each(function () {
+            var tagsType = $(this).data(&#39;type&#39;)
+            var highlightColor = $(this).data(&#39;highlight-color&#39;)
+            if (tagsType === &#39;tags&#39;) {
+                $(this).tagsInput({
+                    width: &#39;auto&#39;
+                });
+            }
+
+            if (tagsType === &#39;highlighted-tags&#39;) {
+                $(this).tagsInput({
+                    width: &#39;auto&#39;,
+                    onChange: function (elem, elem_tags) {
+                        var languages = [&#39;php&#39;, &#39;ruby&#39;, &#39;javascript&#39;];
+                        $(&#39;.tag&#39;, elem_tags).each(function () {
+                            if ($(this).text().search(new RegExp(&#39;(&#39; + languages.join(&#39;|&#39;) + &#39;)&#39;)) &gt;= 0) $(this).css(&#39;background-color&#39;, highlightColor);
+                        });
+                    }
+                });
+            }
+        });
+    }</pre>
+</section>
+<section id="input_mask">
+	<div class="page-header"><h3>Input Mask</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_3.png" style="width: 559px; height: 224px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+js/jquery.mask.js
+</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript file to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;script src=&quot;js/jquery.mask.js&quot;&gt;&lt;/script&gt;</pre>
+<p>
+	Create a real input in your form</p>
+<pre class="prettyprint lang-html linenums">
+&lt;input type=&quot;text&quot; class=&quot;form-control date-mask&quot; /&gt;</pre>
+<p>
+	Then, simply call the mask function by following ways:</p>
+<pre class="prettyprint lang-js linenums">
+ $(&#39;.date-mask&#39;).mask(&#39;11/11/1111&#39;, {
+            placeholder: &quot;__/__/____&quot;
+ });</pre>
+<p>
+	You can use id=&quot;&quot; instead of class=&quot;&quot;&nbsp;</p>
+<h3>
+	Basic Usage Examples</h3>
+<pre class="prettyprint lang-js linenums">
+$(&#39;.date-mask&#39;).mask(&#39;11/11/1111&#39;, {
+            placeholder: &quot;__/__/____&quot;
+        });
+
+        $(&#39;.time-mask&#39;).mask(&#39;00:00:00&#39;, {
+            placeholder: &quot;00:00:00&quot;
+        });
+
+        $(&#39;.date_time-mask&#39;).mask(&#39;00/00/0000 00:00:00&#39;, {
+            placeholder: &quot;00/00/0000 00:00:00&quot;
+        });
+
+        $(&#39;.cep-mask&#39;).mask(&#39;00000-000&#39;, {
+            placeholder: &quot;00000-000&quot;
+        });
+
+        $(&#39;.phone-mask&#39;).mask(&#39;0000-0000&#39;, {
+            placeholder: &quot;0000-0000&quot;
+        });
+
+        $(&#39;.phone_with_ddd-mask&#39;).mask(&#39;(00) 0000-0000&#39;, {
+            placeholder: &quot;(00) 0000-0000&quot;
+        });
+
+        $(&#39;.phone_us-mask&#39;).mask(&#39;(000) 000-0000&#39;, {
+            placeholder: &quot;(000) 000-0000&quot;
+        });
+
+        $(&#39;.mixed-mask&#39;).mask(&#39;AAA 000-S0S&#39;, {
+            placeholder: &quot;AAA 000-S0S&quot;
+        });
+
+        $(&#39;.cpf-mask&#39;).mask(&#39;000.000.000-00&#39;, {
+            reverse: true,
+            placeholder: &quot;000.000.000-00&quot;
+        });
+
+        $(&#39;.money-mask&#39;).mask(&#39;000.000.000.000.000,00&#39;, {
+            reverse: true,
+            placeholder: &quot;000.000.000.000.000,00&quot;
+        });
+
+        $(&#39;.money2-mask&#39;).mask(&quot;#.##0,00&quot;, {
+            reverse: true,
+            maxlength: false,
+            placeholder: &quot;#.##0,00&quot;
+        });
+
+        $(&#39;.ip_address-mask&#39;).mask(&#39;0ZZ.0ZZ.0ZZ.0ZZ&#39;, {
+            placeholder: &quot;0ZZ.0ZZ.0ZZ.0ZZ&quot;,
+            translation: {
+                &#39;Z&#39;: {
+                    pattern: /[0-9]/,
+                    optional: true
+                }
+            }
+        });
+
+        $(&#39;.ip_address-mask&#39;).mask(&#39;099.099.099.099&#39;, {
+            placeholder: &quot;099.099.099.099&quot;
+        });
+
+        $(&#39;.percent-mask&#39;).mask(&#39;##0,00%&#39;, {
+            reverse: true,
+            placeholder: &quot;###,##%&quot;
+        });
+
+        $(&#39;.clear-if-not-match-mask&#39;).mask(&quot;00/00/0000&quot;, {
+            clearIfNotMatch: true,
+            placeholder: &quot;__/__/____&quot;
+        });
+
+        $(&#39;.placeholder-mask&#39;).mask(&quot;00/00/0000&quot;, {
+            placeholder: &quot;__/__/____&quot;
+        });</pre>
+<h3>
+	Callback Examples</h3>
+<pre class="prettyprint lang-js linenums">
+var options =  { 
+  onComplete: function(cep) {
+    alert(&#39;CEP Completed!:&#39; + cep);
+  },
+
+  onKeyPress: function(cep, event, currentField, options){
+    console.log(&#39;An key was pressed!:&#39;, cep, &#39; event: &#39;, event, 
+                &#39;currentField: &#39;, currentField, &#39; options: &#39;, options);
+  },
+
+  onChange: function(cep){
+    console.log(&#39;cep changed! &#39;, cep);
+  },
+
+  onInvalid: function(val, e, f, invalid, options){
+    var error = invalid[0];
+    console.log (&quot;Digit: &quot;, error.v, &quot; is invalid for the position: &quot;, error.p, &quot;. We expect something like: &quot;, error.e);
+  }
+};
+
+$(&#39;.cep_with_callback&#39;).mask(&#39;00000-000&#39;, options);</pre>
+<h3>
+	On-the-fly mask change</h3>
+<pre class="prettyprint lang-js linenums">
+var options =  {onKeyPress: function(cep, e, field, options){
+  var masks = [&#39;00000-000&#39;, &#39;0-00-00-00&#39;];
+    mask = (cep.length&gt;7) ? masks[1] : masks[0];
+  $(&#39;.crazy_cep&#39;).mask(mask, options);
+}};
+
+$(&#39;.crazy_cep&#39;).mask(&#39;00000-000&#39;, options);</pre>
+<h3>
+	Mask as a function</h3>
+<pre class="prettyprint lang-js linenums">
+var SPMaskBehavior = function (val) {
+  return val.replace(/D/g, &#39;&#39;).length === 11 ? &#39;(00) 00000-0000&#39; : &#39;(00) 0000-00009&#39;;
+},
+
+spOptions = {
+  onKeyPress: function(val, e, field, options) {
+      field.mask(SPMaskBehavior.apply({}, arguments), options);
+    }
+};
+
+$(&#39;.sp_celphones&#39;).mask(SPMaskBehavior, spOptions);</pre>
+<h3>
+	Using HTML Notation Exemples</h3>
+<div>
+	<p>
+		To get your mask applied with the data-mask attribute just use it as the same way you use with the $.mask function.&nbsp;</p>
+	<pre class="prettyprint lang-html linenums">
+&lt;input type=&quot;text&quot; name=&quot;field-name&quot; data-mask=&quot;00/00/0000&quot; /&gt;</pre>
+	<p>
+		Activating a reversible mask&nbsp;</p>
+	<pre class="prettyprint lang-html linenums">
+&lt;input type=&quot;text&quot; name=&quot;field-name&quot; data-mask=&quot;00/00/0000&quot; data-mask-reverse=&quot;true&quot; /&gt;</pre>
+	<p>
+		Using clearIfNotMatch option&nbsp;</p>
+	<pre class="prettyprint lang-html linenums">
+&lt;input type=&quot;text&quot; name=&quot;field-name&quot; data-mask=&quot;00/00/0000&quot; data-mask-clearifnotmatch=&quot;true&quot; /&gt;</pre>
+	<p>
+		Using selectOnFocus option&nbsp;</p>
+	<pre class="prettyprint lang-html linenums">
+&lt;input type=&quot;text&quot; name=&quot;field-name&quot; data-mask=&quot;00/00/0000&quot; data-mask-selectonfocus=&quot;true&quot; /&gt;</pre>
+	<h3>
+		Removing the mask</h3>
+	<pre class="prettyprint lang-js linenums">
+$(&#39;.date&#39;).unmask();</pre>
+	<h3>
+		Getting the unmasked typed value</h3>
+	<pre class="prettyprint lang-js linenums">
+$(&#39;.date&#39;).cleanVal();</pre>
+	<h3>
+		Global Options</h3>
+	<pre class="prettyprint lang-js linenums">
+$.jMaskGlobals = {
+    maskElements: &#39;input,td,span,div&#39;,
+    dataMaskAttr: &#39;*[data-mask]&#39;,
+    dataMask: true,
+    watchInterval: 300,
+    watchInputs: true,
+    watchDataMask: false,
+    byPassKeys: [9, 16, 17, 18, 36, 37, 38, 39, 40, 91],
+    translation: {
+        &#39;0&#39;: {pattern: /d/},
+        &#39;9&#39;: {pattern: /d/, optional: true},
+        &#39;#&#39;: {pattern: /d/, recursive: true},
+        &#39;A&#39;: {pattern: /[a-zA-Z0-9]/},
+        &#39;S&#39;: {pattern: /[a-zA-Z]/}
+    }
+  };</pre>
+	<h3>
+		Where called the function in this tmeplate?</h3>
+	<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="icheck">
+	<div class="page-header"><h3>iCheck</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_4.png" style="width: 253px; height: 100px;"></p>
+<p>
+	<img alt="matmix" src="assets/images/image_5.png" style="width: 310px; height: 98px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/icheck.css
+js/icheck.js
+</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/icheck.css file. Because all styles already there in css/forms.css file. You need to add only css/icheck.css file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/icheck.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/icheck.css&quot; /&gt;
+&lt;script src=&quot;js/icheck.js&quot;&gt;&lt;/script&gt;</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/icheck.css file. Because all styles already there in css/forms.css file. You need to add only css/icheck.css file if you use it individually.</em></div>
+<p>
+	Create a real input in your form with label</p>
+<pre class="prettyprint lang-html linenums">
+&lt;input class=&quot;i-min-check&quot; type=&quot;checkbox&quot; id=&quot;minimal-checkbox-1&quot;&gt;
+&lt;label for=&quot;minimal-checkbox-1&quot;&gt;Nam ut tempor lacus,&lt;/label&gt;</pre>
+<p>
+	Then, simply call the icheck function on any input</p>
+<pre class="prettyprint lang-js linenums">
+$(&#39;.i-min-check&#39;).iCheck({
+        checkboxClass: &#39;icheckbox_minimal&#39;,
+        radioClass: &#39;iradio_minimal&#39;,
+        increaseArea: &#39;30%&#39; // optional
+    });</pre>
+<p>
+	You can use id=&quot;&quot; instead of class=&quot;&quot;&nbsp;</p>
+<h3>
+	Options</h3>
+<pre class="prettyprint lang-html linenums">
+{
+  // &#39;checkbox&#39; or &#39;radio&#39; to style only checkboxes or radio buttons, both by default
+  handle: &#39;&#39;,
+  // base class added to customized checkboxes
+  checkboxClass: &#39;icheckbox&#39;,
+  // base class added to customized radio buttons
+  radioClass: &#39;iradio&#39;,
+  // class added on checked state (input.checked = true)
+  checkedClass: &#39;checked&#39;,
+    // if not empty, used instead of &#39;checkedClass&#39; option (input type specific)
+    checkedCheckboxClass: &#39;&#39;,
+    checkedRadioClass: &#39;&#39;,
+  // if not empty, added as class name on unchecked state (input.checked = false)
+  uncheckedClass: &#39;&#39;,
+    // if not empty, used instead of &#39;uncheckedClass&#39; option (input type specific)
+    uncheckedCheckboxClass: &#39;&#39;,
+    uncheckedRadioClass: &#39;&#39;,
+  // class added on disabled state (input.disabled = true)
+  disabledClass: &#39;disabled&#39;,
+    // if not empty, used instead of &#39;disabledClass&#39; option (input type specific)
+    disabledCheckboxClass: &#39;&#39;,
+    disabledRadioClass: &#39;&#39;,
+  // if not empty, added as class name on enabled state (input.disabled = false)
+  enabledClass: &#39;&#39;,
+    // if not empty, used instead of &#39;enabledClass&#39; option (input type specific)
+    enabledCheckboxClass: &#39;&#39;,
+    enabledRadioClass: &#39;&#39;,
+  // class added on indeterminate state (input.indeterminate = true)
+  indeterminateClass: &#39;indeterminate&#39;,
+    // if not empty, used instead of &#39;indeterminateClass&#39; option (input type specific)
+    indeterminateCheckboxClass: &#39;&#39;,
+    indeterminateRadioClass: &#39;&#39;,
+  // if not empty, added as class name on determinate state (input.indeterminate = false)
+  determinateClass: &#39;&#39;,
+    // if not empty, used instead of &#39;determinateClass&#39; option (input type specific)
+    determinateCheckboxClass: &#39;&#39;,
+    determinateRadioClass: &#39;&#39;,
+  // class added on hover state (pointer is moved onto input)
+  hoverClass: &#39;hover&#39;,
+  // class added on focus state (input has gained focus)
+  focusClass: &#39;focus&#39;,
+  // class added on active state (mouse button is pressed on input)
+  activeClass: &#39;active&#39;,
+  // adds hoverClass to customized input on label hover and labelHoverClass to label on input hover
+  labelHover: true,
+    // class added to label if labelHover set to true
+    labelHoverClass: &#39;hover&#39;,
+  // increase clickable area by given % (negative number to decrease)
+  increaseArea: &#39;&#39;,
+  // true to set &#39;pointer&#39; CSS cursor over enabled inputs and &#39;default&#39; over disabled
+  cursor: false,
+  // set true to inherit original input&#39;s class name
+  inheritClass: false,
+  // if set to true, input&#39;s id is prefixed with &#39;iCheck-&#39; and attached
+  inheritID: false,
+  // set true to activate ARIA support
+  aria: false,
+  // add HTML code or text inside customized input
+  insert: &#39;&#39;
+}</pre>
+<h3>
+	Where called the function in this tmeplate?</h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+</section>
+<section id="select2_bootstrap">
+	<div class="page-header"><h3>Select2 Bootstrap</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_6.png" style="width: 593px; height: 334px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/select2-bootstrap.css
+js/select2.js</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>select2-bootstrap<em>.css file. Because all styles already there in css/forms.css file. You need to add only css/</em>select2-bootstrap.css<em>&nbsp;file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/select2-bootstrap.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/select2-bootstrap.css&quot; /&gt;
+&lt;script src=&quot;js/select2.js&quot;&gt;&lt;/script&gt;</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>select2-bootstrap<em>.css file. Because all styles already there in css/forms.css file. You need to add only css/</em>select2-bootstrap.css<em>&nbsp;file if you use it individually.</em></div>
+<p>
+	Create a real select list in your form</p>
+<pre class="prettyprint lang-html linenums">
+&lt;select class=&quot;form-control select2&quot;&gt;
+   &lt;option&gt;&lt;/option&gt;
+     &lt;optgroup label=&quot;Alaskan/Hawaiian Time Zone&quot;&gt;
+     &lt;option value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;
+     &lt;option value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;
+   &lt;/optgroup&gt;
+   &lt;optgroup label=&quot;Pacific Time Zone&quot;&gt;
+     &lt;option value=&quot;CA&quot;&gt;California&lt;/option&gt;
+     &lt;option value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;
+     &lt;option value=&quot;OR&quot;&gt;Oregon&lt;/option&gt;
+     &lt;option value=&quot;WA&quot;&gt;Washington&lt;/option&gt;
+   &lt;/optgroup&gt;
+&lt;/select&gt;</pre>
+<p>
+	Then, simply call the Select2 function by following ways:</p>
+<h3>
+	Where called the function in this tmeplate?</h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.fn.select2) {
+        var placeholder = &quot;Select a State&quot;;
+        $(&#39;.select2, .select2-multiple&#39;).select2({
+            placeholder: placeholder
+        });
+
+        $(&#39;.select2-allow-clear&#39;).select2({
+            allowClear: true,
+            placeholder: placeholder
+        });
+
+        $(&#39;button[data-select2-open]&#39;).click(function () {
+            $(&#39;#&#39; + $(this).data(&#39;select2-open&#39;)).select2(&#39;open&#39;);
+        });
+
+        var select2OpenEventName = &quot;select2-open&quot;;
+        $(&#39;:checkbox&#39;).on(&quot;click&quot;, function () {
+            $(this).parent().nextAll(&#39;select&#39;).select2(&quot;enable&quot;, this.checked);
+        });
+    }</pre>
+</section>
+<section id="selectize_selectbox">
+	<div class="page-header"><h3>Selectize Selectbox</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_7.png" style="width: 550px; height: 189px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/selectize.css
+js/selectize.js
+</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>s<span style="line-height: 19px;">selectize</span><em>.css file. Because all styles already there in css/forms.css file. You need to add only css/</em><span style="line-height: 19px;">selectize</span>.css<em>&nbsp;file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/selectize.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/<span style="font-family: Arial, Verdana, sans-serif;">selectize</span><span style="font-family: Arial, Verdana, sans-serif;">.css&quot; /&gt;</span>
+&lt;script src=&quot;js/<span style="font-family: Arial, Verdana, sans-serif;">selectize</span><span style="font-family: Arial, Verdana, sans-serif;">.js&quot;&gt;&lt;/script&gt;</span></pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>s<span style="line-height: 19px;">selectize</span><em>.css file. Because all styles already there in css/forms.css file. You need to add only css/</em><span style="line-height: 19px;">selectize</span>.css<em>&nbsp;file if you use it individually.</em></div>
+<p>
+	Create a real select list in your form</p>
+<pre class="prettyprint lang-html linenums">
+&nbsp;&lt;select id=&quot;selectize-select&quot; placeholder=&quot;Select A Country&quot;&gt;
+   &lt;option&gt;&lt;/option&gt;
+     &lt;optgroup label=&quot;Alaskan/Hawaiian Time Zone&quot;&gt;
+     &lt;option value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;
+     &lt;option value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;
+   &lt;/optgroup&gt;
+   &lt;optgroup label=&quot;Pacific Time Zone&quot;&gt;
+     &lt;option value=&quot;CA&quot;&gt;California&lt;/option&gt;
+     &lt;option value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;
+     &lt;option value=&quot;OR&quot;&gt;Oregon&lt;/option&gt;
+     &lt;option value=&quot;WA&quot;&gt;Washington&lt;/option&gt;
+   &lt;/optgroup&gt;
+&lt;/select&gt;</pre>
+<p>
+	Then, simply call the selectize function by following ways:</p>
+<pre class="prettyprint lang-js linenums">
+$(&#39;#selectize-select&#39;).selectize();</pre>
+<h3>
+	Where called the function in this tmeplate?</h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.fn.selectize) {
+        var REGEX_EMAIL = &#39;([a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*@&#39; +
+            &#39;(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)&#39;;
+        $(&#39;#select-contact&#39;).selectize({
+            plugins: [&#39;remove_button&#39;],
+            persist: false,
+            maxItems: null,
+            valueField: &#39;email&#39;,
+            labelField: &#39;name&#39;,
+            searchField: [&#39;name&#39;, &#39;email&#39;],
+            options: [
+                {
+                    email: &#39;&#98;&#114;&#105;&#97;&#110;&#64;&#116;&#104;&#105;&#114;&#100;&#114;&#111;&#117;&#116;&#101;&#46;&#99;&#111;&#109;&#39;,
+                    name: &#39;Brian Reavis&#39;
+                },
+
+                {
+                    email: &#39;&#110;&#105;&#107;&#111;&#108;&#97;&#64;&#116;&#101;&#115;&#108;&#97;&#46;&#99;&#111;&#109;&#39;,
+                    name: &#39;Nikola Tesla&#39;
+                },
+                {
+                    email: &#39;&#115;&#111;&#109;&#101;&#111;&#110;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;&#39;
+                }
+      ],
+
+            render: {
+                item: function (item, escape) {
+                    return &#39;&lt;div&gt;&#39; +
+                        (item.name ? &#39;&lt;span class=&quot;name&quot;&gt;&#39; + escape(item.name) + &#39;&lt;/span&gt;&#39; : &#39;&#39;) +
+                        (item.email ? &#39;&lt;span class=&quot;email&quot;&gt;&#39; + escape(item.email) + &#39;&lt;/span&gt;&#39; : &#39;&#39;) +
+                        &#39;&lt;/div&gt;&#39;;
+                },
+                option: function (item, escape) {
+                    var label = item.name || item.email;
+                    var caption = item.name ? item.email : null;
+                    return &#39;&lt;div&gt;&#39; +
+                        &#39;&lt;span class=&quot;label&quot;&gt;&#39; + escape(label) + &#39;&lt;/span&gt;&#39; +
+                        (caption ? &#39;&lt;span class=&quot;caption&quot;&gt;&#39; + escape(caption) + &#39;&lt;/span&gt;&#39; : &#39;&#39;) +
+                        &#39;&lt;/div&gt;&#39;;
+                }
+            },
+            createFilter: function (input) {
+                var match, regex;
+                // &#101;&#109;&#97;&#105;&#108;&#64;&#97;&#100;&#100;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;
+                regex = new RegExp(&#39;^&#39; + REGEX_EMAIL + &#39;$&#39;, &#39;i&#39;);
+                match = input.match(regex);
+                if (match) return !this.options.hasOwnProperty(match[0]);
+                // name &lt;&#101;&#109;&#97;&#105;&#108;&#64;&#97;&#100;&#100;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;&gt;
+                regex = new RegExp(&#39;^([^&lt;]*)&lt;&#39; + REGEX_EMAIL + &#39;&gt;$&#39;, &#39;i&#39;);
+                match = input.match(regex);
+                if (match) return !this.options.hasOwnProperty(match[2]);
+                return false;
+            },
+            create: function (input) {
+                if ((new RegExp(&#39;^&#39; + REGEX_EMAIL + &#39;$&#39;, &#39;i&#39;)).test(input)) {
+                    return {
+                        email: input
+                    };
+                }
+                var match = input.match(new RegExp(&#39;^([^&lt;]*)&lt;&#39; + REGEX_EMAIL + &#39;&gt;$&#39;, &#39;i&#39;));
+
+                if (match) {
+                    return {
+                        email: match[2],
+                        name: $.trim(match[1])
+                    };
+                }
+                alert(&#39;Invalid email address.&#39;);
+                return false;
+            }
+        });
+
+        $(&#39;#input-tags&#39;).selectize({
+            delimiter: &#39;,&#39;,
+            persist: false,
+            create: function (input) {
+                return {
+                    value: input,
+                    text: input
+                }
+            }
+        });
+        $(&#39;#selectize-select&#39;).selectize();
+    }</pre>
+</section>
+<section id="spinner">
+	<div class="page-header"><h3>Spinner</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_8.png" style="width: 544px; height: 298px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/spinner.css
+js/jquery.bootstrap-touchspin.js
+</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/spinner.css file. Because all styles already there in css/forms.css file. You need to add only css/spinner.css file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/spinner.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/spinner.css&quot; /&gt;
+&lt;script src=&quot;js/jquery.bootstrap-touchspin.js&quot;&gt;&lt;/script&gt;</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/spinner.css file. Because all styles already there in css/forms.css file. You need to add only css/spinner.css file if you use it individually</em></div>
+<p>
+	Create a real input in your form</p>
+<pre class="prettyprint lang-html linenums">
+&lt;input class=&quot;vertical-spin&quot; type=&quot;text&quot; value=&quot;&quot; name=&quot;vertical-spin&quot;&gt;</pre>
+<p>
+	Then, simply call the TouchSpin function on any input field.</p>
+<pre class="prettyprint lang-js linenums">
+$(&quot;.vertical-spin&quot;).TouchSpin({
+            verticalbuttons: true,
+            verticalupclass: &#39;glyphicon glyphicon-plus&#39;,
+            verticaldownclass: &#39;glyphicon glyphicon-minus&#39;
+});</pre>
+<p>
+	You can use id=&quot;&quot; instead of class=&quot;&quot;&nbsp;</p>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.fn.TouchSpin) {
+        $(&quot;.vertical-spin&quot;).TouchSpin({
+            verticalbuttons: true,
+            verticalupclass: &#39;glyphicon glyphicon-plus&#39;,
+            verticaldownclass: &#39;glyphicon glyphicon-minus&#39;
+        });
+
+        var vspinTrue = $(&quot;.vertical-spin&quot;).TouchSpin({
+            verticalbuttons: true
+        });
+
+        if (vspinTrue) {
+            $(&#39;.vertical-spin&#39;).prev(&#39;.bootstrap-touchspin-prefix&#39;).remove();
+        }
+
+        $(&quot;input[name=&#39;demo1&#39;]&quot;).TouchSpin({
+            min: 0,
+            max: 100,
+            step: 0.1,
+            decimals: 2,
+            boostat: 5,
+            maxboostedstep: 10,
+            postfix: &#39;%&#39;
+        });
+
+        $(&quot;input[name=&#39;demo2&#39;]&quot;).TouchSpin({
+            min: -1000000000,
+            max: 1000000000,
+            stepinterval: 50,
+            maxboostedstep: 10000000,
+            prefix: &#39;$&#39;
+        });
+
+        $(&quot;input[name=&#39;demo3&#39;]&quot;).TouchSpin();
+        $(&quot;input[name=&#39;demo3_21&#39;]&quot;).TouchSpin({
+            initval: 40
+        });
+
+        $(&quot;input[name=&#39;demo3_22&#39;]&quot;).TouchSpin({
+            initval: 40
+        });
+
+        $(&quot;input[name=&#39;demo5&#39;]&quot;).TouchSpin({
+            prefix: &quot;pre&quot;,
+            postfix: &quot;post&quot;
+        });
+        $(&quot;input[name=&#39;demo0&#39;]&quot;).TouchSpin({});
+    }</pre>
+</section>
+<section id="bootstrap_filestyle">
+	<div class="page-header"><h3>Bootstrap Filestyle</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_9.png" style="width: 548px; height: 513px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+js/bootstrap-filestyle.js</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript &nbsp;file to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;script src=&quot;js/bootstrap-filestyle.js&quot;&gt;&lt;/script&gt;</pre>
+<p>
+	Create a real file element in your form</p>
+<pre class="prettyprint lang-html linenums">
+ &lt;input type=&quot;file&quot; class=&quot;filestyle&quot;&gt;</pre>
+<p>
+	Then, simply call the&nbsp;<span style="line-height: 19px;">filestyle</span>&nbsp;function.</p>
+<pre class="prettyprint lang-js linenums">
+$(&quot;:file&quot;).filestyle();</pre>
+<p>
+	You can use id=&quot;&quot; instead of class=&quot;&quot;&nbsp;</p>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.fn.filestyle) {
+        $(&quot;:file&quot;).filestyle();
+    }</pre>
+</section>
+<section id="basic_form_validation">
+	<div class="page-header"><h3>Basic Form Validation</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_10.png" style="width: 556px; height: 158px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/all-forms.css
+js/jquery.validate.js
+</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em><span style="line-height: 19px;">all-forms.css&nbsp;</span><em>file. Because all styles already there in css/forms.css file. You need to add only css/</em><span style="line-height: 19px;">all-forms.css</span><em>file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/all-forms.less</pre>
+<h3>
+	How to use?</h3>
+<h4 id="basic_form_validation_strongform_better_documentation_you_can_check_a_href"http_jqueryvalidationorg_documentation_"_target"_blank"http_jqueryvalidationorg_documentation_a_strong"><strong>Form better documentation you can check <a href="http://jqueryvalidation.org/documentation/" target="_blank">http://jqueryvalidation.org/documentation/</a></strong></h4>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/all-forms.css&quot; /&gt;
+&lt;script src=&quot;js/jquery.validate.js&quot;&gt;&lt;/script&gt;</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em><span style="line-height: 19px;">all-forms.css&nbsp;</span><em>file. Because all styles already there in css/forms.css file. You need to add only css/</em><span style="line-height: 19px;">all-forms.css</span><em>file if you use it individually.</em></div>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.fn.validate) {
+        $(&quot;#commentForm&quot;).validate();
+        $(&quot;#login&quot;).validate()
+
+        // validate the form when it is submitted
+        var validator = $(&quot;#form1&quot;).validate({
+            errorPlacement: function (error, element) {
+                // Append error within linked label
+                $(element)
+                    .closest(&quot;form&quot;)
+                    .find(&quot;label[for=&#39;&quot; + element.attr(&quot;id&quot;) + &quot;&#39;]&quot;)
+                    .append(error);
+            },
+
+            errorElement: &quot;span&quot;,
+            messages: {
+                user: {
+                    required: &quot; (required)&quot;,
+                    minlength: &quot; (must be at least 3 characters)&quot;
+                },
+
+                password: {
+                    required: &quot; (required)&quot;,
+                    minlength: &quot; (must be between 5 and 12 characters)&quot;,
+                    maxlength: &quot; (must be between 5 and 12 characters)&quot;
+                }
+            }
+        });
+
+        $(&quot;.cancel&quot;).click(function () {
+            validator.resetForm();
+        });
+
+        $(&quot;#form2&quot;).validate();
+    }</pre>
+</section>
+<section id="bootstrap_form_validation">
+	<div class="page-header"><h3>Bootstrap Form Validation</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_11.png" style="width: 549px; height: 476px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/bootstrapValidator.css
+js/form/bootstrapValidator.js
+</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em><span style="line-height: 19px;">basic-forms.css&nbsp;</span><em>file. Because all styles already there in css/forms.css file. You need to add only css/</em><span style="line-height: 19px;">basic-forms.css</span><em>file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/bootstrapValidator.less</pre>
+<h3>
+	How to use?</h3>
+<h4 id="bootstrap_form_validation_strongi_have_purchased_developer_licensed_of_this_plugin_so_you_no_need_to_purchase_license_unless_you_use_your_work_commercially_for_better_documentation_you_can_check_nbsp_stronga_href"http_formvalidationio_"_target"_blank"http_formvalidationio_a"><strong>I have purchased developer licensed of this plugin so you no need to purchase license unless you use your work commercially. for better documentation you can check&nbsp;</strong><a href="http://formvalidation.io/" target="_blank">http://formvalidation.io/</a></h4>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/all-forms.css&quot; /&gt;
+&lt;script src=&quot;js/form/bootstrapValidator.js&quot;&gt;&lt;/script&gt;</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em><span style="line-height: 19px;">basic-forms.css&nbsp;</span><em>file. Because all styles already there in css/forms.css file. You need to add only css/</em><span style="line-height: 19px;">basic-forms.css</span><em>file if you use it individually.</em></div>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/form.validate.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	NOTE:</h3>
+<p>
+	If you use form.validate.init.js&nbsp; file then always use this file after matmix.init.js</p>
+<p>
+	Example:</p>
+<p>
+	<img alt="" src="assets/images/image_30.png" style="width: 483px; height: 72px;"></p>
+</section>
+<section id="colors_pickers">
+	<div class="page-header"><h3>Colors Pickers</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_12.png" style="width: 591px; height: 253px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/colorpicker.css
+js/colorpicker.js
+</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>colorpicker<span style="line-height: 19px;">.css&nbsp;</span><em>file. Because all styles already there in css/forms.css file. You need to add only css/</em>colorpicker<span style="line-height: 19px;">.css</span><em>file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/colorpicker.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/colorpicker.css&quot; /&gt;
+&lt;script src=&quot;js/colorpicker.js&quot;&gt;&lt;/script&gt;</pre>
+<p>
+	Then call function by class or id in any input element</p>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>colorpicker<span style="line-height: 19px;">.css&nbsp;</span><em>file. Because all styles already there in css/forms.css file. You need to add only css/</em>colorpicker<span style="line-height: 19px;">.css</span><em>file if you use it individually.</em></div>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.fn.colorpicker) {
+        $(&#39;.demo1&#39;).colorpicker();
+        $(&#39;.demo2&#39;).colorpicker();
+    }</pre>
+<hr>
+<p>
+	<img alt="matmix" src="assets/images/image_13.png" style="width: 598px; height: 281px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+js/colors.js
+js/jqColorPicker.js</pre>
+<h3>
+	<span style="font-size: 12px;">How to use?</span></h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;script src=&quot;js/colors.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jqColorPicker.js&quot;&gt;&lt;/script&gt;
+</pre>
+<p>
+	Then call function by class or id in any input element</p>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.fn.colorPicker) {
+        $(&#39;.color&#39;).colorPicker();
+        $(&#39;.elem-color&#39;).colorPicker();
+    }</pre>
+</section>
+<section id="date_pickers">
+	<div class="page-header"><h3>Date Pickers</h3><hr class="notop"></div>
+<p>
+	<img alt="matmix" src="assets/images/image_14.png" style="width: 593px; height: 514px;"></p>
+<p>
+	&nbsp;</p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/datepicker.css
+js/bootstrap-datepicker.js
+</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>datepicker<span style="line-height: 19px;">.css&nbsp;</span><em>file. Because all styles already there in css/forms.css file. You need to add only css/</em>datepicker.css&nbsp;<em>file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/datepicker.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/datepicker.css&quot; /&gt;
+&lt;script src=&quot;js/bootstrap-datepicker.js&quot;&gt;&lt;/script&gt;</pre>
+<p>
+	Then call function by class or id in any input element</p>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>datepicker<span style="line-height: 19px;">.css&nbsp;</span><em>file. Because all styles already there in css/forms.css file. You need to add only css/</em>datepicker.css&nbsp;<em>file if you use it individually.</em><em>.</em></div>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.fn.datepicker) {
+        $(&#39;.input-date-picker&#39;).datepicker({
+            orientation: &quot;bottom&quot;,
+            daysOfWeekDisabled: &quot;6&quot;,
+            calendarWeeks: true,
+            autoclose: true,
+            todayHighlight: true
+        });
+        $(&#39;.addon-datepicker&#39;).datepicker({
+            orientation: &quot;bottom&quot;,
+            daysOfWeekDisabled: &quot;1&quot;,
+            calendarWeeks: true,
+            autoclose: true,
+            todayHighlight: true
+        });
+        $(&#39;.inline-date-picker&#39;).datepicker({
+            daysOfWeekDisabled: &quot;1&quot;,
+            calendarWeeks: true,
+            autoclose: true,
+            todayHighlight: true
+        });
+        $(&#39;.input-daterange&#39;).datepicker({
+            orientation: &quot;top&quot;,
+            daysOfWeekDisabled: &quot;1&quot;,
+            calendarWeeks: true,
+            autoclose: true,
+            todayHighlight: true
+        });
+    }</pre>
+<hr>
+<p>
+	<img alt="matmix" src="assets/images/image_15.png" style="width: 590px; height: 475px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/daterangepicker.css
+js/moment.js
+js/daterangepicker.js</pre>
+<div class="alert alert-info">
+	<em style="color: rgb(58, 135, 173);">All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>daterangepicker<span style="color: rgb(58, 135, 173); line-height: 19px;">.css&nbsp;</span><em style="color: rgb(58, 135, 173);">file. Because all styles already there in css/forms.css file. You need to add only css/</em>daterangepicker<span style="color: rgb(58, 135, 173); background-color: rgb(217, 237, 247);">.css&nbsp;</span><em style="color: rgb(58, 135, 173);">file if you use it individually.</em></div>
+<h3>
+	<span style="font-size: 12px;">Less Files</span></h3>
+<pre class="prettyprint lang-html linenums">
+less/daterangepicker.less</pre>
+<h3>
+	<span style="font-size: 12px;">How to use?</span></h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/<span style="font-family: Arial, Verdana, sans-serif;">daterangepicker</span><span style="font-family: Arial, Verdana, sans-serif;">.css&quot; /&gt;</span>
+&lt;script src=&quot;js/moment.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/daterangepicker.js&quot;&gt;&lt;/script&gt;
+</pre>
+<div class="alert alert-info">
+	<em style="color: rgb(58, 135, 173);">All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em><span style="color: rgb(58, 135, 173); background-color: rgb(217, 237, 247);">daterangepicker</span><span style="color: rgb(58, 135, 173); line-height: 19px;">.css&nbsp;</span><em style="color: rgb(58, 135, 173);">file. Because all styles already there in css/forms.css file. You need to add only css/</em><span style="color: rgb(58, 135, 173); background-color: rgb(217, 237, 247);">daterangepicker</span><span style="color: rgb(58, 135, 173); background-color: rgb(217, 237, 247);">.css&nbsp;</span><em style="color: rgb(58, 135, 173);">file if you use it individually.</em></div>
+<p>
+	Then call function by class or id in any input element</p>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+ if ($.fn.daterangepicker) {
+        $(&#39;.input-daterange-datepicker&#39;).daterangepicker();
+        $(&#39;.input-daterange-timepicker&#39;).daterangepicker({
+            timePicker: true,
+            format: &#39;MM/DD/YYYY h:mm A&#39;,
+            timePickerIncrement: 30,
+            timePicker12Hour: true,
+            timePickerSeconds: false
+        });
+
+        $(&#39;.input-limit-datepicker&#39;).daterangepicker({
+            format: &#39;MM/DD/YYYY&#39;,
+            minDate: &#39;06/01/2015&#39;,
+            maxDate: &#39;06/30/2015&#39;,
+            dateLimit: {
+                days: 6
+            }
+        });
+..... /// More
+    }</pre>
+</section>
+<section id="summernote">
+	<div class="page-header"><h3>Summernote</h3><hr class="notop"></div>
+<p>	<img alt="matmix" src="assets/images/image_16.png" style="width: 556px; height: 279px;"></p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/text-editor.css
+js/summernote.min.js
+</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>text-editor.css<em>&nbsp;file. Because all styles already there in css/forms.css file. You need to add only css/</em>text-editor.css<em>&nbsp;file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/text-editor.less</pre>
+<h3>
+	How to use?</h3>
+<p>	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/text-editor.css&quot; /&gt;
+&lt;script src=&quot;js/summernote.min.js&quot;&gt;&lt;/script&gt;</pre>
+<div class="alert alert-info">
+	<em>All forms css is in css/forms.css file. If you already add that file then no need to add&nbsp;css/</em>text-editor.css<em>&nbsp;file. Because all styles already there in css/forms.css file. You need to add only css/</em>text-editor.css<em>&nbsp;file if you use it individually.</em><span style="color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);">&nbsp;</span></div>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.summernote) {
+        $(&#39;.minimal-editor&#39;).summernote({
+            height: 200,
+            focus: false,
+            toolbar: [
+                [&#39;font&#39;, [&#39;bold&#39;, &#39;italic&#39;, &#39;underline&#39;]],
+                [&#39;para&#39;, [&#39;ul&#39;, &#39;ol&#39;, &#39;paragraph&#39;]],
+                [&#39;height&#39;, [&#39;height&#39;]]
+            ]
+        });
+        $(&#39;.simple-editor&#39;).summernote({
+            height: 200,
+            focus: false,
+            toolbar: [
+                [&#39;style&#39;, [&#39;style&#39;]],
+                [&#39;font&#39;, [&#39;bold&#39;, &#39;italic&#39;, &#39;underline&#39;]],
+                [&#39;color&#39;, [&#39;color&#39;]],
+                [&#39;para&#39;, [&#39;ul&#39;, &#39;ol&#39;, &#39;paragraph&#39;]],
+                [&#39;height&#39;, [&#39;height&#39;]],
+                [&#39;insert&#39;, [&#39;link&#39;, &#39;picture&#39;, &#39;hr&#39;]]
+            ]
+        });
+
+        $(&#39;.full-editor&#39;).summernote({
+            height: 250,
+            focus: false,
+            toolbar: [
+                [&#39;style&#39;, [&#39;style&#39;]],
+                [&#39;font&#39;, [&#39;bold&#39;, &#39;italic&#39;, &#39;underline&#39;, &#39;strikethrough&#39;, &#39;superscript&#39;, &#39;subscript&#39;, &#39;clear&#39;]],
+                [&#39;fontname&#39;, [&#39;fontname&#39;]],
+                [&#39;fontsize&#39;, [&#39;fontsize&#39;]],
+                [&#39;color&#39;, [&#39;color&#39;]],
+                [&#39;para&#39;, [&#39;ul&#39;, &#39;ol&#39;, &#39;paragraph&#39;]],
+                [&#39;height&#39;, [&#39;height&#39;]],
+                [&#39;table&#39;, [&#39;table&#39;]],
+                [&#39;insert&#39;, [&#39;link&#39;, &#39;picture&#39;, &#39;hr&#39;]],
+                [&#39;view&#39;, [&#39;fullscreen&#39;, &#39;codeview&#39;]]
+            ]
+        });
+
+        $(&quot;[data-event=fullscreen]&quot;).on(&#39;click&#39;, function () {
+            var FullScreen = $(&#39;body&#39;).hasClass(&#39;full-screen&#39;);
+            if (FullScreen) {
+                $(&#39;body&#39;).removeClass(&#39;full-screen&#39;);
+            } else {
+                $(&#39;body&#39;).addClass(&#39;full-screen&#39;);
+            }
+        });
+
+        $(&quot;#text-edit&quot;).on(&#39;click&#39;, function () {
+            $(&#39;.editable-note&#39;).summernote({
+                focus: true,
+                toolbar: [
+                [&#39;style&#39;, [&#39;style&#39;]],
+                [&#39;font&#39;, [&#39;bold&#39;, &#39;italic&#39;, &#39;underline&#39;, &#39;strikethrough&#39;, &#39;superscript&#39;, &#39;subscript&#39;, &#39;clear&#39;]],
+                [&#39;fontname&#39;, [&#39;fontname&#39;]],
+                [&#39;fontsize&#39;, [&#39;fontsize&#39;]],
+                [&#39;color&#39;, [&#39;color&#39;]],
+                [&#39;para&#39;, [&#39;ul&#39;, &#39;ol&#39;, &#39;paragraph&#39;]],
+                [&#39;height&#39;, [&#39;height&#39;]],
+                [&#39;table&#39;, [&#39;table&#39;]],
+                [&#39;insert&#39;, [&#39;link&#39;, &#39;picture&#39;, &#39;hr&#39;]],
+                [&#39;view&#39;, [&#39;codeview&#39;]]
+            ]
+            });
+        });
+        $(&quot;#text-save&quot;).on(&#39;click&#39;, function () {
+            var aHTML = $(&#39;.editable-note&#39;).code();
+            $(&#39;.editable-note&#39;).destroy();
+        });
+
+        $(&#39;.air-note&#39;).summernote({
+            airMode: true,
+            airPopover: [
+    [&#39;color&#39;, [&#39;color&#39;]],
+    [&#39;font&#39;, [&#39;bold&#39;, &#39;underline&#39;, &#39;clear&#39;]],
+    [&#39;para&#39;, [&#39;ul&#39;, &#39;paragraph&#39;]],
+    [&#39;table&#39;, [&#39;table&#39;]],
+    [&#39;insert&#39;, [&#39;link&#39;, &#39;picture&#39;]]
+  ]
+        });
+    }</pre>
+</section>
+<section id="tables">
+	<div class="page-header"><h3>Tables</h3><hr class="notop"></div>
+<p>
+	&nbsp;</p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/tables.css
+js/jquery.dataTables.js
+js/dataTables.responsive.js
+js/dataTables.tableTools.js
+js/dataTables.bootstrap.js
+//Responsive Stack Table
+js/stacktable.js</pre>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/tables.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&nbsp;   &lt;link rel=&quot;stylesheet&quot; href=&quot;css/tables.css&quot; type=&quot;text/css&quot;&gt;
+    &lt;script src=&quot;js/jquery.dataTables.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/dataTables.responsive.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/dataTables.tableTools.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/dataTables.bootstrap.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/stacktable.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+    /*--Tables
+    css/tables.css
+    js/jquery.dataTables.js
+    js/dataTables.responsive.js
+    js/dataTables.tableTools.js
+    js/dataTables.bootstrap.js
+    */
+
+    if ($.fn.dataTable) {
+        $(&#39;.dt-table&#39;).DataTable({
+            responsive: true
+        });
+
+        $(&#39;.dt-table-export&#39;).DataTable({
+            &quot;dom&quot;: &#39;T&lt;&quot;clear&quot;&gt;lfrtip&#39;,
+            responsive: true,
+            &quot;tableTools&quot;: {
+                &quot;sSwfPath&quot;: &quot;swf/copy_csv_xls_pdf.swf&quot;
+            }
+        });
+    }
+
+    /*--Tables
+    css/tables.css
+    js/stacktable.js
+    */
+    if ($.fn.cardtable) {
+        $(&#39;.dt-stack-table&#39;).stacktable();
+    }</pre>
+<h3>
+	Edit and Delete by using bootbox and sweet alert</h3>
+<p>
+	<img alt="matmix" src="assets/images/image_24.png" style="width: 321px; height: 337px;"></p>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<div>
+	<h3>
+		Code</h3>
+	<h4 id="tables_for_styled_checkbox">For styled checkbox</h4>
+	<pre class="prettyprint lang-js linenums">
+$(&#39;.tc-check,.tc-check-all&#39;).iCheck({
+        checkboxClass: &#39;icheckbox_minimal-aero&#39;,
+        radioClass: &#39;iradio_minimal-aero&#39;,
+        increaseArea: &#39;30%&#39; // optional
+});</pre>
+	<h4 id="tables_for_edit">For Edit</h4>
+	<pre class="prettyprint lang-js linenums">
+ $(&#39;.m-user-edit&#39;).on(&#39;click&#39;, function (e) {
+            e.preventDefault();
+            var Ubox = bootbox.dialog({
+                    title: &quot;Information for: Amery &quot;,
+                    message: &#39;&lt;div class=&quot;row&quot;&gt;  &#39; +
+                        &#39;&lt;div class=&quot;col-md-12&quot;&gt; &#39; +
+                        &#39;&lt;form class=&quot;form-horizontal&quot;&gt; &#39; +
+                        &#39;&lt;div class=&quot;form-group&quot;&gt; &#39; +
+                        &#39;&lt;label class=&quot;col-md-4 control-label&quot; for=&quot;name&quot;&gt;Name&lt;/label&gt; &#39; +
+                        &#39;&lt;div class=&quot;col-md-6&quot;&gt; &#39; +
+                        &#39;&lt;input id=&quot;name&quot; name=&quot;name&quot; type=&quot;text&quot; value=&quot;Amery&quot; placeholder=&quot;Your name&quot; class=&quot;form-control input-md&quot;&gt; &#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;div class=&quot;form-group&quot;&gt; &#39; +
+                        &#39;&lt;label class=&quot;col-md-4 control-label&quot; for=&quot;name&quot;&gt;Address&lt;/label&gt; &#39; +
+                        &#39;&lt;div class=&quot;col-md-6&quot;&gt; &#39; +
+                        &#39;&lt;input id=&quot;address&quot; name=&quot;address&quot; value=&quot;Ap #411-3258 Est. Avenue&quot; type=&quot;text&quot; placeholder=&quot;Address&quot; class=&quot;form-control input-md&quot;&gt; &#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;div class=&quot;form-group&quot;&gt; &#39; +
+                        &#39;&lt;label class=&quot;col-md-4 control-label&quot; for=&quot;name&quot;&gt;Image&lt;/label&gt; &#39; +
+                        &#39;&lt;div class=&quot;col-md-6&quot;&gt; &#39; +
+                        &#39;&lt;img src=&quot;images/avatar/adellecharles.jpg&quot; alt=&quot;user&quot;&gt;&#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;div class=&quot;form-group&quot;&gt; &#39; +
+                        &#39;&lt;label class=&quot;col-md-4 control-label&quot; for=&quot;name&quot;&gt;Change Photo&lt;/label&gt; &#39; +
+
+                        &#39;&lt;div class=&quot;col-md-6&quot;&gt; &#39; +
+                        &#39;&lt;input type=&quot;file&quot; class=&quot;filestyle&quot; data-input=&quot;false&quot;&gt;&#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;div class=&quot;form-group&quot;&gt; &#39; +
+                        &#39;&lt;label class=&quot;col-md-4 control-label&quot; for=&quot;name&quot;&gt;Status&lt;/label&gt; &#39; +
+                        &#39;&lt;div class=&quot;col-md-6&quot;&gt; &#39; +
+                        &#39;&lt;select class=&quot;form-control ubox-status-select&quot;&gt;&#39; +
+                        &#39;&lt;option&gt;Select&lt;/option&gt;&#39; +
+                        &#39;&lt;option&gt;Approve&lt;/option&gt;&#39; +
+                        &#39;&lt;option&gt;Reject&lt;/option&gt;&#39; +
+                        &#39; &lt;option&gt;Suspend&lt;/option&gt;&#39; +
+                        &#39;&lt;option&gt;Pending&lt;/option&gt;&#39; +
+                        &#39;&lt;/select&gt;&#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;/div&gt; &#39; +
+                        &#39;&lt;/div&gt; &lt;/div&gt;&#39; +
+                        &#39;&lt;/form&gt; &lt;/div&gt;  &lt;/div&gt;&#39;,
+                    buttons: {
+                        update: {
+                            label: &quot;Update&quot;,
+                            className: &quot;btn-success&quot;,
+                            callback: function () {
+                                var name = $(&#39;#name&#39;).val();
+                              var answer = $(&quot;input[name=&#39;awesomeness&#39;]:checked&quot;).val()
+                                DemoCallBack.show(&quot;Information updated for &lt;b&gt;&quot; + name + &quot;&lt;/b&gt;&quot;);
+                            }
+                        },
+
+                        cancel: {
+                            label: &quot;Cancel&quot;,
+                            className: &quot;btn-danger&quot;,
+                            callback: function () {
+                                DemoCallBack.show(&quot;You have cancel the form&quot;);
+                            }
+                        }
+                    }
+            });
+
+        Ubox.find(&quot;.filestyle&quot;).filestyle({
+            input: false
+        }); Ubox.find(&#39;.ubox-status-select&#39;).select2({
+            placeholder: &quot;Select a State&quot;,
+            maximumSelectionSize: 6,
+            minimumResultsForSearch: -1
+        });
+    });</pre>
+	<div>
+		<h4 id="tables_for_delete">For Delete</h4>
+	</div>
+	<pre class="prettyprint lang-js linenums">
+$(&#39;.btn-toolbar&#39;).on(&#39;click&#39;, &#39;.m-user-delete&#39;, function (e) {
+    e.preventDefault();
+    var _this = this;
+    swal({
+        title: &quot;Are you sure?&quot;,
+        text: &quot;You will not be able to recover this Information!&quot;,
+        type: &quot;warning&quot;,
+        showCancelButton: true,
+        confirmButtonColor: &quot;#DD6B55&quot;,
+        confirmButtonText: &quot;Yes, delete!&quot;,
+        cancelButtonText: &quot;No, cancel!&quot;,
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            $(_this).parentsUntil(&#39;tbody&#39;).addClass(&quot;noty_animated bounceOutRight&quot;);
+            setTimeout(function () {
+                $(_this).parentsUntil(&#39;tbody&#39;).remove();
+            }, 1000);
+            swal(&quot;Deleted!&quot;, &quot;Information has been deleted.&quot;, &quot;success&quot;);
+        } else {
+            console.log(&#39;not remvoed&#39;);
+        }
+    });
+});</pre>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="notifications_noty">
+	<div class="page-header"><h3>Notifications (Noty)</h3><hr class="notop"></div>
+<h2>
+	<img alt="matmix" src="assets/images/image_17.png" style="font-size: 12px; width: 385px; height: 391px;"></h2>
+<p>
+	&nbsp;</p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/noty.css
+js/jquery.noty.js
+</pre>
+<div class="alert alert-info">
+	<em>All noty css is in css/components.css file. If you already add that file then no need to add&nbsp;css/</em>noty<span style="line-height: 19px;">.css&nbsp;</span><em>file. Because all styles already there in css/</em><em>components</em><em>.css file. You need to add only css/</em>noty.css&nbsp;<em>file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/noty.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/noty.css&quot; /&gt;
+&lt;script src=&quot;js/jquery.noty.js&quot;&gt;&lt;/script&gt;</pre>
+<p>
+	Then call function by follwoing way:</p>
+<div class="alert alert-info">
+	<em>All noty css is in css/components.css file. If you already add that file then no need to add&nbsp;css/</em>noty<span style="line-height: 19px;">.css&nbsp;</span><em>file. Because all styles already there in css/</em><em>components</em><em>.css file. You need to add only css/</em>noty.css&nbsp;<em>file if you use it individually.</em></div>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+if ($.noty) {
+        var n_dom = [];
+        n_dom[0] = &#39;&lt;div class=&quot;activity-item&quot;&gt; &lt;i class=&quot;fa fa-tasks text-warning&quot;&gt;&lt;/i&gt; &lt;div class=&quot;activity&quot;&gt; There are &lt;a href=&quot;#&quot;&gt;6 new tasks&lt;/a&gt; waiting for you. Don&#39;t forget! &lt;span&gt;About 3 hours ago&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;&#39;,
+
+            n_dom[1] = &#39;&lt;div class=&quot;activity-item&quot;&gt; &lt;i class=&quot;fa fa-check text-error&quot;&gt;&lt;/i&gt; &lt;div class=&quot;activity&quot;&gt; Mail server was updated. See &lt;a href=&quot;#&quot;&gt;changelog&lt;/a&gt; &lt;span&gt;About 2 hours ago&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;&#39;,
+
+            n_dom[2] = &#39;&lt;div class=&quot;activity-item&quot;&gt; &lt;i class=&quot;fa fa-heart text-info&quot;&gt;&lt;/i&gt; &lt;div class=&quot;activity&quot;&gt; Your &lt;a href=&quot;#&quot;&gt;latest post&lt;/a&gt; was liked by &lt;a href=&quot;#&quot;&gt;Audrey Mall&lt;/a&gt; &lt;span&gt;35 minutes ago&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;&#39;,
+
+            n_dom[3] = &#39;&lt;div class=&quot;activity-item&quot;&gt; &lt;i class=&quot;fa fa-shopping-cart text-success&quot;&gt;&lt;/i&gt; &lt;div class=&quot;activity&quot;&gt; &lt;a href=&quot;#&quot;&gt;Eugene&lt;/a&gt; ordered 2 copies of &lt;a href=&quot;#&quot;&gt;OEM license&lt;/a&gt; &lt;span&gt;14 minutes ago&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;&#39;,
+
+            n_dom[4] = &#39;&lt;div class=&quot;activity-item&quot;&gt; &lt;i class=&quot;ico-alarm-check text-alert&quot;&gt;&lt;/i&gt; &lt;div class=&quot;activity&quot;&gt; &lt;a href=&quot;#&quot;&gt;Amark&lt;/a&gt; This is frienly notification example &lt;a href=&quot;#&quot;&gt;Here&lt;/a&gt; &lt;span&gt;14 minutes ago&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;&#39;,
+
+             n_dom[5] = &#39;&lt;div class=&quot;activity-item&quot;&gt; &lt;i class=&quot;ico-alarm-check text-alert&quot;&gt;&lt;/i&gt; &lt;div class=&quot;activity&quot;&gt; &lt;a href=&quot;#&quot;&gt;Amark&lt;/a&gt; This is frienly notification example &lt;a href=&quot;#&quot;&gt;Here&lt;/a&gt; &lt;span&gt;14 minutes ago&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;&#39;;
+
+        function nGen(type, text, layout) {
+            var n = noty({
+                text: text,
+                type: type,
+                dismissQueue: true,
+                layout: layout,
+                closeWith: [&#39;click&#39;],
+                theme: &#39;MatMixNoty&#39;,
+                maxVisible: 10,
+                animation: {
+                    open: &#39;noty_animated bounceInRight&#39;,
+                    close: &#39;noty_animated bounceOutRight&#39;,
+                    easing: &#39;swing&#39;,
+                    speed: 500
+                }
+            });
+
+        }
+</pre>
+<p>
+	I have included 6 pre made notifiaction in JS&nbsp;<span style="line-height: 19px;">n_dom[0] to&nbsp;</span><span style="line-height: 19px;">n_dom[5] you can use following any notification and you can call any function by follwoing way:</span></p>
+<p>
+	<span style="line-height: 19px;">For an example you want to show a notification on load event then your code should be:</span></p>
+<pre class="prettyprint lang-js linenums">
+function yourFunction() {
+      nGen(&#39;warning&#39;, n_dom[0], &#39;topRight&#39;);
+ }
+
+$(window).on(&#39;load&#39;, function(){
+yourFunction();
+});</pre>
+<p>
+	Here above code<strong>&nbsp;<span style="line-height: 19px;">&#39;warning&#39;&nbsp;</span></strong><span style="line-height: 19px;">reperesent which type of notification you will show. This template support following 4 pre define type:</span></p>
+<p>
+	<strong>&#39;warning&#39;<br>
+	&#39;error&#39;<br>
+	&#39;information&#39;<br>
+	&#39;success&#39;<br>
+	&#39;alert&#39;</strong></p>
+<p>
+	You can use any above type instead of &#39;warning&#39;</p>
+<p>
+	<strong>n_dom[0]&nbsp;</strong><span style="line-height: 19px;">reperesent which text or messgae you will show as notification. Here I have pre defined following 6 notifications:</span></p>
+<p>
+	<span style="line-height: 19px;"><img alt="matmix" src="assets/images/image_31.png" style="width: 450px; height: 309px;"></span></p>
+<p>
+	<span style="line-height: 19px;">you can use any of them and if you want to create new one then add a new one like :</span></p>
+<pre class="prettyprint lang-html linenums">
+, n_dom[6] = &#39;&lt;div class=&quot;activity-item&quot;&gt; &lt;i class=&quot;ico-alarm-check text-alert&quot;&gt;&lt;/i&gt; &lt;div class=&quot;activity&quot;&gt; &lt;a href=&quot;#&quot;&gt;Amark&lt;/a&gt; This is new &lt;a href=&quot;#&quot;&gt;Here&lt;/a&gt; &lt;span&gt;14 minutes ago&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;</pre>
+<p>
+	and call this one there</p>
+<pre class="prettyprint lang-js linenums">
+nGen(&#39;warning&#39;, n_dom[6], &#39;topRight&#39;);</pre>
+<p>
+	<strong>&#39;topRight&#39;&nbsp;</strong><strong>&nbsp;</strong><span style="line-height: 19px;">reperesent that which layout position you want to show the notification. This template support following postions:</span></p>
+<p>
+	Top</p>
+<p>
+	TopLeft</p>
+<p>
+	TopCenter</p>
+<p>
+	TopRight</p>
+<p>
+	CenterLeft</p>
+<p>
+	Center</p>
+<p>
+	CenterRight</p>
+<p>
+	BottomLeft</p>
+<p>
+	BottomCenter</p>
+<p>
+	BottomRight</p>
+<p>
+	Bottom</p>
+<p>
+	You can use any above type instead of &#39;<strong>topRight</strong>&#39;</p>
+<p>
+	Now if you want to use that your notification will show after 5 second of window load then your code will be:</p>
+<div>
+	<pre class="prettyprint lang-js linenums">
+$(window).on(&#39;load&#39;, function(){
+<span style="font-family: Arial, Verdana, sans-serif;">    setTimeout(function () {
+</span><span style="font-family: Arial, Verdana, sans-serif;">        yourFunction();
+</span><span style="font-family: Arial, Verdana, sans-serif;">     }, 5000);
+</span><span style="font-family: Arial, Verdana, sans-serif;">});</span></pre>
+</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="switchery">
+	<div class="page-header"><h3>Switchery</h3><hr class="notop"></div>
+<h2>
+	<img alt="matmix" src="assets/images/image_18.png" style="font-size: 12px; width: 594px; height: 394px;"></h2>
+<p>
+	&nbsp;</p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/switchery.css
+js/switchery.js
+</pre>
+<div class="alert alert-info">
+	<em>All noty css is in css/components.css file. If you already add that file then no need to add&nbsp;css/</em>switchery<span style="line-height: 19px;">.css&nbsp;</span><em>file. Because all styles already there in css/</em><em>components</em><em>.css file. You need to add only css/</em>switchery.css&nbsp;<em>file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/switchery.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/switchery.css&quot; /&gt;
+&lt;script src=&quot;js/switchery.js&quot;&gt;&lt;/script&gt;</pre>
+<p>
+	Then make a input</p>
+<pre class="prettyprint lang-html linenums">
+&lt;input type=&quot;checkbox&quot; class=&quot;yourClass&quot; checked /&gt;</pre>
+<h3>
+	Js function and usage&nbsp;</h3>
+<pre class="prettyprint lang-js linenums">
+var elem = document.querySelector(&#39;.<span style="font-family: Arial, Verdana, sans-serif;">yourClass</span><span style="font-family: Arial, Verdana, sans-serif;">&#39;);</span>
+var init = new Switchery(elem,{
+            color: &#39;#15bdc3&#39;,
+            jackColor: &#39;#fff&#39;,
+            secondaryColor: &#39;#eee&#39;,
+            jackSecondaryColor: &#39;#fff&#39;,
+});</pre>
+<h3>
+	On Change</h3>
+<div>
+	<pre class="prettyprint lang-js linenums">
+<span style="line-height: 19px;">elem</span>.onchange = function () {
+        if (<span style="line-height: 19px;">elem</span>.checked === true) {
+            // yourFunction
+        } else {
+             // yourFunction
+        }
+    };</pre>
+</div>
+<div>
+	&nbsp; &nbsp;&nbsp;</div>
+<div class="alert alert-info">
+	<em>All noty css is in css/components.css file. If you already add that file then no need to add&nbsp;css/</em>switchery<span style="line-height: 19px;">.css&nbsp;</span><em>file. Because all styles already there in css/</em><em>components</em><em>.css file. You need to add only css/</em>switchery.css&nbsp;<em>file if you use it individually.</em></div>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<pre class="prettyprint lang-js linenums">
+var sw_large = Array.prototype.slice.call(document.querySelectorAll(&#39;.switch-large&#39;));
+    sw_large.forEach(function (html) {
+        var sw_largeGen = new Switchery(html, {
+            size: &#39;large&#39;,
+            color: &#39;#66bb6a&#39;,
+            jackColor: &#39;#fff&#39;,
+            secondaryColor: &#39;#eee&#39;,
+            jackSecondaryColor: &#39;#fff&#39;,
+        });
+    });
+
+    var sw_m = Array.prototype.slice.call(document.querySelectorAll(&#39;.switch-m&#39;));
+    sw_m.forEach(function (html) {
+        var switchery = new Switchery(html, {
+            color: &#39;#66bb6a&#39;,
+            jackColor: &#39;#fff&#39;,
+            secondaryColor: &#39;#eee&#39;,
+            jackSecondaryColor: &#39;#fff&#39;,
+        });
+    });
+
+    var sw_small = Array.prototype.slice.call(document.querySelectorAll(&#39;.switch-small&#39;));
+
+    sw_small.forEach(function (html) {
+        var switchery = new Switchery(html, {
+            size: &#39;small&#39;,
+            color: &#39;#66bb6a&#39;,
+            jackColor: &#39;#fff&#39;,
+            secondaryColor: &#39;#eee&#39;,
+            jackSecondaryColor: &#39;#fff&#39;,
+        });
+    });
+    
+    var sw_c = Array.prototype.slice.call(document.querySelectorAll(&#39;.switch-c&#39;));
+
+    sw_c.forEach(function (html) {
+        var switchery = new Switchery(html, {
+            color: &#39;#15bdc3&#39;,
+            jackColor: &#39;#fff&#39;,
+            secondaryColor: &#39;#eee&#39;,
+            jackSecondaryColor: &#39;#fff&#39;,
+        });
+    });</pre>
+</section>
+<section id="slider">
+	<div class="page-header"><h3>Slider</h3><hr class="notop"></div>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/jquery.nouislider.css
+js/jquery.nouislider.js
+</pre>
+<div class="alert alert-info">
+	<em>All noty css is in css/components.css file. If you already add that file then no need to add&nbsp;css/</em>jquery.nouislider.css&nbsp;<em>file. Because all styles already there in css/</em><em>components</em><em>.css file. You need to add only css/</em>jquery.nouislider.css&nbsp;<em>file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/jquery.nouislider.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/jquery.nouislider.css&quot; /&gt;
+&lt;script src=&quot;js/jquery.nouislider.js&quot;&gt;&lt;/script&gt;</pre>
+<p>
+	Then make call function in a div by following way:</p>
+<div>
+	&nbsp; &nbsp;&nbsp;</div>
+<div class="alert alert-info">
+	<em>All noty css is in css/components.css file. If you already add that file then no need to add&nbsp;css/</em>jquery.nouislider.css&nbsp;<em>file. Because all styles already there in css/</em><em>components</em><em>.css file. You need to add only css/</em>jquery.nouislider.css&nbsp;<em>file if you use it individually.</em></div>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	<img alt="matmix" src="assets/images/image_19.png" style="width: 543px; height: 154px;"></h3>
+<h3>
+	code</h3>
+<pre class="prettyprint lang-js linenums">
+$(&quot;#slider-range&quot;).noUiSlider({
+            start: [50, 200],
+            connect: true,
+            format: wNumb({
+                mark: &#39;&#39;,
+                decimals: 0,
+                prefix: &#39;$&#39;
+            }),
+            range: {
+                &#39;min&#39;: 0,
+                &#39;20%&#39;: 100,
+                &#39;40%&#39;: 200,
+                &#39;60%&#39;: 300,
+                &#39;80%&#39;: 400,
+                &#39;max&#39;: 500
+            }
+        });
+        $(&#39;#slider-range&#39;).Link(&#39;lower&#39;).to($(&#39;#slider-snap-value-lower&#39;));
+        $(&#39;#slider-range&#39;).Link(&#39;upper&#39;).to($(&#39;#slider-snap-value-upper&#39;));
+
+        $(&quot;#slider-range&quot;).noUiSlider_pips({
+            mode: &#39;range&#39;,
+            density: 3,
+            format: wNumb({
+                decimals: 0,
+                prefix: &#39;$&#39;
+            })
+        });</pre>
+<p>
+	<img alt="matmix" src="assets/images/image_20.png" style="width: 538px; height: 137px;"></p>
+<h3>
+	code</h3>
+<pre class="prettyprint lang-js linenums">
+ var range_all_sliders = {
+            &#39;min&#39;: [0],
+            &#39;10%&#39;: [500, 500],
+            &#39;50%&#39;: [4000, 1000],
+            &#39;max&#39;: [10000]
+        };
+        $(&quot;#pips-range&quot;).noUiSlider({
+            start: [20, 80],
+            connect: true,
+            range: {
+                &#39;min&#39;: 0,
+                &#39;max&#39;: 100
+            }
+        });
+
+        $(&quot;#pips-range-01&quot;).noUiSlider({
+            start: [4000],
+            range: {
+                &#39;min&#39;: [2000],
+                &#39;max&#39;: [10000]
+            }
+        });
+
+        $(&quot;#pips-range-02&quot;).noUiSlider({
+            range: range_all_sliders,
+            start: [0, 500],
+            connect: true,
+            range: {
+                &#39;min&#39;: 0,
+                &#39;max&#39;: 1500
+            }
+        });</pre>
+<p>
+	<img alt="matmix" src="assets/images/image_21.png"  ></p>
+<h3>
+	code</h3>
+<pre class="prettyprint lang-js linenums">
+$(&quot;#pips-range-vertical&quot;).noUiSlider({
+            range: range_all_sliders,
+            start: 0,
+            orientation: &#39;vertical&#39;
+        });
+
+        $(&quot;#pips-range-vertical-01&quot;).noUiSlider({
+            range: range_all_sliders,
+            start: [300, 1200],
+            connect: true,
+            range: {
+                &#39;min&#39;: 0,
+                &#39;20%&#39;: 300,
+                &#39;80%&#39;: 1200,
+                &#39;max&#39;: 1500
+            },
+            orientation: &#39;vertical&#39;
+        });
+
+        $(&quot;#pips-range-vertical-02&quot;).noUiSlider({
+            range: range_all_sliders,
+            start: [400, 1000],
+            connect: true,
+            range: {
+                &#39;min&#39;: 0,
+                &#39;max&#39;: 1500
+            },
+            orientation: &#39;vertical&#39;
+        });
+
+        function filter500(value, type) {
+            return value % 1000 ? 2 : 1;
+        }
+
+        $(&quot;.pips-range&quot;).noUiSlider_pips({
+            mode: &#39;range&#39;,
+            density: 3,
+            filter: filter500,
+            format: wNumb({
+                decimals: 2,
+                prefix: &#39;$&#39;
+            })
+        });</pre>
+</section>
+<section id="bootbox">
+	<div class="page-header"><h3>Bootbox</h3><hr class="notop"></div>
+<h2>
+	<img alt="matmix" src="assets/images/image_22.png" style="font-size: 12px; width: 648px; height: 215px;"></h2>
+<p>
+	&nbsp;</p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+js/bootbox.js</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript &nbsp;file to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;script src=&quot;js/bootbox.js&quot;&gt;&lt;/script&gt;</pre>
+<p>
+	Then follow the step:</p>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Alert</h3>
+<pre class="prettyprint lang-js linenums">
+// Alert
+    bb_demos.alert = function () {
+        bootbox.alert(&quot;Hello world!&quot;, function () {
+        DemoCallBack.show(&quot;Hello world callback&quot;);
+   });
+
+    };</pre>
+<h3>
+	Confirm</h3>
+<pre class="prettyprint lang-js linenums">
+// Confirm
+    bb_demos.confirm = function () {
+        bootbox.confirm(&quot;Are you sure?&quot;, function (result) {
+            DemoCallBack.show(&quot;Confirm result: &quot; + result);
+        });
+    };</pre>
+<h3>
+	Prompt</h3>
+<pre class="prettyprint lang-js linenums">
+// Prompt
+    bb_demos.prompt = function () {
+        bootbox.prompt({
+            title: &quot;What is your real name?&quot;,
+            value: &quot;Kamrujaman Shohel&quot;,
+            callback: function (result) {
+                if (result === null) {
+                    DemoCallBack.show(&quot;Prompt dismissed&quot;);
+                } else {
+                    DemoCallBack.show(&quot;Hi &lt;b&gt;&quot; + result + &quot;&lt;/b&gt;&quot;);
+                }
+            }
+        });
+    }</pre>
+<h3>
+	Dialog</h3>
+<div>
+	<pre class="prettyprint lang-js linenums">
+// Dialog
+
+    bb_demos.dialog = function () {
+            bootbox.dialog({
+                message: &quot;I am a custom dialog&quot;,
+                title: &quot;Custom title&quot;,
+                buttons: {
+                    success: {
+                        label: &quot;Success!&quot;,
+                        className: &quot;btn-success&quot;,
+                        callback: function () {
+                            DemoCallBack.show(&quot;great success&quot;);
+                        }
+                    },
+                    danger: {
+                        label: &quot;Danger!&quot;,
+                        className: &quot;btn-danger&quot;,
+                        callback: function () {
+                            DemoCallBack.show(&quot;uh oh, look out!&quot;);
+                        }
+                    },
+
+                    main: {
+                        label: &quot;Click ME!&quot;,
+                        className: &quot;btn-primary&quot;,
+                        callback: function () {
+                            DemoCallBack.show(&quot;Primary button&quot;);
+                        }
+                    }
+                }
+            });
+        }</pre>
+</div>
+<h3>
+	Custom Html Contents</h3>
+<pre class="prettyprint lang-js linenums">
+// Custom Html Contents
+    bb_demos.custom_html = function () {
+        bootbox.dialog({
+            title: &quot;That html&quot;,
+            message: &#39;&lt;img src=&quot;images/bootstrap_logo.png&quot; alt=&quot;image&quot;/&gt;&lt;br/&gt; You can also use &lt;b&gt;html&lt;/b&gt;&#39;
+        });
+    }</pre>
+<h3>
+	Custom Html Forms</h3>
+<pre class="prettyprint lang-js linenums">
+// Custom Html Forms
+
+    bb_demos.html_forms = function () {
+        bootbox.dialog({
+            title: &quot;This is a form in a modal.&quot;,
+            message: &#39;&lt;div class=&quot;row&quot;&gt;  &#39; +
+                &#39;&lt;div class=&quot;col-md-12&quot;&gt; &#39; +
+                &#39;&lt;form class=&quot;form-horizontal&quot;&gt; &#39; +
+                &#39;&lt;div class=&quot;form-group&quot;&gt; &#39; +
+                &#39;&lt;label class=&quot;col-md-4 control-label&quot; for=&quot;name&quot;&gt;Name&lt;/label&gt; &#39; +
+                &#39;&lt;div class=&quot;col-md-4&quot;&gt; &#39; +
+                &#39;&lt;input id=&quot;name&quot; name=&quot;name&quot; type=&quot;text&quot; placeholder=&quot;Your name&quot; class=&quot;form-control input-md&quot;&gt; &#39; +
+
+                &#39;&lt;span class=&quot;help-block&quot;&gt;Here goes your name&lt;/span&gt; &lt;/div&gt; &#39; +
+                &#39;&lt;/div&gt; &#39; +
+                &#39;&lt;div class=&quot;form-group&quot;&gt; &#39; +
+                &#39;&lt;label class=&quot;col-md-4 control-label&quot; for=&quot;awesomeness&quot;&gt;How awesome is this?&lt;/label&gt; &#39; +
+                &#39;&lt;div class=&quot;col-md-4&quot;&gt; &lt;div class=&quot;radio&quot;&gt; &lt;label for=&quot;awesomeness-0&quot;&gt; &#39; +
+                &#39;&lt;input type=&quot;radio&quot; name=&quot;awesomeness&quot; id=&quot;awesomeness-0&quot; value=&quot;Really awesome&quot; checked=&quot;checked&quot;&gt; &#39; +
+                &#39;Really awesome &lt;/label&gt; &#39; +
+                &#39;&lt;/div&gt;&lt;div class=&quot;radio&quot;&gt; &lt;label for=&quot;awesomeness-1&quot;&gt; &#39; +
+                &#39;&lt;input type=&quot;radio&quot; name=&quot;awesomeness&quot; id=&quot;awesomeness-1&quot; value=&quot;Super awesome&quot;&gt; Super awesome &lt;/label&gt; &#39; +
+                &#39;&lt;/div&gt; &#39; +
+                &#39;&lt;/div&gt; &lt;/div&gt;&#39; +
+                &#39;&lt;/form&gt; &lt;/div&gt;  &lt;/div&gt;&#39;,
+            buttons: {
+                success: {
+                    label: &quot;Save&quot;,
+                    className: &quot;btn-success&quot;,
+                    callback: function () {
+                        var name = $(&#39;#name&#39;).val();
+                        var answer = $(&quot;input[name=&#39;awesomeness&#39;]:checked&quot;).val()
+                        DemoCallBack.show(&quot;Hello &quot; + name + &quot;. You&#39;ve chosen &lt;b&gt;&quot; + answer + &quot;&lt;/b&gt;&quot;);
+                    }
+                }
+            }
+        });
+    }</pre>
+</section>
+<section id="sweet_alert">
+	<div class="page-header"><h3>Sweet Alert</h3><hr class="notop"></div>
+<h2>
+	<img alt="matmix" src="assets/images/image_23.png" style="font-size: 12px; width: 539px; height: 366px;"></h2>
+<p>
+	&nbsp;</p>
+<h3>
+	Dependent Files</h3>
+<pre class="prettyprint lang-html linenums">
+css/sweetalert.css
+js/sweetalert.js
+</pre>
+<div class="alert alert-info">
+	<em>All noty css is in css/components.css file. If you already add that file then no need to add&nbsp;css/</em>sweetalert.css&nbsp;<em>file. Because all styles already there in css/</em><em>components</em><em>.css file. You need to add only css/</em>sweetalert.css&nbsp;<em>file if you use it individually.</em></div>
+<h3>
+	Less Files</h3>
+<pre class="prettyprint lang-html linenums">
+less/sweetalert.less</pre>
+<h3>
+	How to use?</h3>
+<p>
+	First, add the Javascript and CSS files to your tag:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/sweetalert.css&quot; /&gt;
+&lt;script src=&quot;js/sweetalert.js&quot;&gt;&lt;/script&gt;</pre>
+<div>
+	&nbsp; &nbsp;&nbsp;</div>
+<div class="alert alert-info">
+	<em>All noty css is in css/components.css file. If you already add that file then no need to add&nbsp;css/</em>sweetalert.css&nbsp;<em>file. Because all styles already there in css/</em><em>components</em><em>.css file. You need to add only css/</em>sweetalert.css&nbsp;<em>file if you use it individually.</em></div>
+<h3>
+	<span style="font-size: 12px;">Where called the function in this tmeplate?</span></h3>
+<pre class="prettyprint lang-html linenums">
+&lt;!--Template Plugins Initialize--&gt;
+&lt;script src=&quot;js/matmix.init.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Code</h3>
+<h3>
+	Simple Alert</h3>
+<pre class="prettyprint lang-js linenums">
+  $(&#39;.simple-alert&#39;).on(&#39;click&#39;, function (e) {
+        e.preventDefault();
+        swal({
+            title: &quot;Are you sure?&quot;,
+            text: &quot;You will not be able to recover this imaginary file!&quot;,
+            confirmButtonColor: &quot;#DD6B55&quot;,
+        });
+    });</pre>
+<div>
+	<h3>
+		Success Allert</h3>
+</div>
+<pre class="prettyprint lang-js linenums">
+    $(&#39;.success-alert&#39;).on(&#39;click&#39;, function (e) {
+        e.preventDefault();
+        swal({
+            title: &quot;Are you sure?&quot;,
+            text: &quot;You will not be able to recover this imaginary file!&quot;,
+            type: &quot;success&quot;,
+            confirmButtonColor: &quot;#4caf50&quot;
+        });
+    });</pre>
+<div>
+	<h3>
+		Alert with confirmation message</h3>
+</div>
+<pre class="prettyprint lang-js linenums">
+    $(&#39;.warning-btn-ok&#39;).on(&#39;click&#39;, function (e) {
+        e.preventDefault();
+        swal({
+            title: &quot;Are you sure?&quot;,
+            text: &quot;You will not be able to recover this imaginary file!&quot;,
+            type: &quot;warning&quot;,
+            showCancelButton: true,
+            confirmButtonColor: &quot;#DD6B55&quot;,
+            confirmButtonText: &quot;Yes, delete it!&quot;,
+            closeOnConfirm: false
+        }, function () {
+            swal({
+                title: &quot;Your imaginary file has been deleted.&quot;,
+                type: &quot;success&quot;,
+                confirmButtonColor: &quot;#4caf50&quot;
+            });
+        });
+    });</pre>
+<div>
+	<h3>
+		Alert with cancel message</h3>
+</div>
+<pre class="prettyprint lang-js linenums">
+    $(&#39;.warning-btn-cancel&#39;).on(&#39;click&#39;, function (e) {
+        e.preventDefault();
+        swal({
+            title: &quot;Are you sure?&quot;,
+            text: &quot;You will not be able to recover this imaginary file!&quot;,
+            type: &quot;warning&quot;,
+            showCancelButton: true,
+            confirmButtonColor: &quot;#DD6B55&quot;,
+            confirmButtonText: &quot;Yes, delete it!&quot;,
+            cancelButtonText: &quot;No, cancel plx!&quot;,
+            closeOnConfirm: false,
+            closeOnCancel: false
+
+        }, function (isConfirm) {
+            if (isConfirm) {
+                swal(&quot;Deleted!&quot;, &quot;Your imaginary file has been deleted.&quot;, &quot;success&quot;);
+            } else {
+                swal(&quot;Cancelled&quot;, &quot;Your imaginary file is safe :)&quot;, &quot;error&quot;);
+            }
+        });
+
+    });</pre>
+<div>
+	<h3>
+		Alert with custom icon</h3>
+</div>
+<pre class="prettyprint lang-js linenums">
+    $(&#39;.warning-custom-icon&#39;).on(&#39;click&#39;, function (e) {
+        e.preventDefault();
+        swal({
+            title: &quot;Sweet!&quot;,
+            text: &quot;Here&#39;s a custom image.&quot;,
+            imageUrl: &quot;images/thumbs-up.jpg&quot;
+        });
+    });</pre>
+<div>
+	<h3>
+		Alert with custom Html</h3>
+</div>
+<pre class="prettyprint lang-js linenums">
+    $(&#39;.warning-custom-html&#39;).on(&#39;click&#39;, function (e) {
+        e.preventDefault();
+        swal({
+            title: &quot;HTML &lt;small&gt;Title&lt;/small&gt;!&quot;,
+            text: &#39;A custom &lt;span style=&quot;color:#F8BB86&quot;&gt;html&lt;span&gt; message.&#39;,
+            html: true
+        });
+    });</pre>
+<div>
+	<h3>
+		Alert Auto Close after 3 seconds</h3>
+</div>
+<pre class="prettyprint lang-js linenums">
+    $(&#39;.warning-auto-close&#39;).on(&#39;click&#39;, function (e) {
+        e.preventDefault();
+        swal({
+            title: &quot;Auto close alert!&quot;,
+            text: &quot;I will close in 3 seconds.&quot;,
+            timer: 3000,
+            showConfirmButton: false
+        });
+    });</pre>
+<h3>
+	Prompt</h3>
+<pre class="prettyprint lang-js linenums">
+    $(&#39;.warning-prompt&#39;).on(&#39;click&#39;, function (e) {
+        e.preventDefault();
+        swal({
+            title: &quot;An input!&quot;,
+            text: &quot;Write something interesting:&quot;,
+            type: &quot;input&quot;,
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: &quot;slide-from-top&quot;,
+            inputPlaceholder: &quot;Write something&quot;
+        }, function (inputValue) {
+            if (inputValue === false) return false;
+            if (inputValue === &quot;&quot;) {
+                swal.showInputError(&quot;You need to write something!&quot;);
+                return false
+            }
+            swal(&quot;Nice!&quot;, &quot;You wrote: &quot; + inputValue, &quot;success&quot;);
+        });
+    });</pre>
+<div>
+	&nbsp;</div>
+</section>
+<section id="chart">
+	<div class="page-header"><h3>Chart</h3><hr class="notop"></div>
+<h3>
+	Dependent files</h3>
+<pre class="prettyprint lang-html linenums">
+&lt;script src=&quot;js/chart/flot/excanvas.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/flot/jquery.flot.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/flot/curvedLines.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/flot/jquery.flot.stack.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/flot/jquery.flot.pie.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/flot/jquery.flot.axislabels.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/flot/jquery.flot.time.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/flot/jquery.flot.resize.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/flot/jquery.flot.tooltip.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/flot/jquery.flot.spline.js&quot;&gt;&lt;/script&gt;</pre>
+<h3>
+	Chart Initialize</h3>
+<pre class="prettyprint lang-html linenums">
+&lt;script src=&quot;js/chart.init.js&quot;&gt;&lt;/script&gt;</pre>
+</section>
+<section id="sources_credits">
+	<div class="page-header"><h3>Sources & Credits</h3><hr class="notop"></div>
+<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+	<tbody>
+		<tr>
+			<td>
+				<h3>
+					Resources</h3>
+			</td>
+			<td>
+				<h3>
+					Link</h3>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				select2-bootstrap</td>
+			<td>
+				<a href="https://fk.github.io/select2-bootstrap-css/" target="_blank">https://fk.github.io/select2-bootstrap-css/</a></td>
+		</tr>
+		<tr>
+			<td>
+				Tags Input</td>
+			<td>
+				<a href="https://github.com/xoxco/jQuery-Tags-Input" target="_blank">https://github.com/xoxco/jQuery-Tags-Input</a></td>
+		</tr>
+		<tr>
+			<td>
+				Input Mask</td>
+			<td>
+				<a href="http://igorescobar.github.io/jQuery-Mask-Plugin/" target="_blank">http://igorescobar.github.io/jQuery-Mask-Plugin/</a></td>
+		</tr>
+		<tr>
+			<td>
+				iCheck</td>
+			<td>
+				<a href="http://fronteed.com/iCheck/" target="_blank">http://fronteed.com/iCheck/</a></td>
+		</tr>
+		<tr>
+			<td>
+				Selectize</td>
+			<td>
+				<a href="http://brianreavis.github.io/selectize.js/" target="_blank">http://brianreavis.github.io/selectize.js/</a></td>
+		</tr>
+		<tr>
+			<td>
+				Spinner</td>
+			<td>
+				<a href="http://www.virtuosoft.eu/code/bootstrap-touchspin/" target="_blank">http://www.virtuosoft.eu/code/bootstrap-touchspin/</a></td>
+		</tr>
+		<tr>
+			<td>
+				File Style</td>
+			<td>
+				<a href="http://markusslima.github.io/bootstrap-filestyle/" target="_blank">http://markusslima.github.io/bootstrap-filestyle/</a></td>
+		</tr>
+		<tr>
+			<td>
+				jQuery Validate</td>
+			<td>
+				<a href="http://jqueryvalidation.org/" target="_blank">http://jqueryvalidation.org/</a></td>
+		</tr>
+		<tr>
+			<td>
+				Color Pickers</td>
+			<td>
+				<a href="https://github.com/PitPik/tinyColorPicker/" target="_blank">https://github.com/PitPik/tinyColorPicker/</a></td>
+		</tr>
+		<tr>
+			<td>
+				Date Range Picker</td>
+			<td>
+				<a href="https://github.com/dangrossman/bootstrap-daterangepicker" target="_blank">https://github.com/dangrossman/bootstrap-daterangepicker</a></td>
+		</tr>
+		<tr>
+			<td>
+				Summernote</td>
+			<td>
+				<a href="http://summernote.org/" target="_blank">http://summernote.org/&nbsp;</a></td>
+		</tr>
+		<tr>
+			<td>
+				Data Table</td>
+			<td>
+				<a href="https://www.datatables.net/" target="_blank">https://www.datatables.net/</a></td>
+		</tr>
+		<tr>
+			<td>
+				Stack Table</td>
+			<td>
+				<a href="https://github.com/johnpolacek/stacktable.js/" target="_blank">https://github.com/johnpolacek/stacktable.js/</a></td>
+		</tr>
+		<tr>
+			<td>
+				wow JS</td>
+			<td>
+				<a href="http://mynameismatthieu.com/WOW/" target="_blank">http://mynameismatthieu.com/WOW/</a></td>
+		</tr>
+		<tr>
+			<td>
+				Jquery Appear</td>
+			<td>
+				<a href="https://github.com/morr/jquery.appear" target="_blank">https://github.com/morr/jquery.appear</a></td>
+		</tr>
+		<tr>
+			<td>
+				Noty</td>
+			<td>
+				<a href="http://ned.im/noty/#/about" target="_blank">http://ned.im/noty/#/about</a></td>
+		</tr>
+		<tr>
+			<td>
+				switchery</td>
+			<td>
+				<a href="http://abpetkov.github.io/switchery/" target="_blank">http://abpetkov.github.io/switchery/</a></td>
+		</tr>
+		<tr>
+			<td>
+				No UI Slider</td>
+			<td>
+				<a href="http://refreshless.com/nouislider/examples/" target="_blank">http://refreshless.com/nouislider/examples/</a></td>
+		</tr>
+		<tr>
+			<td>
+				BootBox</td>
+			<td>
+				<a href="https://github.com/makeusabrew/bootbox" target="_blank">https://github.com/makeusabrew/bootbox</a></td>
+		</tr>
+		<tr>
+			<td>
+				Sweet Alert</td>
+			<td>
+				<a href="http://t4t5.github.io/sweetalert/" target="_blank">http://t4t5.github.io/sweetalert/</a></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				Avatar Images</td>
+			<td>
+				<a href="http://uifaces.com/" target="_blank">http://uifaces.com/</a></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+</section>
+
+	</div>
+</body>
+</html>

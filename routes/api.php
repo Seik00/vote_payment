@@ -56,7 +56,16 @@ Route::name('api.')->namespace('Api')->group(function () {
         Route::post('vote', 'VoteController@vote');
         Route::get('get_user_info', 'VoteController@get_user_info');
         Route::get('users_voted', 'VoteController@users_voted');
+        Route::get('get_info', 'VotePayController@get_info');
     });
+
+    Route::group(['middleware' => 'check.access'], function () {
+        Route::group(['prefix' => 'votepay'], function () {
+            Route::get('get_info', 'VotePayController@get_info');
+        });
+    });
+    
+
     Route::group(['prefix' => 'project'], function () {
         Route::get('lookup', 'APIController@lookup');
         Route::middleware('jwt.auth')->group(function () {
@@ -66,9 +75,9 @@ Route::name('api.')->namespace('Api')->group(function () {
 
     });
 
-    Route::group(['prefix' => 'vote'], function () {
-        Route::post('vote', 'VoteController@vote');
-    });
+    // Route::group(['prefix' => 'vote'], function () {
+    //     Route::post('vote', 'VoteController@vote');
+    // });
     // Protected routes
     Route::middleware('jwt.auth')->group(function () {
         Route::group(['prefix' => 'member'], function () {
@@ -127,4 +136,5 @@ Route::name('api.')->namespace('Api')->group(function () {
             Route::post('upload-file', 'AttachmentController@uploadFile');
         });
     });
+    
 });

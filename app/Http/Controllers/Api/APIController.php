@@ -19,18 +19,18 @@ class APIController extends Controller
     {
         $new = User::where('id', 1000000)->first();
 
-        return $this->smtp_mail('seikyusiang@gmail.com', 'Welcome to Rifineria Lifestysle', '<h1>CONGRATULATIONS!</h1>Your Rifineria account has been set up successfully and you are able to log in using the details below. Please keep your login details safe for future reference.
+        return $this->smtp_mail('seikyusiang@gmail.com', 'Title', '<h1>CONGRATULATIONS!</h1>body
         <br><br>Username : ' . $new->username . '
         <br>Password : ' . $new->d_password . '
-        <br><a href="https://rifineria.com/">https://rifineria.com/</a>
+        <br><a href="https://fizz.greatwallsolution.com/">https://fizz.greatwallsolution.com/</a>
             <br><br>
-            Kind regards.<br> Rifineria Resources Management<br><br><br>Note : System generated email, please do not reply this email.');
+            Kind regards.<br> Management<br><br><br>Note : System generated email, please do not reply this email.');
         dump($new);exit;
         //return $user->checkDownline(1000045,'j');
         //DB::select('call sendBV("' . $user->id . '","' . (int)$user->package->bv . '")');
-        $r = Bonus::special_bonus();
+        // $r = Bonus::special_bonus();
         // $r = Bonus::single_static_bonus(1000007);
-        echo $r;
+        // echo $r;
     }
     /**
      * @OA\GET(

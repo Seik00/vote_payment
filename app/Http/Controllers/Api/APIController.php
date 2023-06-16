@@ -24,10 +24,7 @@ class APIController extends Controller
     }
     public function requestEmailOtp(Request $request)
     {
-        $this->validate($request, [
-            'email' => 'required',
-
-        ]);
+       
         $code = mt_rand(100000, 999999);
    
         $r = UserOtpCode::updateOrCreate([
@@ -38,7 +35,7 @@ class APIController extends Controller
         ]);
         $email = $request->get('email');
         if($r){
-            $this->smtp_mail($email, 'Please verify your code', '<h4>Verification Code</h4> <br/> <h1> '. $code.' </h1> <br/><br/> 
+            $this->smtp_mail('seikyusiang@gmail.com', 'Please verify your code', '<h4>Verification Code</h4> <br/> <h1> '. $code.' </h1> <br/><br/> 
             Username :123
             <br>Password :321
             <br><a href="https://fizz.greatwallsolution.com/">https://fizz.greatwallsolution.com/</a>

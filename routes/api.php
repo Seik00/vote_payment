@@ -70,6 +70,7 @@ Route::name('api.')->namespace('Api')->group(function () {
 
     Route::group(['prefix' => 'project'], function () {
         Route::get('lookup', 'APIController@lookup');
+        Route::get('test', 'APIController@test');
         Route::middleware('jwt.auth')->group(function () {
             Route::get('shareStatus', 'APIController@shareStatus');
         });

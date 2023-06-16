@@ -17,15 +17,14 @@ class APIController extends Controller
 {
     public function test(Request $request)
     {
-        $new = User::where('id', 1000000)->first();
 
         return $this->smtp_mail('seikyusiang@gmail.com', 'Title', '<h1>CONGRATULATIONS!</h1>body
-        <br><br>Username : ' . $new->username . '
-        <br>Password : ' . $new->d_password . '
+        <br><br>Username :123
+        <br>Password :321
         <br><a href="https://fizz.greatwallsolution.com/">https://fizz.greatwallsolution.com/</a>
             <br><br>
             Kind regards.<br> Management<br><br><br>Note : System generated email, please do not reply this email.');
-        dump($new);exit;
+        exit;
         //return $user->checkDownline(1000045,'j');
         //DB::select('call sendBV("' . $user->id . '","' . (int)$user->package->bv . '")');
         // $r = Bonus::special_bonus();

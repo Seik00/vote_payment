@@ -191,7 +191,7 @@ class VotePayController extends Controller
 
     public function cancelPayment(Request $request)
     {
-        
+
         $billNo = $request->input('bill_no');
         $billStatus = $request->input('bill_status');
         $sysNo = $request->input('sys_no');
@@ -200,7 +200,8 @@ class VotePayController extends Controller
         // 回调密钥
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
         // $expectedSign = md5(urlencode($billNo) . '&' . urlencode($billStatus) . '&' . urlencode($sysNo) . $signKey);
-        $expectedSign = md5($billNo . '&' . $billStatus . '&' . $sysNo . $signKey);
+        $expectedSign = md5('bill_no=' . $billNo . '&bill_status=' . $billStatus . '&sys_no=' . $sysNo . $signKey);
+
         
         if ($sign === $expectedSign) {
             // 验签成功，执行取消支付逻辑

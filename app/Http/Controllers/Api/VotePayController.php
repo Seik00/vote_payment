@@ -185,10 +185,13 @@ class VotePayController extends Controller
                 ->update(['payment_status' => '3']);
         }
         Paymentlog::create($paymentlog_db);
+
+        return redirect('/web');
     }
 
     public function cancelPayment(Request $request)
     {
+        
         $billNo = $request->input('bill_no');
         $billStatus = $request->input('bill_status');
         $sysNo = $request->input('sys_no');
@@ -196,7 +199,8 @@ class VotePayController extends Controller
         
         // 回调密钥
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
-        $expectedSign = md5(urlencode($billNo) . '&' . urlencode($billStatus) . '&' . urlencode($sysNo) . $signKey);
+        // $expectedSign = md5(urlencode($billNo) . '&' . urlencode($billStatus) . '&' . urlencode($sysNo) . $signKey);
+        $expectedSign = md5($billNo . '&' . $billStatus . '&' . $sysNo . $signKey);
         
         if ($sign === $expectedSign) {
             // 验签成功，执行取消支付逻辑
@@ -213,10 +217,22 @@ class VotePayController extends Controller
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
 
-                $updated = DB::table('payment_gateway_order')
+            }else{
+                $paymentlog_db = [
+                    'platform' => 'return_cancel_Url',
+                    'order_no' => $billNo,
+                    'respond_log' => json_encode([
+                        'request_data' => $request->all(),
+                        'expectedSign' => $expectedSign,
+                    ]),
+                    'message'=> ' 验签成功，订单已激活',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ];
+            }
+
+            $updated = DB::table('payment_gateway_order')
                 ->where('order_no', $billNo)
                 ->update(['payment_status' => $billStatus]);
-            }
             
         } else {
             // 验签失败, Insert log
@@ -236,6 +252,8 @@ class VotePayController extends Controller
                 ->update(['payment_status' => '3']);
         }
         Paymentlog::create($paymentlog_db);
+
+        return redirect('/web');
     }
     
 

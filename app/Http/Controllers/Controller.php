@@ -356,7 +356,6 @@ class Controller extends BaseController
     {
         $content = "<tr>
                         <td style='padding-bottom: 30px;padding-top:30px;font-family: monospace;font-size: 15px;font-weight: bold;color:black;'>
-                            <p>Dear " . $to_email . ",</p>
                             <p>" . $message . "</p>
 
                         </td>

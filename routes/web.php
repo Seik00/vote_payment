@@ -16,9 +16,7 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@
 
 Route::group(['prefix' => '/'], function () {
 
-    Route::get('/', function () {
-        return redirect()->route('loginPage');
-    });
+    Route::get('/', 'SiteController@redirectLoginPage');
 
     Route::group(['namespace' => 'web'], function () {
         Route::get('/login', 'SiteController@loginPage')->name('site_index');
@@ -29,9 +27,7 @@ Route::group(['prefix' => '/'], function () {
 });
 
 Route::group(['prefix' => 'web', 'namespace' => 'web'], function () {
-    Route::get('/', function () {
-        return redirect()->route('loginPage');
-    });
+    Route::get('/', 'SiteController@redirectLoginPage');
     Route::get('/get_user_info', [VoteController::class, 'get_user_info']);
     Route::get('/count_voted', [VoteController::class, 'count_voted']);
     Route::get('/admin_get_table', [VoteController::class, 'admin_get_table']);

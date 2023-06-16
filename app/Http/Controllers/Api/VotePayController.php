@@ -33,13 +33,13 @@ class VotePayController extends Controller
 
         // 按照参数名的升序排序
         $params = [
-            'order_amount' => $order_amount,
             'order_id' => $order_id,
+            'order_amount' => $order_amount,
+            'sys_no' => $sys_no,
+            'user_id' => $user_id,
             'order_ip' => $order_ip,
             'order_time' => $order_time,
             'pay_user_name' => $pay_user_name,
-            'sys_no' => $sys_no,
-            'user_id' => $user_id,
         ];
 
         // 对参数值进行urlencode
@@ -60,6 +60,15 @@ class VotePayController extends Controller
         $signParams = ['sign' => $sign];
         $params = $params + $signParams;
         
+        foreach ($params as $key => $value) {
+            $params[$key] = urldecode($value);
+        }
+
+        // dump($params);
+        // // dump($data);
+        // dump($order_time);
+        // exit();
+
         $db_params = [
             'usdt_address' => $usdt_address,
             'username' => $pay_user_name,
@@ -104,7 +113,7 @@ class VotePayController extends Controller
                 $paymentlog_db = [
                     'platform' => 'redirectUrl',
                     'order_no' => $order_id,
-                    'respond_log' => $responseData,
+                    'respond_log' => json_encode($responseData),
                     'message'=> $responseData['msg'],
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
@@ -119,7 +128,7 @@ class VotePayController extends Controller
                 $paymentlog_db = [
                     'platform' => 'redirectUrl',
                     'order_no' => $order_id,
-                    'respond_log' => $responseData,
+                    'respond_log' => json_encode($responseData),
                     'message'=> $errorMsg,
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];

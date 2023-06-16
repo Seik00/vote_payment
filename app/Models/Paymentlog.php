@@ -12,6 +12,7 @@ class Paymentlog extends Model
         'platform',
         'order_no',
         'respond_log',
+        'message',
         'created_at' 
     ];
 }

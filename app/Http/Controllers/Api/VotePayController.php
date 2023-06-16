@@ -6,7 +6,6 @@ use App\Helper\Bonus;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Paymentlog;
-use App\Models\Thirdpartylog;
 use App\User;
 use DB;
 use Carbon\Carbon;
@@ -18,7 +17,6 @@ class VotePayController extends Controller
     public function get_info(Request $request)
     {
 
-        
         $usdt_address = "0xasasas";
         $bank_account = "111";
         $email = "test@gmail.com";
@@ -107,6 +105,7 @@ class VotePayController extends Controller
                     'platform' => 'redirectUrl',
                     'order_no' => $order_id,
                     'respond_log' => $responseData,
+                    'message'=> $responseData['msg'],
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
                 
@@ -121,6 +120,7 @@ class VotePayController extends Controller
                     'platform' => 'redirectUrl',
                     'order_no' => $order_id,
                     'respond_log' => $responseData,
+                    'message'=> $errorMsg,
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
             }
@@ -146,17 +146,34 @@ class VotePayController extends Controller
             $paymentlog_db = [
                 'platform' => 'return_success_Url',
                 'order_no' => $billNo,
-                'respond_log' => json_encode($request->all()),
+                'respond_log' => json_encode([
+                    'request_data' => $request->all(),
+                    'expectedSign' => $expectedSign,
+                ]),
+                'message'=> ' 验签成功, 订单支付成功',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ];
+
+            $updated = DB::table('payment_gateway_order')
+                ->where('order_no', $billNo)
+                ->update(['payment_status' => '2']);
+
         } else {
             // 验签失败 insert log
             $paymentlog_db = [
                 'platform' => 'return_success_Url',
                 'order_no' => $billNo,
-                'respond_log' => json_encode($request->all()),
+                'respond_log' => json_encode([
+                    'request_data' => $request->all(),
+                    'expectedSign' => $expectedSign,
+                ]),
+                'message'=> ' 验签失败',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ];
+
+            $updated = DB::table('payment_gateway_order')
+                ->where('order_no', $billNo)
+                ->update(['payment_status' => '3']);
         }
         Paymentlog::create($paymentlog_db);
     }
@@ -179,9 +196,17 @@ class VotePayController extends Controller
                 $paymentlog_db = [
                     'platform' => 'return_cancel_Url',
                     'order_no' => $billNo,
-                    'respond_log' => json_encode($request->all()),
+                    'respond_log' => json_encode([
+                        'request_data' => $request->all(),
+                        'expectedSign' => $expectedSign,
+                    ]),
+                    'message'=> ' 验签成功，订单已取消',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
+
+                $updated = DB::table('payment_gateway_order')
+                ->where('order_no', $billNo)
+                ->update(['payment_status' => $billStatus]);
             }
             
         } else {
@@ -189,9 +214,17 @@ class VotePayController extends Controller
             $paymentlog_db = [
                 'platform' => 'return_cancel_Url',
                 'order_no' => $billNo,
-                'respond_log' => json_encode($request->all()),
+                'respond_log' => json_encode([
+                    'request_data' => $request->all(),
+                    'expectedSign' => $expectedSign,
+                ]),
+                'message'=> ' 验签失败',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ];
+
+            $updated = DB::table('payment_gateway_order')
+                ->where('order_no', $billNo)
+                ->update(['payment_status' => '3']);
         }
         Paymentlog::create($paymentlog_db);
     }

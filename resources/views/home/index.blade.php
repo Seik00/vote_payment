@@ -97,7 +97,10 @@ label{
                 </div>
             </div>
         </header>
-
+		@if (Session::get('success') == 'request_complete')
+   
+			<input type="hidden" id="trigger-alert" value="true">
+		@endif
         <main>
             <section class="hero">
                 <div class="container">
@@ -507,10 +510,10 @@ label{
 				    </g>
 				</svg>
 			</div>
+
             <div class="container">
                 <div class="site-footer-inner has-top-divider">
-                    <div class="footer-copyright">&copy; 2023 FIZZ, all rights reserved</div>
-					
+						<div class="footer-copyright">&copy; 2023 FIZZ, all rights reserved </div>
                 </div>
             </div>
         </footer>
@@ -522,12 +525,32 @@ label{
 	<script src="path/to/sweetalert.min.js"></script>
 
     <script>
+		window.onload = function() {
+			var trigger = document.getElementById('trigger-alert').value;
+			if (trigger === 'true') {
+				swal({
+					title: "{{ __('site.Successful_operation') }}",
+					//  text: "Success!",
+					icon: "success"
+				})
+				.then((reload) => {
+					if(reload.isConfirmed){
+						console.log('done');
+					}
+				});
+			}
+		};
+
         function nextStep(step) {
             if(step == 1){
-                submit_email(step);
+                // submit_email(step);
+				document.getElementById(`step${step}`).classList.remove("active");
+            document.getElementById(`step${step+1}`).classList.add("active");
             }
 			if(step == 2){
-                check_otp(step);
+                // check_otp(step);
+				document.getElementById(`step${step}`).classList.remove("active");
+            document.getElementById(`step${step+1}`).classList.add("active");
             }
             if (document.getElementById(`input${step}`).value === "") {
                 alert("Please fill the form before proceed");

@@ -17,7 +17,6 @@ class VotePayController extends Controller
 
     public function get_info(Request $request)
     {
-        
         // $request->session()->flash('message', 'Your message here');
 
         // return redirect('/web');
@@ -222,7 +221,8 @@ class VotePayController extends Controller
 
             return 'false';
         }
-        
+        session()->flash('success', 'request_complete');
+        return redirect('/set-and-redirect');
         // return redirect('/web');
     }
 

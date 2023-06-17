@@ -16,9 +16,14 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@
 
 Route::group(['prefix' => '/'], function () {
 
+    Route::get('/set-and-redirect', function () {
+        session(['success' => 'request_complete']);
+        return redirect()->route('home.index');
+    })->name('set-and-redirect');
+
     Route::get('/', function () {
         return view('home.index');
-    });
+    })->name('home.index');
 });
 
 Route::group(['prefix' => 'web', 'namespace' => 'web'], function () {

@@ -65,4 +65,30 @@ class APIController extends Controller
 
     }
 
+    public function checkOTP(Request $request){
+
+        $email = $request->get('email');
+
+        $otp = UserOtpCode::where([
+            'email' => $email,
+            'code' => $request->get('otp'),
+        ])->first();
+
+        if ($otp) {
+            $otp = UserOtpCode::where([
+                'email' => $email,
+                'code' => $request->get('otp'),
+            ])->delete();
+            return response()->json([
+                'code' => 0,
+                'message' => 'OTP_OK',
+            ]);
+        } else {
+            return response()->json([
+                'code' => 1,
+                'message' => 'INCORRECT_OTP',
+            ]);
+        }
+    }
+
 }

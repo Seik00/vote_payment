@@ -77,19 +77,20 @@
                 <div class="container">
                     <div class="hero-inner">
 						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0 is-revealing">Landing template for FIZZ</h1>
-	                        <p class="hero-paragraph is-revealing">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
+	                        <!-- <h1 class="hero-title mt-0 is-revealing">Landing template for FIZZ</h1>
+	                        <p class="hero-paragraph is-revealing">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p> -->
 							<div class="hero-form field field-grouped is-revealing">
                             <div class="form-wizard">
                                 <div class="step active" id="step1">
                                     <h2>Step 1</h2>
                                     <label>Email Address</label>
-                                    <input type="email" id="input1" id="email" placeholder="Enter Email Address">
+                                    <input type="email" id="email" placeholder="Enter Email Address">
                                     <button class="next-button" onclick="nextStep(1)">Next</button>
                                 </div>
                                 <div class="step" id="step2">
                                     <h2>Step 2</h2>
-                                    <input type="text" id="input2" placeholder="Enter value">
+									<label>Verification Code</label>
+                                    <input type="text" id="otp" placeholder="Enter Verification Code">
                                     <button class="prev-button" onclick="prevStep(1)">Previous</button>
                                     <button class="next-button" onclick="nextStep(2)">Next</button>
                                 </div>
@@ -474,11 +475,16 @@
 
     <script src="/dist/js/main.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="path/to/sweetalert.min.js"></script>
 
     <script>
         function nextStep(step) {
-            if(step == 1 && document.getElementById(`input${step}`).value != ""){
+            if(step == 1){
                 submit_email();
+            }
+			if(step == 2){
+                check_otp();
             }
             if (document.getElementById(`input${step}`).value === "") {
                 alert("Please fill the form before proceed");
@@ -504,7 +510,6 @@
 
         function submit_email() {
           
-            var lang = document.documentElement.lang;
             $.ajax({
                 type: "POST",
                 data: {
@@ -517,13 +522,14 @@
                     console.log(data);
                     if (data.code == 0){
                         swal({
-                            title: "{{ __('site.vote_success') }}",
+                            title: "{{ __('site.email_sent') }}",
                             //  text: "Success!",
                             icon: "success"
                         })
                         .then((reload) => {
                             if(reload){
-                            location.reload();
+								document.getElementById(`step${step}`).classList.remove("active");
+            					document.getElementById(`step${step+1}`).classList.add("active");
                             }
                         });
                         
@@ -540,6 +546,45 @@
                     
             });
         }
+
+		function check_otp() {
+          
+		  $.ajax({
+			  type: "POST",
+			  data: {
+				otp: document.getElementById("otp").value,
+			  },
+			  url: "/api/project/checkOTP",
+			  success: function(result){
+				  
+				  var data = JSON.parse(JSON.stringify(result));
+				  console.log(data);
+				  if (data.code == 0){
+					  swal({
+						  title: "{{ __('site.verification_correct') }}",
+						  //  text: "Success!",
+						  icon: "success"
+					  })
+					  .then((reload) => {
+						  if(reload){
+							document.getElementById(`step${step}`).classList.remove("active");
+            				document.getElementById(`step${step+1}`).classList.add("active");
+						  }
+					  });
+					  
+				  }
+				  else{
+					  swal({
+						  title: data.message,
+						  timer: 2500,
+						  icon: "error",
+						  showConfirmButton: false
+					  });
+				  }
+			  }
+				  
+		  });
+	  }
     </script>
 </body>
 </html>

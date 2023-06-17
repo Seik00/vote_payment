@@ -418,4 +418,7 @@ return [
     'invalid_address' => 'Invalid Wallet Address !!!',
 
     'vote_hasnt_start' =>  'Vote hasnt start !!!',
+    
+    'email_sent' => 'Email Sent',
+    'verification_correct' => 'Verification Code Correct',
 ];

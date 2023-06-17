@@ -23,8 +23,14 @@ class APIController extends Controller
     }
     public function requestEmailOtp(Request $request)
     {
-        $email = $request->get('email');
        
+        $email = $request->get('email');
+        if(empty($email)){
+            return $this->jsonResponse([
+                'code' => 1,
+                'message' => __('site.email_empty'),
+            ]);
+        }
         $code = mt_rand(100000, 999999);
    
         $r = UserOtpCode::updateOrCreate([

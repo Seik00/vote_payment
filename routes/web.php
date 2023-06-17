@@ -19,13 +19,6 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/', function () {
         return view('home.index');
     });
-
-    Route::group(['namespace' => 'web'], function () {
-        Route::get('/login', 'SiteController@loginPage')->name('site_index');
-        Route::get('/register/{ref?}', 'SiteController@registerPage')->name('site_register_with_ref');
-        Route::get('/register', 'SiteController@registerPage')->name('site_register');
-        Route::post('/register', 'SiteController@doregisterPage')->name('site_doregister');
-    });
 });
 
 Route::group(['prefix' => 'web', 'namespace' => 'web'], function () {

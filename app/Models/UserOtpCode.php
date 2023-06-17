@@ -11,7 +11,7 @@ class UserOtpCode extends Model
 
     protected $fillable = [
         'user_id',
-        'contact_number',
+        'email',
         'code',
         'expiry_date',
     ];

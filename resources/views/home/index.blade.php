@@ -473,6 +473,8 @@
     </div>
 
     <script src="/dist/js/main.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script>
         function nextStep(step) {
             if(step == 1 && document.getElementById(`input${step}`).value != ""){
@@ -501,6 +503,7 @@
 
 
         function submit_email() {
+          
             var lang = document.documentElement.lang;
             $.ajax({
                 type: "POST",

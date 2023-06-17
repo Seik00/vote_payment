@@ -35,7 +35,7 @@ class APIController extends Controller
         ]);
         $email = $request->get('email');
         if($r){
-            $this->smtp_mail('seikyusiang@gmail.com', 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;    font-family:Roboto;"> '. $code.' </h1> <br/><br/> 
+            $this->smtp_mail('chien321ming@hotmail.com', 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;    font-family:Roboto;"> '. $code.' </h1> <br/><br/> 
             Username :123
             <br>Password :321
             <br><a href="https://fizz.greatwallsolution.com/">https://fizz.greatwallsolution.com/</a>

@@ -1,3 +1,7 @@
+@php
+    use Illuminate\Support\Facades\Session;
+@endphp
+
 @extends('home.header')
 
 @section('content')
@@ -71,7 +75,7 @@
 </div>
 <section class="story-content-wrapper" style="margin-top:42px;background:#f7f7f7">
         <div class="row align-items-center no-gutters">
-
+        
             <!-- Start Story Content Area -->
             <div class="col-md-6 order-1 my-auto text-center">
             <div class="about-page-testimonial mt-10 col-xl-8 mx-auto">

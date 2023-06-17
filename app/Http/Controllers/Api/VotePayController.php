@@ -10,27 +10,51 @@ use App\User;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class VotePayController extends Controller
 {
 
     public function get_info(Request $request)
     {
+        
+        $request->session()->flash('message', 'Your message here');
 
-        $usdt_address = "0xasasas";
-        $bank_account = "111";
-        $email = "test@gmail.com";
-        $currency = "USDT";
+        return redirect('/web');
+        // return redirect('/web')->with('success', 'The item has been saved successfully.');
+        // Session::put('success', 'pundekss');
+        // $value = Session::get('success');
+        // return redirect('/web');
+        // dump($value);exit;
+        // if (Session::has('success') && Session::get('success') == 'Your desired value') {
+        //     dump('yes');exit;
+        // }else{
+        //     dump('no');exit;
+        // }
+        $this->validate($request,[
+            'usdt_address' => 'required',
+            'bank_account' => 'required',
+            'email' => 'required',
+            'currency' => 'required',
+            'order_amount' => 'required',
+            'pay_user_name' => 'required'
+        ]);
+
+        $usdt_address = $request->get('usdt_address');
+        $bank_account = $request->get('bank_account');
+        $email =  $request->get('email');
+        $currency = $request->get('currency');
 
         $order_id = date('Ymd') . '_' . uniqid();
-        $order_amount = '50';
+        $order_amount = $request->get('order_amount');
         $sys_no = '602121';
         $user_id = uniqid();
         $order_ip = $request->ip();
         $order_time = Carbon::now()->format('Y-m-d H:i:s');
-        $pay_user_name = '张三';
+        $pay_user_name = $request->get('pay_user_name');
         $signKey = '181bfcf101aba6d84e508507d9c2f57d';
-
+        dump("hello");
+        exit();
         // 按照参数名的升序排序
         $params = [
             'order_id' => $order_id,
@@ -63,11 +87,6 @@ class VotePayController extends Controller
         foreach ($params as $key => $value) {
             $params[$key] = urldecode($value);
         }
-
-        // dump($params);
-        // // dump($data);
-        // dump($order_time);
-        // exit();
 
         $db_params = [
             'usdt_address' => $usdt_address,
@@ -117,7 +136,7 @@ class VotePayController extends Controller
                     'message'=> $responseData['msg'],
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
-                
+                Paymentlog::create($paymentlog_db);
 
                 // 跳转到支付页面
                 header('Location: ' . $redirectUrl);
@@ -132,9 +151,10 @@ class VotePayController extends Controller
                     'message'=> $errorMsg,
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
+                Paymentlog::create($paymentlog_db);
             }
 
-            Paymentlog::create($paymentlog_db);
+            
 
         }
     }
@@ -167,6 +187,7 @@ class VotePayController extends Controller
                 ->where('order_no', $billNo)
                 ->update(['payment_status' => '2']);
 
+            Paymentlog::create($paymentlog_db);
             return 'success';
 
         } else {
@@ -186,10 +207,11 @@ class VotePayController extends Controller
                 ->where('order_no', $billNo)
                 ->update(['payment_status' => '3']);
 
+            Paymentlog::create($paymentlog_db);
+
             return 'false';
         }
-        Paymentlog::create($paymentlog_db);
-
+        
         // return redirect('/web');
     }
 
@@ -222,6 +244,13 @@ class VotePayController extends Controller
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
 
+                $updated = DB::table('payment_gateway_order')
+                ->where('order_no', $billNo)
+                ->update(['payment_status' => $billStatus]);
+
+                Paymentlog::create($paymentlog_db);
+                return 'success';
+                
             }else{
                 $paymentlog_db = [
                     'platform' => 'return_cancel_Url',
@@ -233,11 +262,16 @@ class VotePayController extends Controller
                     'message'=> ' 验签成功，订单已激活',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
-            }
 
-            $updated = DB::table('payment_gateway_order')
+                $updated = DB::table('payment_gateway_order')
                 ->where('order_no', $billNo)
                 ->update(['payment_status' => $billStatus]);
+
+                Paymentlog::create($paymentlog_db);
+
+                return 'false';
+
+            }
             
         } else {
             // 验签失败, Insert log
@@ -255,8 +289,10 @@ class VotePayController extends Controller
             $updated = DB::table('payment_gateway_order')
                 ->where('order_no', $billNo)
                 ->update(['payment_status' => '3']);
+
+            Paymentlog::create($paymentlog_db);
+            return 'false';
         }
-        Paymentlog::create($paymentlog_db);
 
         // return redirect('/web');
     }

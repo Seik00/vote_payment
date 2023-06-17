@@ -70,9 +70,9 @@ class AuthController extends Controller
 
         return redirect()->route('site_register');
     }
+    
     public function loginPage(Request $request)
     {
-
         return view('web.auth.login');
     }
 

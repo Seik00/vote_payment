@@ -794,7 +794,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
    
     
-    <div class="form-container">
+    <div class="form-container">asas
+    @if(session('message'))
+    <div class="alert alert-success">
+        123
+    </div>
+    @endif
       <div class="container-spe">
         <h1>{{ __('site.content_title') }}</h1>
 

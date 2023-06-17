@@ -56,7 +56,6 @@ Route::name('api.')->namespace('Api')->group(function () {
         Route::post('vote', 'VoteController@vote');
         Route::get('get_user_info', 'VoteController@get_user_info');
         Route::get('users_voted', 'VoteController@users_voted');
-        Route::get('get_info', 'VotePayController@get_info');
     });
 
     Route::group(['middleware' => 'check.access'], function () {

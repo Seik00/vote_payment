@@ -167,6 +167,8 @@ class VotePayController extends Controller
                 ->where('order_no', $billNo)
                 ->update(['payment_status' => '2']);
 
+            return 'success';
+
         } else {
             // 验签失败 insert log
             $paymentlog_db = [
@@ -183,10 +185,12 @@ class VotePayController extends Controller
             $updated = DB::table('payment_gateway_order')
                 ->where('order_no', $billNo)
                 ->update(['payment_status' => '3']);
+                
+            return 'false';
         }
         Paymentlog::create($paymentlog_db);
 
-        return redirect('/web');
+        // return redirect('/web');
     }
 
     public function cancelPayment(Request $request)
@@ -254,7 +258,7 @@ class VotePayController extends Controller
         }
         Paymentlog::create($paymentlog_db);
 
-        return redirect('/web');
+        // return redirect('/web');
     }
     
 

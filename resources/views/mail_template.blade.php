@@ -38,15 +38,15 @@
             <img src="{{url(asset( config('sys_config.icon_email'))) }}" alt="Rifineria" style="width:180px;height:235px;">
             <!-- <p style="color:goldenrod;font-size: 20px;">RIFINERIA</p> -->
             
-          </td>
-        </tr>
-        <tr>
-          <td>
-
             <table border="0" cellpadding="0" cellspacing="0" width="90%" style="margin-left: auto; margin-right: auto;">
               {!! $details['body'] !!}
             </table>
           </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          
         </tr>
       </table>
     </td>

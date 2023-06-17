@@ -17,7 +17,7 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@
 Route::group(['prefix' => '/'], function () {
 
     Route::get('/', function () {
-        return redirect()->route('loginPage');
+        return view('home.index');
     });
 
     Route::group(['namespace' => 'web'], function () {

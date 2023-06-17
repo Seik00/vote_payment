@@ -46,12 +46,11 @@ class APIController extends Controller
             </div>
             <br>
             <br>
-            <a href="https://fizz.greatwallsolution.com/">https://fizz.greatwallsolution.com/</a>
-            <br><br>
             <div style="text-align: left;">
             Kind regards.<br>Management
             </div>
-            <br><br><br>
+            <br>
+            <br>
             <div style="text-align: left;">
             Note : System generated email, please do not reply this email.
             </div>

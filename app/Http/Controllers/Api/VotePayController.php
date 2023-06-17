@@ -82,9 +82,9 @@ class VotePayController extends Controller
         ];
 
         $order = new Order($db_params);
-        $order->save();
+        $r = $order->save();
 
-        if ($order->save()) {
+        if ($r) {
            
             // 构建请求URL和请求数据
             $url = 'https://swpapi.jy6989.com/UtInRecordApi/orderGateWay';
@@ -185,7 +185,7 @@ class VotePayController extends Controller
             $updated = DB::table('payment_gateway_order')
                 ->where('order_no', $billNo)
                 ->update(['payment_status' => '3']);
-                
+
             return 'false';
         }
         Paymentlog::create($paymentlog_db);

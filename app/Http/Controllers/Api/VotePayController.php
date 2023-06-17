@@ -53,8 +53,7 @@ class VotePayController extends Controller
         $order_time = Carbon::now()->format('Y-m-d H:i:s');
         $pay_user_name = $request->get('pay_user_name');
         $signKey = '181bfcf101aba6d84e508507d9c2f57d';
-        dump("hello");
-        exit();
+        
         // 按照参数名的升序排序
         $params = [
             'order_id' => $order_id,

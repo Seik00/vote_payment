@@ -481,10 +481,10 @@
     <script>
         function nextStep(step) {
             if(step == 1){
-                submit_email();
+                submit_email(step);
             }
 			if(step == 2){
-                check_otp();
+                check_otp(step);
             }
             if (document.getElementById(`input${step}`).value === "") {
                 alert("Please fill the form before proceed");
@@ -508,7 +508,7 @@
         }
 
 
-        function submit_email() {
+        function submit_email(step) {
           
             $.ajax({
                 type: "POST",
@@ -547,7 +547,7 @@
             });
         }
 
-		function check_otp() {
+		function check_otp(step) {
           
 		  $.ajax({
 			  type: "POST",

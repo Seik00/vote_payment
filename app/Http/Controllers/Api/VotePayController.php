@@ -189,9 +189,10 @@ class VotePayController extends Controller
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ];
 
+            // payment_status (66) == 订单支付成功
             $updated = DB::table('payment_gateway_order')
                 ->where('order_no', $billNo)
-                ->update(['payment_status' => '2']);
+                ->update(['payment_status' => '66']);
 
             Paymentlog::create($paymentlog_db);
             return 'success';
@@ -208,10 +209,10 @@ class VotePayController extends Controller
                 'message'=> ' 验签失败',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ];
-
+            // payment_status (999) 验签失败
             $updated = DB::table('payment_gateway_order')
                 ->where('order_no', $billNo)
-                ->update(['payment_status' => '3']);
+                ->update(['payment_status' => '999']);
 
             Paymentlog::create($paymentlog_db);
 
@@ -268,10 +269,6 @@ class VotePayController extends Controller
                     'message'=> ' 验签成功，订单已激活',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
-
-                $updated = DB::table('payment_gateway_order')
-                ->where('order_no', $billNo)
-                ->update(['payment_status' => $billStatus]);
 
                 Paymentlog::create($paymentlog_db);
 

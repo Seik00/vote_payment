@@ -36,11 +36,24 @@ class APIController extends Controller
         $email = $request->get('email');
         if($r){
             $this->smtp_mail('chien321ming@hotmail.com', 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;    font-family:Roboto;"> '. $code.' </h1> <br/><br/> 
-            Username :123
-            <br>Password :321
-            <br><a href="https://fizz.greatwallsolution.com/">https://fizz.greatwallsolution.com/</a>
-                <br><br>
-                Kind regards.<br> Management<br><br><br>Note : System generated email, please do not reply this email.');
+            <div>
+            Name :123
+            <br>
+            Address :321
+            <br>
+            ID :123
+            <br>
+            Amount :321
+            </div>
+            <br>
+            <br>
+            <a href="https://fizz.greatwallsolution.com/">https://fizz.greatwallsolution.com/</a>
+            <br><br>
+            <div style="width: 50%;">
+            Kind regards.<br>Management
+            </div>
+            <br><br><br>
+            Note : System generated email, please do not reply this email.');
         }
 
         return response()->json([

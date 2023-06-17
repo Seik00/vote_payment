@@ -35,7 +35,7 @@ class APIController extends Controller
         ]);
         if($r){
             $this->smtp_mail('chien321ming@hotmail.com', 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;    font-family:Roboto;"> '. $code.' </h1> <br/><br/> 
-            <div>
+            <div style="text-align: center;">
             Name :123
             <br>
             Address :321
@@ -48,11 +48,14 @@ class APIController extends Controller
             <br>
             <a href="https://fizz.greatwallsolution.com/">https://fizz.greatwallsolution.com/</a>
             <br><br>
-            <div style="width: 50%;">
+            <div style="text-align: center;">
             Kind regards.<br>Management
             </div>
             <br><br><br>
-            Note : System generated email, please do not reply this email.');
+            <div style="text-align: center;">
+            Note : System generated email, please do not reply this email.
+            </div>
+            ');
         }
 
         return response()->json([

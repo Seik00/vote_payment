@@ -45,7 +45,6 @@ class APIController extends Controller
             Amount :321
             </div>
             <br>
-            <br>
             <div style="text-align: left;">
             Kind regards.<br>Management
             </div>

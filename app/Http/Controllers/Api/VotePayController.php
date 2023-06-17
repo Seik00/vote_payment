@@ -18,9 +18,9 @@ class VotePayController extends Controller
     public function get_info(Request $request)
     {
         
-        $request->session()->flash('message', 'Your message here');
+        // $request->session()->flash('message', 'Your message here');
 
-        return redirect('/web');
+        // return redirect('/web');
         // return redirect('/web')->with('success', 'The item has been saved successfully.');
         // Session::put('success', 'pundekss');
         // $value = Session::get('success');

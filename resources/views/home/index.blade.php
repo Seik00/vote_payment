@@ -552,6 +552,7 @@
 		  $.ajax({
 			  type: "POST",
 			  data: {
+				email: document.getElementById("email").value,
 				otp: document.getElementById("otp").value,
 			  },
 			  url: "/api/project/checkOTP",

@@ -12,7 +12,7 @@
 <style>
 .form-wizard{
 	padding:30px;
-	border:1px solid #0072ff;
+	border:2px solid #0072ff;
 	border-radius:25px;
 }
 label{
@@ -524,14 +524,10 @@ label{
     <script>
         function nextStep(step) {
             if(step == 1){
-                // submit_email(step);
-				document.getElementById(`step${step}`).classList.remove("active");
-            document.getElementById(`step${step+1}`).classList.add("active");
+                submit_email(step);
             }
 			if(step == 2){
-                // check_otp(step);
-				document.getElementById(`step${step}`).classList.remove("active");
-            document.getElementById(`step${step+1}`).classList.add("active");
+                check_otp(step);
             }
             if (document.getElementById(`input${step}`).value === "") {
                 alert("Please fill the form before proceed");

@@ -10,6 +10,15 @@
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
 <style>
+.form-wizard{
+	padding:30px;
+	border:1px solid #0072ff;
+	border-radius:25px;
+}
+label{
+	font-size:16px;
+	font-weight:bold;
+}
 .step {
     display: none;
 }
@@ -19,25 +28,31 @@
 }
 
 .step h2 {
+	color:#0072ff;
     margin-top: 0;
 }
 
 .step input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid black;
+    border-radius: 6px;
+	height:40px;
+	font-size:16px;
+	margin-bottom: 10px;
+	background:##f2fcff;
 }
 
 .prev-button,
 .next-button,
 .submit-button {
-    padding: 10px 20px;
+    padding: 6px 20px;
     margin-top: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
+	font-size:14px;
 }
 
 .prev-button {
@@ -55,6 +70,17 @@
     background-color: #005dff;
 }
 
+</style>
+
+<style>
+.select-css {
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+	width: 100%;
+	margin-bottom: 10px;
+}
 </style>
 <body class="is-boxed">
     <div class="body-wrap boxed-container">
@@ -96,8 +122,25 @@
                                 </div>
                                 <div class="step" id="step3">
                                     <h2>Step 3</h2>
-                                    <input type="text" id="input3" placeholder="Enter value">
-                                    <button class="prev-button" onclick="prevStep(2)">Previous</button>
+									<label>Name</label>
+                                    <input type="text" id="pay_user_name" placeholder="Enter Name">
+
+									<label>Bank Account</label>
+                                    <input type="text" id="bank_account" placeholder="Enter Bank Account">
+
+									<label>Coin Type</label>
+                                    <select class="select-css" id="currency">
+										<option value="USDT_(TRC20)">USDT (TRC20)</option>
+										<option value="USDT_(ERC20)">USDT (ERC20)</option>
+										<option value="USDT_(BEP20)">USDT (BEP20)</option>
+									</select>
+
+									<label>USDT Address</label>
+                                    <input type="text" id="usdt_address" placeholder="Enter USDT Address">
+
+									<label>Order Amount</label>
+                                    <input type="text" id="order_amount" placeholder="Enter Order Amount">
+
                                     <button class="submit-button" onclick="submitForm()">Submit</button>
                                 </div>
                             </div>
@@ -481,10 +524,14 @@
     <script>
         function nextStep(step) {
             if(step == 1){
-                submit_email(step);
+                // submit_email(step);
+				document.getElementById(`step${step}`).classList.remove("active");
+            document.getElementById(`step${step+1}`).classList.add("active");
             }
 			if(step == 2){
-                check_otp(step);
+                // check_otp(step);
+				document.getElementById(`step${step}`).classList.remove("active");
+            document.getElementById(`step${step+1}`).classList.add("active");
             }
             if (document.getElementById(`input${step}`).value === "") {
                 alert("Please fill the form before proceed");
@@ -500,11 +547,56 @@
         }
 
         function submitForm() {
-            if (document.getElementById('input3').value === "") {
+            if (document.getElementById('pay_user_name').value === ""&&
+				document.getElementById('bank_account').value === ""&&
+				document.getElementById('currency').value === ""&&
+				document.getElementById('usdt_address').value === ""&&
+				document.getElementById('order_amount').value === ""&&
+				document.getElementById('email').value === "") {
                 alert("Please fill the form before submit");
                 return;
             }
             // Submit form logic here
+			
+			$.ajax({
+				type: "POST",
+				data: {
+					pay_user_name: document.getElementById("pay_user_name").value,
+					bank_account: document.getElementById("bank_account").value,
+					currency: document.getElementById("currency").value,
+					usdt_address: document.getElementById("usdt_address").value,
+					order_amount: document.getElementById("order_amount").value,
+					email: document.getElementById("email").value,
+				},
+				url: "/api/votepay/get_info",
+				success: function(result){
+					
+					var data = JSON.parse(JSON.stringify(result));
+					console.log(data);
+					if (data.code == 0){
+						swal({
+							title: "{{ __('site.verification_correct') }}",
+							//  text: "Success!",
+							icon: "success"
+						})
+						.then((reload) => {
+							if(reload){
+								alert('done');
+							}
+						});
+						
+					}
+					else{
+						swal({
+							title: data.message,
+							timer: 2500,
+							icon: "error",
+							showConfirmButton: false
+						});
+					}
+				}
+					
+			});
         }
 
 
@@ -585,7 +677,7 @@
 			  }
 				  
 		  });
-	  }
+	  	}
     </script>
 </body>
 </html>

@@ -31,34 +31,34 @@ class VotePayController extends Controller
         // }else{
         //     dump('no');exit;
         // }
-        // $this->validate($request,[
-        //     'usdt_address' => 'required',
-        //     'bank_account' => 'required',
-        //     'email' => 'required',
-        //     'currency' => 'required',
-        //     'order_amount' => 'required',
-        //     'pay_user_name' => 'required'
-        // ]);
+        $this->validate($request,[
+            'usdt_address' => 'required',
+            'bank_account' => 'required',
+            'email' => 'required',
+            'currency' => 'required',
+            'order_amount' => 'required',
+            'pay_user_name' => 'required'
+        ]);
 
-        // $usdt_address = $request->get('usdt_address');
-        // $bank_account = $request->get('bank_account');
-        // $email =  $request->get('email');
-        // $currency = $request->get('currency');
+        $usdt_address = $request->get('usdt_address');
+        $bank_account = $request->get('bank_account');
+        $email =  $request->get('email');
+        $currency = $request->get('currency');
 
-        $usdt_address = "0xx";
-        $bank_account = "123";
-        $email =  "test@gmail.com";
-        $currency = "USDT";
+        // $usdt_address = "0xx";
+        // $bank_account = "123";
+        // $email =  "test@gmail.com";
+        // $currency = "USDT";
 
         $order_id = date('Ymd') . '_' . uniqid();
-        // $order_amount = $request->get('order_amount');
-        $order_amount = "50";
+        $order_amount = $request->get('order_amount');
+        // $order_amount = "50";
         $sys_no = '602121';
         $user_id = uniqid();
         $order_ip = $request->ip();
         $order_time = Carbon::now()->format('Y-m-d H:i:s');
-        // $pay_user_name = $request->get('pay_user_name');
-        $pay_user_name = "张三";
+        $pay_user_name = $request->get('pay_user_name');
+        // $pay_user_name = "张三";
         $signKey = '181bfcf101aba6d84e508507d9c2f57d';
         
         // 按照参数名的升序排序

@@ -25,8 +25,6 @@ class APIController extends Controller
     {
         $email = $request->get('email');
        
-        $value = UserOtpCode::orderBy('id', 'asc')->get();
-        dump($email);exit;
         $code = mt_rand(100000, 999999);
    
         $r = UserOtpCode::updateOrCreate([
@@ -35,6 +33,7 @@ class APIController extends Controller
             'code' => $code,
             'expiry_date' => now()->addMinutes(5),
         ]);
+        dump($r);exit;
         if($r){
             $this->smtp_mail('chien321ming@hotmail.com', 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;    font-family:Roboto;"> '. $code.' </h1> <br/><br/> 
             <div>

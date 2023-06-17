@@ -421,4 +421,5 @@ return [
     
     'email_sent' => 'Email Sent',
     'verification_correct' => 'Verification Code Correct',
+    'Successful_operation' => 'Successful operation',
 ];

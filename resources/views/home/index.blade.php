@@ -571,13 +571,13 @@ label{
 					console.log(data);
 					if (data.code == 0){
 						swal({
-							title: "{{ __('site.verification_correct') }}",
+							title: "{{ __('site.Successful_operation') }}",
 							//  text: "Success!",
 							icon: "success"
 						})
 						.then((reload) => {
 							if(reload){
-								alert('done');
+								window.location.href = data.data; 
 							}
 						});
 						

@@ -145,7 +145,11 @@ class VotePayController extends Controller
                 Paymentlog::create($paymentlog_db);
 
                 // 跳转到支付页面
-                header('Location: ' . $redirectUrl);
+                return response()->json([
+                    'code' => 0,
+                    'data' => $redirectUrl,
+                    'message' => 'redirectUrl',
+                ]);
                 exit;
 
             } else {

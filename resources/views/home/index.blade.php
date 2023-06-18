@@ -194,7 +194,7 @@ i.fas.fa-paper-plane{
 									
 
                                     <button class="prev-button" onclick="prevStep(2)">上一页</button>
-                                    <button class="submit-button" onclick="submitForm()">提交</button>
+                                    <button class="submit-button" onclick="check_otp()">提交</button>
                                 </div>
                             </div>
 

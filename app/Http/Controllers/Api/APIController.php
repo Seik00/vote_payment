@@ -42,13 +42,23 @@ class APIController extends Controller
         if($r){
             $this->smtp_mail($email, 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;font-family:Roboto; color: white;"> '. $code.' </h1> <br/><br/> 
             <div style="text-align: left;color: white;">
-            Name :123
+            Name: 123
             <br>
-            Address :321
+            Bank Account: 000
             <br>
-            ID :123
+            Coin Type: TRC20
             <br>
-            Amount :321
+            Address: 321
+            <br>
+            Amount: 123
+            <br>
+            Exchange Rate: 7%
+            <br>
+            Sumbit Amount: 321
+            <br>
+            ID: 123
+            <br>
+            Email: test@gmail.com
             </div>
             <br>
             <div style="text-align: left;color: white;">

@@ -12,7 +12,6 @@
       padding: 0;
       min-width: 100% !important;
       font-family: 'Helvetica', sans-serif;
-      background-color: #001321 !important; /* Set the background color to #001321 */
     }
 
     .header {
@@ -31,7 +30,7 @@
   <table width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation">
     <tr>
       <td style="padding-left: 30px;">
-        <table class="header" bgcolor="#fff" style="border-radius: 15px; background-color: #fff;" align="center" cellpadding="0" cellspacing="0" border="0" role="presentation">
+        <table class="header" bgcolor="#001321" style="border-radius: 15px; background-color: #001321;" align="center" cellpadding="0" cellspacing="0" border="0" role="presentation">
           <tr>
             <td style="padding: 50px; text-align: center; border-radius: 15px 15px; background-color: #001321;">
               <img src="{{url(asset( config('sys_config.icon_email'))) }}" alt="Rifineria" style="width:180px;height:235px;">
@@ -50,5 +49,6 @@
   </table>
   <![endif]-->
 </body>
+
 
 </html>

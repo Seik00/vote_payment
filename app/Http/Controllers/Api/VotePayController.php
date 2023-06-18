@@ -302,7 +302,6 @@ class VotePayController extends Controller
         }
 
         // return redirect('/web');
-    }
-    
+    }    
 
 }

@@ -16,7 +16,7 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@
 
 Route::group(['prefix' => '/'], function () {
 
-    Route::get('/set-and-redirect', function () {
+    Route::post('/set-and-redirect', function () {
         session(['success' => 'request_complete']);
         return redirect()->route('home.index');
     })->name('set-and-redirect');

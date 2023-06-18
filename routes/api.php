@@ -62,7 +62,7 @@ Route::name('api.')->namespace('Api')->group(function () {
         Route::group(['prefix' => 'votepay'], function () {
             Route::post('get_info', 'VotePayController@get_info');
             Route::match(['get', 'post'], 'success', 'VotePayController@successPayment');
-            Route::post('cancel', 'VotePayController@cancelPayment');
+            Route::get('cancel', 'VotePayController@cancelPayment');
         });
     });
     

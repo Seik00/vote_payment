@@ -588,8 +588,8 @@ i.fas.fa-paper-plane{
 			var trigger = document.getElementById('trigger-alert').value;
 			if (trigger === 'true') {
 				swal({
-					title: "{{ __('site.Successful_operation') }}",
-					//  text: "Success!",
+					title: "{{ __('site.DEPOSIT_SUCCESS') }}",
+					text: "{{ __('site.DEPOSIT_SUCCESS_DESC') }}",
 					icon: "success"
 				})
 				.then((reload) => {

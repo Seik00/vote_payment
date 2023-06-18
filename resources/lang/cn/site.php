@@ -287,4 +287,6 @@ return [
     'fill_info' => '请填写资料以进行下一页',
     'check_email_get_code' => '请查收您的邮箱以获取验证码',
     'INCORRECT_OTP' => '验证码错误',
+    'DEPOSIT_SUCCESS' => '入金成功',
+    'DEPOSIT_SUCCESS_DESC' => '您的入金已成功完成。感谢您的支持和信任。',
 ];

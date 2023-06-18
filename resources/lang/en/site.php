@@ -427,4 +427,6 @@ return [
     'fill_info' => 'Please fill the form before proceed',
     'check_email_get_code' => 'Please check your email to get the verification code',
     'INCORRECT_OTP' => 'Verification code error',
+    'DEPOSIT_SUCCESS' => 'Deposit successful',
+    'DEPOSIT_SUCCESS_DESC' => 'Your deposit has been successfully completed. Thank you for your support and trust.',
 ];

@@ -244,12 +244,50 @@ class VotePayController extends Controller
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
         // $expectedSign = md5(urlencode($billNo) . '&' . urlencode($billStatus) . '&' . urlencode($sysNo) . $signKey);
         $expectedSign = md5('bill_no=' . $billNo . '&bill_status=' . $billStatus . '&sys_no=' . $sysNo . $signKey);
-
         
-        if ($sign === $expectedSign) {
-            // 验签成功，执行取消支付逻辑
-            if ($billStatus == 1) {
-                // 订单已取消 insert log
+        if (!empty($request->all())) {
+
+            if ($sign === $expectedSign) {
+                // 验签成功，执行取消支付逻辑
+                if ($billStatus == 1) {
+                    // 订单已取消 insert log
+                    $paymentlog_db = [
+                        'platform' => 'return_cancel_Url',
+                        'order_no' => $billNo,
+                        'respond_log' => json_encode([
+                            'request_data' => $request->all(),
+                            'expectedSign' => $expectedSign,
+                        ]),
+                        'message'=> ' 验签成功，订单已取消',
+                        'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    ];
+    
+                    $updated = DB::table('payment_gateway_order')
+                    ->where('order_no', $billNo)
+                    ->update(['payment_status' => $billStatus]);
+    
+                    Paymentlog::create($paymentlog_db);
+                    return redirect('/set-and-redirect')->with('result', 'success');
+                }else{
+                    $paymentlog_db = [
+                        'platform' => 'return_cancel_Url',
+                        'order_no' => $billNo,
+                        'respond_log' => json_encode([
+                            'request_data' => $request->all(),
+                            'expectedSign' => $expectedSign,
+                        ]),
+                        'message'=> ' 验签成功，订单已激活',
+                        'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    ];
+    
+                    Paymentlog::create($paymentlog_db);
+    
+                    return redirect('/set-and-redirect')->with('result', 'false');
+    
+                }
+                
+            } else {
+                // 验签失败, Insert log
                 $paymentlog_db = [
                     'platform' => 'return_cancel_Url',
                     'order_no' => $billNo,
@@ -257,57 +295,20 @@ class VotePayController extends Controller
                         'request_data' => $request->all(),
                         'expectedSign' => $expectedSign,
                     ]),
-                    'message'=> ' 验签成功，订单已取消',
+                    'message'=> ' 验签失败',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ];
-
+    
                 $updated = DB::table('payment_gateway_order')
-                ->where('order_no', $billNo)
-                ->update(['payment_status' => $billStatus]);
-
+                    ->where('order_no', $billNo)
+                    ->update(['payment_status' => '3']);
+    
                 Paymentlog::create($paymentlog_db);
-                return 'success';
-                // return redirect('/set-and-redirect')->with('result', 'success');
-
-            }else{
-                $paymentlog_db = [
-                    'platform' => 'return_cancel_Url',
-                    'order_no' => $billNo,
-                    'respond_log' => json_encode([
-                        'request_data' => $request->all(),
-                        'expectedSign' => $expectedSign,
-                    ]),
-                    'message'=> ' 验签成功，订单已激活',
-                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                ];
-
-                Paymentlog::create($paymentlog_db);
-                return 'false';
-                // return redirect('/set-and-redirect')->with('result', 'false');
-
+                return redirect('/set-and-redirect')->with('result', 'false');
             }
-            
-        } else {
-            // 验签失败, Insert log
-            $paymentlog_db = [
-                'platform' => 'return_cancel_Url',
-                'order_no' => $billNo,
-                'respond_log' => json_encode([
-                    'request_data' => $request->all(),
-                    'expectedSign' => $expectedSign,
-                ]),
-                'message'=> ' 验签失败',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            ];
 
-            $updated = DB::table('payment_gateway_order')
-                ->where('order_no', $billNo)
-                ->update(['payment_status' => '3']);
-
-            Paymentlog::create($paymentlog_db);
-            return 'false';
-            // return redirect('/set-and-redirect')->with('result', 'false');
         }
+        
         // return redirect('/web');
     }    
 

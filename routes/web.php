@@ -19,17 +19,12 @@ Route::group(['prefix' => '/'], function () {
     Route::match(['get', 'post'], '/set-and-redirect', function () {
         $result = session('result');
     
-        if ($result === 'success_payment' || $result === 'success') {
-            return 'success';
-        }else{
+        if ($result === 'false') {
             return 'false';
         }
     
         // 其他操作
-        if ($result === 'success_payment'){
-            session(['success' => 'request_complete']);
-        }
-
+        session(['success' => 'request_complete']);
         return redirect()->route('home.index');
     })->name('set-and-redirect');
 

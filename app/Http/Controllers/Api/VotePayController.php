@@ -266,7 +266,9 @@ class VotePayController extends Controller
                 ->update(['payment_status' => $billStatus]);
 
                 Paymentlog::create($paymentlog_db);
-                return redirect('/set-and-redirect')->with('result', 'success');
+                return 'success';
+                // return redirect('/set-and-redirect')->with('result', 'success');
+
             }else{
                 $paymentlog_db = [
                     'platform' => 'return_cancel_Url',
@@ -280,8 +282,8 @@ class VotePayController extends Controller
                 ];
 
                 Paymentlog::create($paymentlog_db);
-
-                return redirect('/set-and-redirect')->with('result', 'false');
+                return 'false';
+                // return redirect('/set-and-redirect')->with('result', 'false');
 
             }
             
@@ -303,7 +305,8 @@ class VotePayController extends Controller
                 ->update(['payment_status' => '3']);
 
             Paymentlog::create($paymentlog_db);
-            return redirect('/set-and-redirect')->with('result', 'false');
+            return 'false';
+            // return redirect('/set-and-redirect')->with('result', 'false');
         }
         // return redirect('/web');
     }    

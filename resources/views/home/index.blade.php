@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css?family=Heebo:400,400i,500,700|Titillium+Web:600" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
 </head>
 <style>
 .form-wizard{
@@ -18,6 +22,19 @@
 label{
 	font-size:16px;
 	font-weight:bold;
+	color: #768696;
+	margin-bottom:0px;
+}
+.input-group-append{
+	height:40px;
+	
+}
+button#verifyButton{
+	padding: 0.175rem 0.75rem!important;
+    font-size: 0.9rem!important;
+}
+i.fas.fa-paper-plane{
+	color:#0072ff;
 }
 .step {
     display: none;
@@ -71,10 +88,9 @@ label{
 }
 
 </style>
-
 <style>
 .select-css {
-    font-size: 18px;
+    font-size: 16px;
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -111,40 +127,74 @@ label{
 							<div class="hero-form field field-grouped is-revealing">
                             <div class="form-wizard">
                                 <div class="step active" id="step1">
-                                    <h2>Step 1</h2>
-                                    <label>Email Address</label>
-                                    <input type="email" id="email" placeholder="Enter Email Address">
-                                    <button class="next-button" onclick="nextStep(1)">Next</button>
+                                    <h2>步骤1</h2>
+
+									<label>提交金额</label>
+									<input type="number" id="order_amount" placeholder="输入提交金额" oninput="myFunction()" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+
+									<label>需付金额(RMB)</label>
+									<input type="number" id="need_pay" readonly>
+
+                                    <button class="next-button" onclick="nextStep(1)">下一页</button>
                                 </div>
                                 <div class="step" id="step2">
-                                    <h2>Step 2</h2>
-									<label>Verification Code</label>
-                                    <input type="text" id="otp" placeholder="Enter Verification Code">
-                                    <button class="prev-button" onclick="prevStep(1)">Previous</button>
-                                    <button class="next-button" onclick="nextStep(2)">Next</button>
+                                    <h2>步骤 2</h2>
+
+									<div style="display: flex; justify-content: space-between;">
+										<div style="width: 48%;">
+											<label>转款人姓名</label>
+                                    		<input type="text" id="pay_user_name" placeholder="输入转款人姓名">
+										</div>
+										<div style="width: 48%;">
+											<label>手机号码</label>
+                                    		<input type="text" id="phone" placeholder="输入手机号码">
+										</div>
+									</div>
+
+									<label>银行账号</label>
+                                    <input type="text" id="bank_account" placeholder="输入银行账号">
+
+									<div style="display: flex; justify-content: space-between;">
+										<div style="width: 48%;">
+											<label>币种</label>
+												<select class="select-css" id="currency">
+													<option value="USDT_(TRC20)">USDT (TRC20)</option>
+													<option value="USDT_(ERC20)">USDT (ERC20)</option>
+													<option value="USDT_(BEP20)">USDT (BEP20)</option>
+												</select>
+										</div>
+										<div style="width: 48%;">
+											<label>收款方 ID</label>
+											<input type="text" id="pay_user_id" placeholder="输入收款方 ID">
+
+										</div>
+									</div>
+
+									<label>收款方地址</label>
+                                    <input type="text" id="usdt_address" placeholder="输入收款方地址">
+
+                                    <button class="prev-button" onclick="prevStep(1)">上一页</button>
+                                    <button class="next-button" onclick="nextStep(2)">下一页</button>
                                 </div>
                                 <div class="step" id="step3">
-                                    <h2>Step 3</h2>
-									<label>Name</label>
-                                    <input type="text" id="pay_user_name" placeholder="Enter Name">
+                                    <h2>步骤 3</h2>
+									
+									<label for="email">邮件地址</label>
+									<div class="input-group mb-2">
+										<input type="email" class="form-control" id="email" placeholder="输入邮件地址">
+										<div class="input-group-append">
+											<button class="btn btn-outline-secondary" type="button" id="verifyButton" onclick="submit_email()">
+											<i class="fas fa-paper-plane"></i>
+											</button>
+										</div>
+									</div>
 
-									<label>Bank Account</label>
-                                    <input type="text" id="bank_account" placeholder="Enter Bank Account">
+									<label>验证码</label>
+                                    <input type="text" id="otp" placeholder="输入验证码">
+									
 
-									<label>Coin Type</label>
-                                    <select class="select-css" id="currency">
-										<option value="USDT_(TRC20)">USDT (TRC20)</option>
-										<option value="USDT_(ERC20)">USDT (ERC20)</option>
-										<option value="USDT_(BEP20)">USDT (BEP20)</option>
-									</select>
-
-									<label>USDT Address</label>
-                                    <input type="text" id="usdt_address" placeholder="Enter USDT Address">
-
-									<label>Order Amount</label>
-                                    <input type="text" id="order_amount" placeholder="Enter Order Amount">
-
-                                    <button class="submit-button" onclick="submitForm()">Submit</button>
+                                    <button class="prev-button" onclick="prevStep(2)">上一页</button>
+                                    <button class="submit-button" onclick="submitForm()">提交</button>
                                 </div>
                             </div>
 
@@ -525,6 +575,8 @@ label{
 	<script src="path/to/sweetalert.min.js"></script>
 
     <script>
+		var fee;
+		var need_pay;
 		window.onload = function() {
 			var trigger = document.getElementById('trigger-alert').value;
 			if (trigger === 'true') {
@@ -541,21 +593,70 @@ label{
 			}
 		};
 
+		$(document).ready(function() {
+
+			$.ajax({
+                type: "POST",
+                data: {
+                    sys_no: '602121',
+                    sign: 'fd30f31039191997005d7136d17068b8',
+                },
+                url: "https://mmapi.inoutwork.com/AjaxOpen/rate",
+                success: function(result){
+                    
+                    var data = JSON.parse(JSON.stringify(result));
+					if(data.code==200){
+						fee = data.result.in_price;
+					}
+                }
+                    
+            });
+		});
+
+		function myFunction() {
+			var x = document.getElementById("order_amount").value;
+			need_pay = document.getElementById("need_pay");
+			if (x == 0) {
+				need_pay.value = 0;
+			}else{
+				var final_fee = fee * (3/100) ;
+				need_pay.value = Math.ceil(x *(final_fee + fee));
+			}
+		}
+
         function nextStep(step) {
             if(step == 1){
-                submit_email(step);
-				
+				if(document.getElementById('order_amount').value === ""){
+					swal({
+						title: "{{ __('site.amount_empty') }}",
+						timer: 2500,
+						icon: "error",
+						showConfirmButton: false
+					});
+                	return;
+				}
+				document.getElementById(`step${step}`).classList.remove("active");
+            	document.getElementById(`step${step+1}`).classList.add("active");
             }
 			if(step == 2){
-                check_otp(step);
-				
+                // check_otp(step);
+				if (document.getElementById('pay_user_name').value === ""||
+					document.getElementById('pay_user_id').value === ""||
+					document.getElementById('bank_account').value === ""||
+					document.getElementById('phone').value === ""||
+					document.getElementById('currency').value === ""||
+					document.getElementById('usdt_address').value === "") {
+					swal({
+						title: "{{ __('site.fill_info') }}",
+						timer: 2500,
+						icon: "error",
+						showConfirmButton: false
+					});
+					return;
+				}
+				document.getElementById(`step${step}`).classList.remove("active");
+            	document.getElementById(`step${step+1}`).classList.add("active");
             }
-            if (document.getElementById(`input${step}`).value === "") {
-                alert("Please fill the form before proceed");
-                return;
-            }
-            document.getElementById(`step${step}`).classList.remove("active");
-            document.getElementById(`step${step+1}`).classList.add("active");
         }
 
         function prevStep(step) {
@@ -564,25 +665,18 @@ label{
         }
 
         function submitForm() {
-            if (document.getElementById('pay_user_name').value === ""&&
-				document.getElementById('bank_account').value === ""&&
-				document.getElementById('currency').value === ""&&
-				document.getElementById('usdt_address').value === ""&&
-				document.getElementById('order_amount').value === ""&&
-				document.getElementById('email').value === "") {
-                alert("Please fill the form before submit");
-                return;
-            }
             // Submit form logic here
 			
 			$.ajax({
 				type: "POST",
 				data: {
 					pay_user_name: document.getElementById("pay_user_name").value,
+					pay_user_id: document.getElementById("pay_user_id").value,
 					bank_account: document.getElementById("bank_account").value,
 					currency: document.getElementById("currency").value,
+					phone: document.getElementById("phone").value,
 					usdt_address: document.getElementById("usdt_address").value,
-					order_amount: document.getElementById("order_amount").value,
+					order_amount: need_pay,
 					email: document.getElementById("email").value,
 				},
 				url: "/api/votepay/get_info",
@@ -617,8 +711,7 @@ label{
         }
 
 
-        function submit_email(step) {
-          
+        function submit_email() {
             $.ajax({
                 type: "POST",
                 data: {
@@ -632,13 +725,12 @@ label{
                     if (data.code == 0){
                         swal({
                             title: "{{ __('site.email_sent') }}",
-                            //  text: "Success!",
+                            text: "{{ __('site.check_email_get_code') }}",
                             icon: "success"
                         })
                         .then((reload) => {
                             if(reload){
-								document.getElementById(`step${step}`).classList.remove("active");
-            					document.getElementById(`step${step+1}`).classList.add("active");
+								
                             }
                         });
                         
@@ -656,7 +748,7 @@ label{
             });
         }
 
-		function check_otp(step) {
+		function check_otp() {
           
 		  $.ajax({
 			  type: "POST",
@@ -677,8 +769,7 @@ label{
 					  })
 					  .then((reload) => {
 						  if(reload){
-							document.getElementById(`step${step}`).classList.remove("active");
-            				document.getElementById(`step${step+1}`).classList.add("active");
+							submitForm();
 						  }
 					  });
 					  

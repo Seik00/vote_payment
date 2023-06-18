@@ -422,4 +422,8 @@ return [
     'email_sent' => 'Email Sent',
     'verification_correct' => 'Verification Code Correct',
     'Successful_operation' => 'Successful operation',
+    'email_empty' => 'Enter Email',
+    'amount_empty' => 'Enter Amount',
+    'fill_info' => 'Please fill the form before proceed',
+    'check_email_get_code' => 'Please check your email to get the verification code',
 ];

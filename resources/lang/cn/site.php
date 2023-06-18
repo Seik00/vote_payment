@@ -278,5 +278,12 @@ return [
 
     'vote_hasnt_start' =>  '投票尚未开始 !!!',
 
-
+    
+    'email_sent' => '邮箱地址已发送',
+    'verification_correct' => '验证码正确',
+    'Successful_operation' => '操作成功',
+    'email_empty' => '请输入邮箱地址',
+    'amount_empty' => '请输入金额',
+    'fill_info' => '请填写资料以进行下一页',
+    'check_email_get_code' => '请查收您的邮箱以获取验证码',
 ];

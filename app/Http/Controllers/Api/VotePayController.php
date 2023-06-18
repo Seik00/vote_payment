@@ -205,7 +205,7 @@ class VotePayController extends Controller
 
             Paymentlog::create($paymentlog_db);
             $this->handleNextRequest("订单支付成功");
-            return 'success';
+            return redirect('/set-and-redirect')->with('result', 'success_payment');
 
         } else {
             // 验签失败 insert log
@@ -226,7 +226,7 @@ class VotePayController extends Controller
 
             Paymentlog::create($paymentlog_db);
             $this->handleNextRequest("验签失败_999");
-            return 'false';
+            return redirect('/set-and-redirect')->with('result', 'false');
         }
         
         // return redirect('/web');
@@ -267,8 +267,7 @@ class VotePayController extends Controller
 
                 Paymentlog::create($paymentlog_db);
                 $this->handleNextRequest("验签成功_订单已取消");
-                return 'success';
-                
+                return redirect('/set-and-redirect')->with('result', 'success');
             }else{
                 $paymentlog_db = [
                     'platform' => 'return_cancel_Url',
@@ -310,18 +309,6 @@ class VotePayController extends Controller
         // return redirect('/web');
     }    
 
-
-    private function handleNextRequest($message)
-    {
-        if($message == "订单支付成功"){
-            session()->flash('success', 'request_complete');
-            return redirect('/set-and-redirect');
-        }elseif($message == "验签成功_订单已取消"){
-            session()->flash('success', 'request_complete');
-            return redirect('/set-and-redirect');
-        }
-        
-    }
 
 
 }

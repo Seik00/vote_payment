@@ -205,7 +205,6 @@ class VotePayController extends Controller
                     ->update(['payment_status' => '66']);
 
                 Paymentlog::create($paymentlog_db);
-                $this->handleNextRequest("订单支付成功");
                 return redirect('/set-and-redirect')->with('result', 'success_payment');
 
             } else {
@@ -226,7 +225,6 @@ class VotePayController extends Controller
                     ->update(['payment_status' => '999']);
 
                 Paymentlog::create($paymentlog_db);
-                $this->handleNextRequest("验签失败_999");
                 return redirect('/set-and-redirect')->with('result', 'false');
             }
 

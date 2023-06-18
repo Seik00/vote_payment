@@ -711,7 +711,7 @@ i.fas.fa-paper-plane{
                 type: "POST",
                 data: {
                     email: document.getElementById("email").value,
-                    rate: document.getElementById("fee").value,
+                    rate: fee,
 					pay_user_name: document.getElementById("pay_user_name").value,
 					pay_user_id: document.getElementById("pay_user_id").value,
 					bank_account: document.getElementById("bank_account").value,

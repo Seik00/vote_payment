@@ -21,7 +21,7 @@
   </style>
 </head>
 
-<body style="margin: 0; padding: 0; min-width: 100% !important; font-family: 'Helvetica', sans-serif; background-color: #001321 !important;">
+<body style="margin: 0; padding: 0; min-width: 100% !important; font-family: 'Helvetica', sans-serif;">
   <!--[if (gte mso 9)|(IE)]>
     <table width="600" align="center" cellpadding="0" cellspacing="0" border="0" role="presentation">
       <tr>
@@ -32,7 +32,7 @@
       <td style="padding-left: 30px;">
         <table class="header" bgcolor="#001321" style="border-radius: 15px; background-color: #001321;" align="center" cellpadding="0" cellspacing="0" border="0" role="presentation">
           <tr>
-            <td style="padding: 50px; text-align: center; border-radius: 15px 15px; background-color: #001321;">
+            <td bgcolor="#001321" style="padding: 50px; text-align: center; border-radius: 15px 15px; background-color: #001321;">
               <img src="{{url(asset( config('sys_config.icon_email'))) }}" alt="Rifineria" style="width:180px;height:235px;">
               <table border="0" cellpadding="0" cellspacing="0" width="90%" style="margin-left: auto; margin-right: auto;">
                 {!! $details['body'] !!}

@@ -306,7 +306,9 @@ class VotePayController extends Controller
             Paymentlog::create($paymentlog_db);
             return 'false';
         }
-
+        
+        session()->flash('success', 'request_complete');
+        return redirect('/set-and-redirect');
         // return redirect('/web');
     }    
 

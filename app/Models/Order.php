@@ -12,6 +12,8 @@ class Order extends Model
         'usdt_address',
         'username',
         'email',
+        'phone',
+        'payee_id',
         'currency',
         'order_no', 
         'merchant_code',

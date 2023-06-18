@@ -5,6 +5,6 @@ return [
      'icon' => env('ICON', 'images/logo/fizz_logo_1.png'),
      'new_icon' => env('ICON', 'images/logo/fizz_logo_1.png'),
      'only_icon' => env('ICON', 'images/logo/fizz_logo_1.png'),
-     'icon_email' => env('EMAIL_LOGO', 'images/logo/fizz_logo_1.png'),
+     'icon_email' => env('EMAIL_LOGO', 'images/logo/fizz_logo_2.png'),
      'year' => env('YEAR', '2023'),
 ];

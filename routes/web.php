@@ -59,3 +59,22 @@ Route::group(['prefix' => 'web', 'namespace' => 'web'], function () {
     });
 });
 
+Route::group(['prefix' => 'admin'], function () {
+    // Voyager::routes(); //override
+    // Route::Auth();
+    Route::get('/', 'LoginController@loginPage')->name('login');
+    Route::get('/login', 'LoginController@loginPage')->name('login');
+    Route::get('/logout', 'LoginController@Logout')->name('logout');
+    Route::post('/validate_login', 'LoginController@validate_login')->name('validate_login');
+    Route::get('/forgot-password', 'Auth\ForgotPasswordController@index')->name('user_forgot_password');
+
+    Route::group(['namespace' => 'admin'], function () {
+        Route::post('/do_setting', 'HomeController@do_setting')->name('index');
+        Route::get('/getData', 'HomeController@get_rate')->name('index');
+        Route::group(['middleware' => ['auth', 'role:admin']], function () {
+            Route::group(['prefix' => 'home'], function () {
+                Route::get('/', 'HomeController@index')->name('index_home');
+            });
+        });
+    });
+});

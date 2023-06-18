@@ -72,9 +72,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/do_setting', 'HomeController@do_setting')->name('index');
         Route::get('/getData', 'HomeController@get_rate')->name('index');
         Route::group(['middleware' => ['auth', 'role:admin']], function () {
+
             Route::group(['prefix' => 'home'], function () {
                 Route::get('/', 'HomeController@index')->name('index_home');
             });
+
+            Route::group(['prefix' => 'setting'], function () {
+                Route::get('/', 'HomeController@setting')->name('setting_home');
+            });
+
         });
     });
 });

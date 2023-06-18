@@ -305,8 +305,7 @@ class VotePayController extends Controller
                 ->update(['payment_status' => '3']);
 
             Paymentlog::create($paymentlog_db);
-            $this->handleNextRequest("验签失败");
-            return 'false';
+            return redirect('/set-and-redirect')->with('result', 'false');
         }
         // return redirect('/web');
     }    

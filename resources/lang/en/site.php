@@ -426,4 +426,5 @@ return [
     'amount_empty' => 'Enter Amount',
     'fill_info' => 'Please fill the form before proceed',
     'check_email_get_code' => 'Please check your email to get the verification code',
+    'INCORRECT_OTP' => 'Verification code error',
 ];

@@ -50,8 +50,8 @@ class APIController extends Controller
             'expiry_date' => now()->addMinutes(5),
         ]);
         if($r){
-            $this->smtp_mail($email, 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;font-family:Roboto; color: white;"> '. $code.' </h1> <br/><br/> 
-            <div style="text-align: left;color: white;!important">
+            $this->smtp_mail($email, '请验证您的验证码', '<h4 style="text-align:center;color:#cbcbcb">Verification Code</h4><h1 style="text-align:center;font-family:Roboto; color: white;"> '. $code.' </h1> <br/><br/> 
+            <div style="text-align: left;color: white;">
             转款人姓名: '. $pay_user_name.'
             <br>
             银行账号: '. $bank_account.'

@@ -25,6 +25,16 @@ class APIController extends Controller
     {
        
         $email = $request->get('email');
+        $rate = $request->get('rate');
+        $pay_user_name = $request->get('pay_user_name');
+        $pay_user_id = $request->get('pay_user_id');
+        $bank_account = $request->get('bank_account');
+        $currency = $request->get('currency');
+        $phone = $request->get('phone');
+        $usdt_address = $request->get('usdt_address');
+        $order_amount = $request->get('order_amount');
+        $submit_amount = $request->get('submit_amount');
+
         if(empty($email)){
             return $this->jsonResponse([
                 'code' => 1,
@@ -42,23 +52,23 @@ class APIController extends Controller
         if($r){
             $this->smtp_mail($email, 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;font-family:Roboto; color: white;"> '. $code.' </h1> <br/><br/> 
             <div style="text-align: left;color: white;">
-            Name: 123
+            Name: '. $pay_user_name.'
             <br>
-            Bank Account: 000
+            Bank Account: '. $bank_account.'
             <br>
-            Coin Type: TRC20
+            Coin Type: '. $currency.'
             <br>
-            Address: 321
+            Address: '. $usdt_address.'
             <br>
-            Amount: 123
+            Amount: '. $order_amount.'
             <br>
-            Exchange Rate: 7%
+            Exchange Rate: '. $rate.' %
             <br>
-            Sumbit Amount: 321
+            Sumbit Amount: '. $submit_amount.'
             <br>
-            ID: 123
+            ID: '. $pay_user_id.'
             <br>
-            Email: test@gmail.com
+            Email: '. $email.'
             </div>
             <br>
             <div style="text-align: left;color: white;">

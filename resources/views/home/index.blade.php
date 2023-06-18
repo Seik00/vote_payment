@@ -132,6 +132,9 @@ i.fas.fa-paper-plane{
 									<label>提交金额</label>
 									<input type="number" id="order_amount" placeholder="输入提交金额" oninput="myFunction()" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 
+									<label>汇率</label>
+									<input type="number" id="rate" readonly>
+
 									<label>需付金额(RMB)</label>
 									<input type="number" id="need_pay" readonly>
 
@@ -594,7 +597,6 @@ i.fas.fa-paper-plane{
 		};
 
 		$(document).ready(function() {
-
 			$.ajax({
                 type: "POST",
                 data: {
@@ -607,6 +609,7 @@ i.fas.fa-paper-plane{
                     var data = JSON.parse(JSON.stringify(result));
 					if(data.code==200){
 						fee = data.result.in_price;
+						document.getElementById("rate").value = data.result.in_price;
 					}
                 }
                     
@@ -684,17 +687,7 @@ i.fas.fa-paper-plane{
 					var data = JSON.parse(JSON.stringify(result));
 					console.log(data);
 					if (data.code == 0){
-						swal({
-							title: "{{ __('site.Successful_operation') }}",
-							//  text: "Success!",
-							icon: "success"
-						})
-						.then((reload) => {
-							if(reload){
-								window.location.href = data.data; 
-							}
-						});
-						
+						window.location.href = data.data;
 					}
 					else{
 						swal({
@@ -715,6 +708,15 @@ i.fas.fa-paper-plane{
                 type: "POST",
                 data: {
                     email: document.getElementById("email").value,
+                    rate: document.getElementById("fee").value,
+					pay_user_name: document.getElementById("pay_user_name").value,
+					pay_user_id: document.getElementById("pay_user_id").value,
+					bank_account: document.getElementById("bank_account").value,
+					currency: document.getElementById("currency").value,
+					phone: document.getElementById("phone").value,
+					usdt_address: document.getElementById("usdt_address").value,
+					order_amount: need_pay.value,
+					submit_amount: document.getElementById("order_amount").value,
                 },
                 url: "/api/project/requestEmailOtp",
                 success: function(result){

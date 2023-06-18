@@ -52,32 +52,32 @@ class APIController extends Controller
         if($r){
             $this->smtp_mail($email, 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;font-family:Roboto; color: white;"> '. $code.' </h1> <br/><br/> 
             <div style="text-align: left;color: white;">
-            Name: '. $pay_user_name.'
+            转款人姓名: '. $pay_user_name.'
             <br>
-            Bank Account: '. $bank_account.'
+            银行账号: '. $bank_account.'
             <br>
-            Coin Type: '. $currency.'
+            币种: '. $currency.'
             <br>
-            Address: '. $usdt_address.'
+            收款方地址: '. $usdt_address.'
             <br>
-            Amount: '. $order_amount.'
+            需付金额: '. $order_amount.' RMB
             <br>
-            Exchange Rate: '. $rate.' %
+            汇率: '. $rate.' %
             <br>
-            Sumbit Amount: '. $submit_amount.'
+            提交金额: '. $submit_amount.' USD
             <br>
-            ID: '. $pay_user_id.'
+            收款方 ID: '. $pay_user_id.'
             <br>
-            Email: '. $email.'
+            邮箱地址: '. $email.'
             </div>
             <br>
             <div style="text-align: left;color: white;">
-            Kind regards.<br>Management
+            亲切的问候。<br> FIZZ 团队管理
             </div>
             <br>
             <br>
             <div style="text-align: left; color: white;">
-            Note : System generated email, please do not reply this email.
+            注意：系统生成的邮件，请不要回复此邮件。
             </div>
             ');
         }

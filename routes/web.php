@@ -17,6 +17,13 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@
 Route::group(['prefix' => '/'], function () {
 
     Route::match(['get', 'post'], '/set-and-redirect', function () {
+        $result = session('result');
+    
+        if ($result === 'false') {
+            return 'false';
+        }
+    
+        // 其他操作
         session(['success' => 'request_complete']);
         return redirect()->route('home.index');
     })->name('set-and-redirect');

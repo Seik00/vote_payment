@@ -282,8 +282,8 @@ class VotePayController extends Controller
                 ];
 
                 Paymentlog::create($paymentlog_db);
-                $this->handleNextRequest("验签成功_订单已激活");
-                return 'false';
+
+                return redirect('/set-and-redirect')->with('result', 'false');
 
             }
             

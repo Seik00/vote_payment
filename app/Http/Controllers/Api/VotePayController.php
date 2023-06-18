@@ -266,7 +266,6 @@ class VotePayController extends Controller
                 ->update(['payment_status' => $billStatus]);
 
                 Paymentlog::create($paymentlog_db);
-                $this->handleNextRequest("验签成功_订单已取消");
                 return redirect('/set-and-redirect')->with('result', 'success');
             }else{
                 $paymentlog_db = [

@@ -40,8 +40,8 @@ class APIController extends Controller
             'expiry_date' => now()->addMinutes(5),
         ]);
         if($r){
-            $this->smtp_mail($email, 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;    font-family:Roboto;"> '. $code.' </h1> <br/><br/> 
-            <div style="text-align: left;">
+            $this->smtp_mail($email, 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;font-family:Roboto; color: white;"> '. $code.' </h1> <br/><br/> 
+            <div style="text-align: left;color: white;">
             Name :123
             <br>
             Address :321
@@ -51,12 +51,12 @@ class APIController extends Controller
             Amount :321
             </div>
             <br>
-            <div style="text-align: left;">
+            <div style="text-align: left;color: white;">
             Kind regards.<br>Management
             </div>
             <br>
             <br>
-            <div style="text-align: left;">
+            <div style="text-align: left; color: white;">
             Note : System generated email, please do not reply this email.
             </div>
             ');

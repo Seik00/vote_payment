@@ -71,6 +71,7 @@ Route::name('api.')->namespace('Api')->group(function () {
         Route::post('requestEmailOtp', 'APIController@requestEmailOtp');
         Route::get('test', 'APIController@test');
         Route::post('checkOTP', 'APIController@checkOTP');
+        Route::get('/getData', 'APIController@get_rate');
     });
     
 });

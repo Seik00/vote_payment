@@ -70,7 +70,6 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['namespace' => 'admin'], function () {
         Route::post('/do_setting', 'HomeController@do_setting')->name('index');
-        Route::get('/getData', 'HomeController@get_rate')->name('index');
         Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
             Route::group(['prefix' => 'home'], function () {

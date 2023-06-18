@@ -38,13 +38,4 @@ class HomeController extends AdminBaseController
         }
     }
 
-    public function get_rate()
-    {
-        $rate = DB::table('global_setting')->where('global_key', 'EXCHANG_RATE')->first();
-
-        return [
-            'admin_rate' => $rate->key_value,
-        ];
-    }
-
 }

@@ -51,7 +51,7 @@ class APIController extends Controller
         ]);
         if($r){
             $this->smtp_mail($email, 'Please verify your code', '<h4 style="text-align:center;color:#4f4f4f">Verification Code</h4><h1 style="text-align:center;font-family:Roboto; color: white;"> '. $code.' </h1> <br/><br/> 
-            <div style="text-align: left;color: white;">
+            <div style="text-align: left;color: white;!important">
             转款人姓名: '. $pay_user_name.'
             <br>
             银行账号: '. $bank_account.'
@@ -114,6 +114,16 @@ class APIController extends Controller
                 'message' => 'INCORRECT_OTP',
             ]);
         }
+    }
+
+
+    public function get_rate()
+    {
+        $rate = DB::table('global_setting')->where('global_key', 'EXCHANG_RATE')->first();
+
+        return [
+            'admin_rate' => $rate->key_value,
+        ];
     }
 
 }

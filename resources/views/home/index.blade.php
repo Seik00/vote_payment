@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FIZZ</title>
-    <link href="https://fonts.googleapis.com/css?family=Heebo:400,400i,500,700|Titillium+Web:600" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -14,6 +14,9 @@
 
 </head>
 <style>
+.body-wrap{
+	background: #1c222b;
+}
 .form-wizard{
 	padding:30px;
 	border:2px solid #0072ff;
@@ -569,14 +572,14 @@ i.fas.fa-paper-plane{
 
             <div class="container">
                 <div class="site-footer-inner has-top-divider">
-						<div class="footer-copyright">&copy; 2023 FIZZ, all rights reserved </div>
+						<div class="footer-copyright" style="color:#768696;font-weight:bold;">&copy; 2023 FIZZ, all rights reserved </div>
                 </div>
             </div>
         </footer>
     </div>
 
     <script src="/dist/js/main.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/custom.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="path/to/sweetalert.min.js"></script>
 

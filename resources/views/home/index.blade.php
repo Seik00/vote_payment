@@ -19,6 +19,9 @@
 	border:2px solid #0072ff;
 	border-radius:25px;
 }
+.read{
+	background:#6e6e6e;
+}
 label{
 	font-size:16px;
 	font-weight:bold;
@@ -133,10 +136,10 @@ i.fas.fa-paper-plane{
 									<input type="number" id="order_amount" placeholder="输入提交金额" oninput="myFunction()" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 
 									<label>汇率</label>
-									<input type="number" id="rate" readonly>
+									<input type="number" id="rate" class="read" readonly>
 
 									<label>需付金额(RMB)</label>
-									<input type="number" id="need_pay" readonly>
+									<input type="number" id="need_pay" class="read" readonly>
 
                                     <button class="next-button" onclick="nextStep(1)">下一页</button>
                                 </div>

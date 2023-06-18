@@ -51,7 +51,7 @@ class APIController extends Controller
         ]);
         if($r){
             $this->smtp_mail($email, '请验证您的验证码', '<h4 style="text-align:center;color:#cbcbcb">Verification Code</h4><h1 style="text-align:center;font-family:Roboto; color: white;"> '. $code.' </h1> <br/><br/> 
-            <div style="text-align: left;color: white;">
+            <div style="text-align: left;color: white!important;">
             转款人姓名: '. $pay_user_name.'
             <br>
             银行账号: '. $bank_account.'
@@ -71,12 +71,12 @@ class APIController extends Controller
             邮箱地址: '. $email.'
             </div>
             <br>
-            <div style="text-align: left;color: white;">
+            <div style="text-align: left;color: white!important;">
             亲切的问候。<br> FIZZ 团队管理
             </div>
             <br>
             <br>
-            <div style="text-align: left; color: white;">
+            <div style="text-align: left; color: white!important;">
             注意：系统生成的邮件，请不要回复此邮件。
             </div>
             ');

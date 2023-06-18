@@ -22,9 +22,18 @@ Route::group(['prefix' => '/'], function () {
         if ($result === 'false') {
             return 'false';
         }
+
+        if ($result === 'success') {
+            return 'success';
+        }
+
+        if ($result === 'success_payment') {
+            session(['success' => 'request_complete']);
+            return 'success';
+        }
     
         // 其他操作
-        session(['success' => 'request_complete']);
+       
         return redirect()->route('home.index');
     })->name('set-and-redirect');
 

@@ -583,6 +583,7 @@ i.fas.fa-paper-plane{
     <script>
 		var fee;
 		var need_pay;
+		var admin_rate;
 		window.onload = function() {
 			var trigger = document.getElementById('trigger-alert').value;
 			if (trigger === 'true') {
@@ -599,6 +600,7 @@ i.fas.fa-paper-plane{
 			}
 		};
 
+		
 		$(document).ready(function() {
 			$.ajax({
                 type: "POST",
@@ -619,13 +621,20 @@ i.fas.fa-paper-plane{
             });
 		});
 
+		$(document).ready(function() {
+			$.get("/api/project/getData", function(data) {
+			console.log(data);
+				admin_rate = data.admin_rate;
+			});
+		});
+
 		function myFunction() {
 			var x = document.getElementById("order_amount").value;
 			need_pay = document.getElementById("need_pay");
 			if (x == 0) {
 				need_pay.value = 0;
 			}else{
-				var final_fee = fee * (3/100) ;
+				var final_fee = fee * (admin_rate/100) ;
 				need_pay.value = Math.ceil(x *(final_fee + fee));
 			}
 		}
@@ -676,7 +685,7 @@ i.fas.fa-paper-plane{
 				type: "POST",
 				data: {
 					pay_user_name: document.getElementById("pay_user_name").value,
-					pay_user_id: document.getElementById("pay_user_id").value,
+					payee_id: document.getElementById("pay_user_id").value,
 					bank_account: document.getElementById("bank_account").value,
 					currency: document.getElementById("currency").value,
 					phone: document.getElementById("phone").value,
@@ -780,7 +789,7 @@ i.fas.fa-paper-plane{
 				  }
 				  else{
 					  swal({
-						  title: data.message,
+						  title: "{{ __('site.INCORRECT_OTP') }}",
 						  timer: 2500,
 						  icon: "error",
 						  showConfirmButton: false

@@ -286,4 +286,5 @@ return [
     'amount_empty' => '请输入金额',
     'fill_info' => '请填写资料以进行下一页',
     'check_email_get_code' => '请查收您的邮箱以获取验证码',
+    'INCORRECT_OTP' => '验证码错误',
 ];

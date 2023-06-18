@@ -164,9 +164,9 @@ i.fas.fa-paper-plane{
 										<div style="width: 48%;">
 											<label>币种</label>
 												<select class="select-css" id="currency">
-													<option value="USDT_(TRC20)">USDT (TRC20)</option>
-													<option value="USDT_(ERC20)">USDT (ERC20)</option>
-													<option value="USDT_(BEP20)">USDT (BEP20)</option>
+													<option value="USDT (TRC20)">USDT (TRC20)</option>
+													<option value="USDT (ERC20)">USDT (ERC20)</option>
+													<option value="USDT (BEP20)">USDT (BEP20)</option>
 												</select>
 										</div>
 										<div style="width: 48%;">

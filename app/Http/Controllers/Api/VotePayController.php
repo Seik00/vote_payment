@@ -185,47 +185,52 @@ class VotePayController extends Controller
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
         $expectedSign = md5($billNo . $signKey);
         
-        if ($sign === $expectedSign) {
-            // 验签成功, 订单支付成功 insert log
-            $paymentlog_db = [
-                'platform' => 'return_success_Url',
-                'order_no' => $billNo,
-                'respond_log' => json_encode([
-                    'request_data' => $request->all(),
-                    'expectedSign' => $expectedSign,
-                ]),
-                'message'=> ' 验签成功, 订单支付成功',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            ];
+        if (!empty($request->all())) {
+            if ($sign === $expectedSign) {
+                // 验签成功, 订单支付成功 insert log
+                $paymentlog_db = [
+                    'platform' => 'return_success_Url',
+                    'order_no' => $billNo,
+                    'respond_log' => json_encode([
+                        'request_data' => $request->all(),
+                        'expectedSign' => $expectedSign,
+                    ]),
+                    'message'=> ' 验签成功, 订单支付成功',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ];
 
-            // payment_status (66) == 订单支付成功
-            $updated = DB::table('payment_gateway_order')
-                ->where('order_no', $billNo)
-                ->update(['payment_status' => '66']);
+                // payment_status (66) == 订单支付成功
+                $updated = DB::table('payment_gateway_order')
+                    ->where('order_no', $billNo)
+                    ->update(['payment_status' => '66']);
 
-            Paymentlog::create($paymentlog_db);
-            $this->handleNextRequest("订单支付成功");
-            return redirect('/set-and-redirect')->with('result', 'success_payment');
+                Paymentlog::create($paymentlog_db);
+                $this->handleNextRequest("订单支付成功");
+                return redirect('/set-and-redirect')->with('result', 'success_payment');
 
-        } else {
-            // 验签失败 insert log
-            $paymentlog_db = [
-                'platform' => 'return_success_Url',
-                'order_no' => $billNo,
-                'respond_log' => json_encode([
-                    'request_data' => $request->all(),
-                    'expectedSign' => $expectedSign,
-                ]),
-                'message'=> ' 验签失败',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            ];
-            // payment_status (999) 验签失败
-            $updated = DB::table('payment_gateway_order')
-                ->where('order_no', $billNo)
-                ->update(['payment_status' => '999']);
+            } else {
+                // 验签失败 insert log
+                $paymentlog_db = [
+                    'platform' => 'return_success_Url',
+                    'order_no' => $billNo,
+                    'respond_log' => json_encode([
+                        'request_data' => $request->all(),
+                        'expectedSign' => $expectedSign,
+                    ]),
+                    'message'=> ' 验签失败',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ];
+                // payment_status (999) 验签失败
+                $updated = DB::table('payment_gateway_order')
+                    ->where('order_no', $billNo)
+                    ->update(['payment_status' => '999']);
 
-            Paymentlog::create($paymentlog_db);
-            $this->handleNextRequest("验签失败_999");
+                Paymentlog::create($paymentlog_db);
+                $this->handleNextRequest("验签失败_999");
+                return redirect('/set-and-redirect')->with('result', 'false');
+            }
+
+        }else{
             return redirect('/set-and-redirect')->with('result', 'false');
         }
         

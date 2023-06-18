@@ -716,6 +716,37 @@ i.fas.fa-paper-plane{
 
 
         function submit_email() {
+
+			if(document.getElementById("email").value==''){
+				swal({
+					title: "{{ __('site.email_empty') }}",
+					timer: 2500,
+					icon: "error",
+					showConfirmButton: false
+				});
+				return;
+			}
+			var button = document.getElementById("verifyButton");
+    
+			// 禁用按钮
+			button.disabled = true;
+			
+			// 保存原始图标的 HTML 代码
+			var originalIcon = button.innerHTML;
+			
+			// 倒计时计数器
+			var countdown = 60;
+			var timer = setInterval(function() {
+				countdown--;
+				if (countdown >= 0) {
+					button.innerHTML = countdown + " s";
+				} else {
+					clearInterval(timer);
+					button.innerHTML = originalIcon;
+					button.disabled = false;
+				}
+			}, 1000);
+			
             $.ajax({
                 type: "POST",
                 data: {

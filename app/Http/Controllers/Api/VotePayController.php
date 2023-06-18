@@ -267,7 +267,7 @@ class VotePayController extends Controller
 
                 Paymentlog::create($paymentlog_db);
                 $this->handleNextRequest("验签成功_订单已取消");
-                return 'success';
+               
                 
             }else{
                 $paymentlog_db = [
@@ -321,7 +321,7 @@ class VotePayController extends Controller
             session()->flash('success', 'request_complete');
             return redirect('/set-and-redirect');
         }
-        
+        return 'success';
     }
 
 

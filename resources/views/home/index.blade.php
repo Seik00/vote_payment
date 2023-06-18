@@ -639,7 +639,6 @@ i.fas.fa-paper-plane{
             	document.getElementById(`step${step+1}`).classList.add("active");
             }
 			if(step == 2){
-                // check_otp(step);
 				if (document.getElementById('pay_user_name').value === ""||
 					document.getElementById('pay_user_id').value === ""||
 					document.getElementById('bank_account').value === ""||
@@ -730,7 +729,7 @@ i.fas.fa-paper-plane{
                         })
                         .then((reload) => {
                             if(reload){
-								
+								console.log('email sent!');
                             }
                         });
                         

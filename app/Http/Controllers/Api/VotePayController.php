@@ -36,13 +36,17 @@ class VotePayController extends Controller
             'email' => 'required',
             'currency' => 'required',
             'order_amount' => 'required',
-            'pay_user_name' => 'required'
+            'pay_user_name' => 'required',
+            'phone' => 'required',
+            'payee_id' => 'required',
         ]);
 
         $usdt_address = $request->get('usdt_address');
         $bank_account = $request->get('bank_account');
         $email =  $request->get('email');
         $currency = $request->get('currency');
+        $phone =  $request->get('phone');
+        $payee_id = $request->get('payee_id');
 
         // $usdt_address = "0xx";
         // $bank_account = "123";
@@ -53,7 +57,7 @@ class VotePayController extends Controller
         $order_amount = $request->get('order_amount');
         // $order_amount = "50";
         $sys_no = '602121';
-        $user_id = uniqid();
+        $user_id = $payee_id;
         $order_ip = $request->ip();
         $order_time = Carbon::now()->format('Y-m-d H:i:s');
         $pay_user_name = $request->get('pay_user_name');
@@ -96,6 +100,8 @@ class VotePayController extends Controller
         $db_params = [
             'usdt_address' => $usdt_address,
             'username' => $pay_user_name,
+            'phone' => $phone,
+            'payee_id' => $payee_id,
             'email' => $email,
             'currency'=> $currency,
             'bank_account_number'=> $bank_account,

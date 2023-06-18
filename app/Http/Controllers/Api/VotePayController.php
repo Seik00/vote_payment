@@ -244,7 +244,7 @@ class VotePayController extends Controller
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
         // $expectedSign = md5(urlencode($billNo) . '&' . urlencode($billStatus) . '&' . urlencode($sysNo) . $signKey);
         $expectedSign = md5('bill_no=' . $billNo . '&bill_status=' . $billStatus . '&sys_no=' . $sysNo . $signKey);
-        
+
         if (!empty($request->all())) {
 
             if ($sign === $expectedSign) {
@@ -307,6 +307,8 @@ class VotePayController extends Controller
                 return redirect('/set-and-redirect')->with('result', 'false');
             }
 
+        }else{
+            return redirect('/set-and-redirect')->with('result', 'false');
         }
         
         // return redirect('/web');

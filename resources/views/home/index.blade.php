@@ -675,7 +675,7 @@ i.fas.fa-paper-plane{
 					currency: document.getElementById("currency").value,
 					phone: document.getElementById("phone").value,
 					usdt_address: document.getElementById("usdt_address").value,
-					order_amount: need_pay,
+					order_amount: need_pay.value,
 					email: document.getElementById("email").value,
 				},
 				url: "/api/votepay/get_info",

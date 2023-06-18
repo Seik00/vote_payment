@@ -314,9 +314,14 @@ class VotePayController extends Controller
 
     private function handleNextRequest($message)
     {
-        if ($message == "订单支付成功" || $message == "验签成功_订单已取消") {
-            return redirect()->route('home.index');
+        if($message == "订单支付成功"){
+            session()->flash('success', 'request_complete');
+            return redirect('/set-and-redirect');
+        }elseif($message == "验签成功_订单已取消"){
+            session()->flash('success', 'request_complete');
+            return redirect('/set-and-redirect');
         }
+        
     }
 
 

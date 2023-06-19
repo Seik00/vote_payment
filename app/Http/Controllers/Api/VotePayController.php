@@ -205,7 +205,7 @@ class VotePayController extends Controller
                     ->update(['payment_status' => '66']);
 
                 Paymentlog::create($paymentlog_db);
-                return redirect('/set-and-redirect')->with('result', 'success_payment');
+                return 'success';
 
             } else {
                 // 验签失败 insert log
@@ -225,11 +225,11 @@ class VotePayController extends Controller
                     ->update(['payment_status' => '999']);
 
                 Paymentlog::create($paymentlog_db);
-                return redirect('/set-and-redirect')->with('result', 'false');
+                return 'false';
             }
 
         }else{
-            return redirect('/set-and-redirect')->with('result', 'false');
+            return 'false';
         }
         
         // return redirect('/web');
@@ -270,7 +270,7 @@ class VotePayController extends Controller
                     ->update(['payment_status' => $billStatus]);
     
                     Paymentlog::create($paymentlog_db);
-                    return redirect('/set-and-redirect')->with('result', 'success');
+                    return 'success';
                 }else{
                     $paymentlog_db = [
                         'platform' => 'return_cancel_Url',
@@ -284,7 +284,8 @@ class VotePayController extends Controller
                     ];
     
                     Paymentlog::create($paymentlog_db);
-                    return redirect('/set-and-redirect')->with('result', 'false');
+    
+                    return 'false';
     
                 }
                 
@@ -306,16 +307,23 @@ class VotePayController extends Controller
                     ->update(['payment_status' => '999']);
     
                 Paymentlog::create($paymentlog_db);
-                return redirect('/set-and-redirect')->with('result', 'false');
+                return 'false';
             }
 
         }else{
-            return redirect('/set-and-redirect')->with('result', 'false');
+            return 'false';
         }
         
         // return redirect('/web');
     }    
 
+    public function frontEndSuccessRespond(Request $request)
+    {
+        return redirect('/set-and-redirect')->with('result', 'request_complete');
+    }
 
-
+    public function frontEndFailedRespond(Request $request)
+    {
+        return redirect('/set-and-redirect');
+    }
 }

@@ -19,7 +19,7 @@ Route::group(['prefix' => '/'], function () {
     Route::match(['get', 'post'], '/set-and-redirect', function () {
         $result = session('result');
 
-        if ($result === 'request_complete') {
+        if ($result === 'success_payment') {
             session(['success' => 'request_complete']);
         }
        
@@ -27,6 +27,7 @@ Route::group(['prefix' => '/'], function () {
     })->name('set-and-redirect');
 
     Route::get('/', function () {
+        session()->forget('success');
         return view('home.index');
     })->name('home.index');
 });

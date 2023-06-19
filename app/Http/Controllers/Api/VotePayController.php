@@ -319,11 +319,11 @@ class VotePayController extends Controller
 
     public function frontEndSuccessRespond(Request $request)
     {
-        return redirect('/set-and-redirect')->with('result', 'request_complete');
+        return redirect('/set-and-redirect')->with('result', 'success_payment');
     }
 
     public function frontEndFailedRespond(Request $request)
     {
-        return redirect('/set-and-redirect');
+        return redirect('/');
     }
 }

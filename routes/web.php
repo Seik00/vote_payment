@@ -23,7 +23,7 @@ Route::group(['prefix' => '/'], function () {
     })->name('set-and-redirect');
 
     Route::get('/', function () {
-        // session()->forget('success');
+        session()->forget('success');
         return view('home.index');
     })->name('home.index');
 });

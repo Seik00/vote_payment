@@ -22,7 +22,8 @@
                             <th>Currecy Type</th>     
                             <th>Order No</th>     
                             <th>Bank Account</th> 
-                            <th>Amount</th>              
+                            <th>Amount</th>      
+                            <th>USDT Amount</th>              
                             <th>Status</th> 
                             <th>Date</th>                                             
                         </tr><!--end tr-->
@@ -41,6 +42,7 @@
                                 <td>{{ $order->order_no }}</td>
                                 <td>{{ $order->bank_account_number }}</td>
                                 <td>{{ $order->amount }}</td>
+                                <td>{{ $order->usdt_amount }}</td>
                                 @if ($order->payment_status == 0)
                                     <td>待办</td>
                                 @elseif ($order->payment_status == 1)

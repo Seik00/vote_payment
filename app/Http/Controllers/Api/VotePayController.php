@@ -180,6 +180,8 @@ class VotePayController extends Controller
         $amount = $request->input('amount');
         $sysNo = $request->input('sys_no');
         $sign = $request->input('sign');
+        $amountUsdt = $request->input('amount_usdt');
+
         
         // 回调密钥
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
@@ -201,8 +203,11 @@ class VotePayController extends Controller
 
                 // payment_status (66) == 订单支付成功
                 $updated = DB::table('payment_gateway_order')
-                    ->where('order_no', $billNo)
-                    ->update(['payment_status' => '66']);
+                ->where('order_no', $billNo)
+                ->update([
+                    'payment_status' => '66',
+                    'usdt_amount' => $amountUsdt,
+                ]);
 
                 Paymentlog::create($paymentlog_db);
                 return 'success';

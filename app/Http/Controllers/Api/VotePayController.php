@@ -284,7 +284,6 @@ class VotePayController extends Controller
                     ];
     
                     Paymentlog::create($paymentlog_db);
-    
                     return redirect('/set-and-redirect')->with('result', 'false');
     
                 }
@@ -304,7 +303,7 @@ class VotePayController extends Controller
     
                 $updated = DB::table('payment_gateway_order')
                     ->where('order_no', $billNo)
-                    ->update(['payment_status' => '3']);
+                    ->update(['payment_status' => '999']);
     
                 Paymentlog::create($paymentlog_db);
                 return redirect('/set-and-redirect')->with('result', 'false');

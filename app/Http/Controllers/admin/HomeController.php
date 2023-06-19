@@ -17,15 +17,25 @@ class HomeController extends AdminBaseController
    
     public function index()
     {
-        $user = auth()->user();
-        $rate = DB::table('global_setting')->where('global_key', 'EXCHANG_RATE')->first();
+      
+        $orders = DB::table('payment_gateway_order')->orderByDesc('id')->get();
+
         // dump($rate);exit();
         return view('admin.home.index')
-            ->with('rate',$rate)
+            ->with('orders',$orders)
             ->with('output_data',$this->output_data);
     }
 
- 
+
+    public function setting()
+    {
+
+        $rate = DB::table('global_setting')->where('global_key', 'EXCHANG_RATE')->first();
+        // dump($rate);exit();
+        return view('admin.home.setting')
+            ->with('rate',$rate)
+            ->with('output_data',$this->output_data);
+    }
 
     public function do_setting(Request $request)
     {
@@ -34,7 +44,7 @@ class HomeController extends AdminBaseController
             $rate = $request->get('rate');
             DB::table('global_setting')->where('global_key', 'EXCHANG_RATE')->update(['key_value' => $rate]);
             
-            return redirect()->route('index_home')->with('message', 'Update successfully !!!');;
+            return redirect()->route('setting_home')->with('message', 'Update successfully !!!');;
         }
     }
 

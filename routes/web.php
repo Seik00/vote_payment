@@ -92,6 +92,10 @@ Route::group(['prefix' => 'admin'], function () {
             Route::group(['prefix' => 'home'], function () {
                 Route::get('/', 'HomeController@index')->name('index_home');
             });
+
+            Route::group(['prefix' => 'setting'], function () {
+                Route::get('/', 'HomeController@setting')->name('setting_home');
+            });
             
 
         });

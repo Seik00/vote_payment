@@ -17,18 +17,13 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@
 Route::group(['prefix' => '/'], function () {
 
     Route::match(['get', 'post'], '/set-and-redirect', function () {
-        $result = session('result');
-        dump($result);  // 打印 result session
-
-        if ($result === 'success_payment') {
-            session(['success' => 'request_complete']);
-        }
+        session(['success' => 'request_complete']);
        
         return redirect()->route('home.index');
     })->name('set-and-redirect');
 
     Route::get('/', function () {
-        session()->forget('success');
+        // session()->forget('success');
         return view('home.index');
     })->name('home.index');
 });

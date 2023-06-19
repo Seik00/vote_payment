@@ -18,6 +18,7 @@ Route::group(['prefix' => '/'], function () {
 
     Route::match(['get', 'post'], '/set-and-redirect', function () {
         $result = session('result');
+        dump($result);  // 打印 result session
 
         if ($result === 'success_payment') {
             session(['success' => 'request_complete']);

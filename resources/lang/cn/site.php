@@ -289,5 +289,5 @@ return [
     'INCORRECT_OTP' => '验证码错误',
     'DEPOSIT_SUCCESS' => '入金成功',
     'DEPOSIT_SUCCESS_DESC' => '您的入金已成功完成。感谢您的支持和信任。',
-    'INPUT_CORRECT_PHONE' => '请输入有效的手机号',
+    'INPUT_CORRECT_PHONE' => '请输入有效的手机号，正确格式为: 13912345678',
 ];

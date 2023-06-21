@@ -11,6 +11,10 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 
 </head>
 <style>
@@ -106,19 +110,25 @@ i.fas.fa-paper-plane{
 </style>
 <body class="is-boxed">
     <div class="body-wrap boxed-container">
-        <header class="site-header">
-            <div class="container">
-                <div class="site-header-inner">
-                    <div class="brand header-brand">
-                        <h1 class="m-0">
-                            <a href="#">
-                            <img src="{{asset( config('sys_config.icon')) }}" alt="Logo" style="width:80px;">
-                            </a>
-                        </h1>
-                    </div>
-                </div>
+	<header class="site-header">
+    <div class="container">
+        <div class="site-header-inner d-flex justify-content-between">
+            <div class="brand header-brand">
+                <h1 class="m-0">
+                    <a href="/">
+                        <img src="{{ asset(config('sys_config.icon')) }}" alt="Logo" style="width:80px;">
+                    </a>
+                </h1>
             </div>
-        </header>
+            <div class="navigation" style="z-index:99">
+                <h6 class="m-0">
+                    <a href="/" class="nav-link">Home</a>
+                </h6>
+            </div>
+        </div>
+    </div>
+</header>
+
 		@if (Session::get('success') == 'request_complete')
    
 			<input type="hidden" id="trigger-alert" value="true">
@@ -156,29 +166,24 @@ i.fas.fa-paper-plane{
 										</div>
 										<div style="width: 48%;">
 											<label>手机号码</label>
-                                    		<input type="text" id="phone" placeholder="输入手机号码">
+                                    		<input type="text" id="phone" pattern="1[3-9]\d{9}" placeholder="输入手机号码">
 										</div>
 									</div>
 
 									<label>银行账号</label>
                                     <input type="text" id="bank_account" placeholder="输入银行账号">
 
-									<div style="display: flex; justify-content: space-between;">
-										<div style="width: 48%;">
-											<label>币种</label>
-												<select class="select-css" id="currency">
-													<option value="USDT (TRC20)">USDT (TRC20)</option>
-													<option value="USDT (ERC20)">USDT (ERC20)</option>
-													<option value="USDT (BEP20)">USDT (BEP20)</option>
-												</select>
-										</div>
-										<div style="width: 48%;">
-											<label>收款方 ID</label>
-											<input type="text" id="pay_user_id" placeholder="输入收款方 ID">
+									<label>币种</label>
+									<select class="select-css" id="currency">
+										<option value="USDT (TRC20)">USDT (TRC20)</option>
+										<option value="USDT (ERC20)">USDT (ERC20)</option>
+										<option value="USDT (BEP20)">USDT (BEP20)</option>
+									</select>
 
-										</div>
-									</div>
+									<label>收款方 ID</label>
+									<input type="text" id="pay_user_id" placeholder="输入收款方 ID">
 
+									
 									<label>收款方地址</label>
                                     <input type="text" id="usdt_address" placeholder="输入收款方地址">
 
@@ -603,7 +608,6 @@ i.fas.fa-paper-plane{
 			}
 		};
 
-		
 		$(document).ready(function() {
 			$.ajax({
                 type: "POST",
@@ -657,6 +661,20 @@ i.fas.fa-paper-plane{
             	document.getElementById(`step${step+1}`).classList.add("active");
             }
 			if(step == 2){
+
+				var phone = document.getElementById('phone').value;
+				var phoneRegex = /^1[3-9]\d{9}$/;
+				if (!phoneRegex.test(phone)) {
+					swal({
+						title: "{{ __('site.INPUT_CORRECT_PHONE') }}",
+						timer: 2500,
+						icon: "error",
+						showConfirmButton: false
+					});
+					event.preventDefault();
+					return;
+				}
+
 				if (document.getElementById('pay_user_name').value === ""||
 					document.getElementById('pay_user_id').value === ""||
 					document.getElementById('bank_account').value === ""||

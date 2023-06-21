@@ -62,7 +62,7 @@ class APIController extends Controller
             <br>
             需付金额: '. $order_amount.' RMB
             <br>
-            汇率: '. $rate.' %
+            汇率: '. $rate.' 
             <br>
             提交金额: '. $submit_amount.' USD
             <br>

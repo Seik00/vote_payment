@@ -145,7 +145,7 @@ i.fas.fa-paper-plane{
                                 <div class="step active" id="step1">
                                     <h2>步骤1</h2>
 
-									<label>提交金额</label>
+									<label>提交金额 (USDT)</label>
 									<input type="number" id="order_amount" placeholder="输入提交金额" oninput="myFunction()" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 
 									<label>汇率</label>
@@ -180,7 +180,7 @@ i.fas.fa-paper-plane{
 										<option value="USDT (BEP20)">USDT (BEP20)</option>
 									</select>
 
-									<label>收款方 ID</label>
+									<label>收款方 FIZZ ID</label>
 									<input type="text" id="pay_user_id" placeholder="输入收款方 ID">
 
 									
@@ -609,6 +609,18 @@ i.fas.fa-paper-plane{
 		};
 
 		$(document).ready(function() {
+			
+		});
+
+		$(document).ready(function() {
+			$.get("/api/project/getData", function(data) {
+			console.log(data);
+				admin_rate = data.admin_rate;
+				thirdPartyRate();
+			});
+		});
+
+		function thirdPartyRate() {
 			$.ajax({
                 type: "POST",
                 data: {
@@ -621,19 +633,13 @@ i.fas.fa-paper-plane{
                     var data = JSON.parse(JSON.stringify(result));
 					if(data.code==200){
 						fee = data.result.in_price;
-						document.getElementById("rate").value = data.result.in_price;
+						var final_fee = fee * (admin_rate/100) ;
+						document.getElementById("rate").value = (final_fee + fee).toFixed(2);
 					}
                 }
                     
             });
-		});
-
-		$(document).ready(function() {
-			$.get("/api/project/getData", function(data) {
-			console.log(data);
-				admin_rate = data.admin_rate;
-			});
-		});
+		}
 
 		function myFunction() {
 			var x = document.getElementById("order_amount").value;

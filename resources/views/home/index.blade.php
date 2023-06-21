@@ -122,7 +122,7 @@ i.fas.fa-paper-plane{
             </div>
             <div class="navigation" style="z-index:99">
                 <h6 class="m-0">
-                    <a href="/" class="nav-link">Home</a>
+                    <a href="/" class="nav-link">首页</a>
                 </h6>
             </div>
         </div>

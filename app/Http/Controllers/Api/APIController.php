@@ -90,7 +90,7 @@ class APIController extends Controller
 
     }
 
-    public function successEmail($billNo, $amount, $amountUsdt)
+    public function successEmail()
     {
         
 

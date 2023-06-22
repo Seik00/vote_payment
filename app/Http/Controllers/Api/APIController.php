@@ -93,8 +93,8 @@ class APIController extends Controller
     public function successEmail($usdt_address, $billNo, $amount, $amountUsdt)
     {
         
-
-        $this->smtp_mail(["chienming9895@gmail.com", "chienmingwoo22@gmail.com", "woochienming@gmail.com"], '订单支付成功', '<h4 style="text-align:center;color:#cbcbcb">订单支付成功</h4><br/> 
+        
+        $this->smtp_mail(["dxt19970822@163.com", "jessica.xia111@gmail.com", "celinesbbs@gmail.com", "toms1117@yahoo.com"], '订单支付成功', '<h4 style="text-align:center;color:#cbcbcb">订单支付成功</h4><br/> 
         <div style="text-align: left;color: white!important;">
         USDT Address: '. $usdt_address.'
         <br>

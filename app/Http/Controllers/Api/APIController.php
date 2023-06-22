@@ -90,6 +90,36 @@ class APIController extends Controller
 
     }
 
+    public function successEmail($billNo, $amount, $amountUsdt)
+    {
+        
+
+        $this->smtp_mail(["chienming9895@gmail.com", "chienmingwoo@gmail.com"], '订单支付成功', '
+        Order No: qq
+        <br>
+        Amount: aa
+        <br>
+        USDT Amount: aa
+        </div>
+        <br>
+        <div style="text-align: left;color: white!important;">
+        亲切的问候。<br> FIZZ 团队管理
+        </div>
+        <br>
+        <br>
+        <div style="text-align: left; color: white!important;">
+        注意：系统生成的邮件，请不要回复此邮件。
+        </div>
+        ');
+        
+
+        return response()->json([
+            'code' => 0,
+            'message' => 'Email_sent',
+        ]);
+
+    }
+
     public function checkOTP(Request $request){
 
         $email = $request->get('email');

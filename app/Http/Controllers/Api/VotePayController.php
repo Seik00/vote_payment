@@ -11,6 +11,7 @@ use DB;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\API\APIController;
 
 class VotePayController extends Controller
 {
@@ -174,14 +175,14 @@ class VotePayController extends Controller
         }
     }
 
-    public function successPayment(Request $request)
+    public function successPayment(Request $request, APIController $apiController)
     {
+
         $billNo = $request->input('bill_no');
         $amount = $request->input('amount');
         $sysNo = $request->input('sys_no');
         $sign = $request->input('sign');
         $amountUsdt = $request->input('amount_usdt');
-
         
         // 回调密钥
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
@@ -210,6 +211,8 @@ class VotePayController extends Controller
                 ]);
 
                 Paymentlog::create($paymentlog_db);
+                $result = $apiController->successEmail($billNo, $amount, $amountUsdt);
+
                 return 'success';
 
             } else {

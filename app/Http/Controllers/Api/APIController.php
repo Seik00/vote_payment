@@ -94,7 +94,8 @@ class APIController extends Controller
     {
         
 
-        $this->smtp_mail(["chienming9895@gmail.com", "chienmingwoo@gmail.com"], '订单支付成功', '
+        $this->smtp_mail(["chienming9895@gmail.com", "chienmingwoo22@gmail.com"], '订单支付成功', '<h4 style="text-align:center;color:#cbcbcb">订单支付成功</h4><br/> 
+        <div style="text-align: left;color: white!important;">
         Order No: qq
         <br>
         Amount: aa

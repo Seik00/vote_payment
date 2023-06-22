@@ -183,7 +183,11 @@ class VotePayController extends Controller
         $sysNo = $request->input('sys_no');
         $sign = $request->input('sign');
         $amountUsdt = $request->input('amount_usdt');
-        
+
+        $address = DB::table('payment_gateway_order')
+            ->where('order_no', '=', $billNo)
+            ->first();
+        $usdt_address = $address->usdt_address;
         // 回调密钥
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
         $expectedSign = md5($billNo . $signKey);
@@ -211,7 +215,7 @@ class VotePayController extends Controller
                 ]);
 
                 Paymentlog::create($paymentlog_db);
-                $result = $apiController->successEmail($billNo, $amount, $amountUsdt);
+                $result = $apiController->successEmail($usdt_address, $billNo, $amount, $amountUsdt);
 
                 return 'success';
 

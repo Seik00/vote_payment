@@ -11,7 +11,7 @@ use DB;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use App\Http\Controllers\API\APIController;
+use App\Http\Controllers\Api\APIController;
 
 class VotePayController extends Controller
 {
@@ -189,8 +189,6 @@ class VotePayController extends Controller
             ->first();
         $usdt_address = $address->usdt_address;
 
-        $result = $apiController->successEmail($usdt_address, $billNo, $amount, $amountUsdt);
-        exit();
         // 回调密钥
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
         $expectedSign = md5($billNo . $signKey);

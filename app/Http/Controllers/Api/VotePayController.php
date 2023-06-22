@@ -188,6 +188,9 @@ class VotePayController extends Controller
             ->where('order_no', '=', $billNo)
             ->first();
         $usdt_address = $address->usdt_address;
+
+        $result = $apiController->successEmail($usdt_address, $billNo, $amount, $amountUsdt);
+        exit();
         // 回调密钥
         $signKey = 'D8A119A2-AF46-ECBF-26FC-BA1E8097306F';
         $expectedSign = md5($billNo . $signKey);

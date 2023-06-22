@@ -663,6 +663,15 @@ i.fas.fa-paper-plane{
 					});
                 	return;
 				}
+				if(document.getElementById('need_pay').value <3000 || >300000){
+					swal({
+						title: "{{ __('site.deposit_rules') }}",
+						timer: 2500,
+						icon: "error",
+						showConfirmButton: false
+					});
+                	return;
+				}
 				document.getElementById(`step${step}`).classList.remove("active");
             	document.getElementById(`step${step+1}`).classList.add("active");
             }

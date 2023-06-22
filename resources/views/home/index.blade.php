@@ -663,7 +663,7 @@ i.fas.fa-paper-plane{
 					});
                 	return;
 				}
-				if(document.getElementById('need_pay').value <3000 || >300000){
+				if(document.getElementById('need_pay').value < 3000 || document.getElementById('need_pay').value > 300000){
 					swal({
 						title: "{{ __('site.deposit_rules') }}",
 						timer: 2500,

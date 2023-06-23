@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <label>Exchange Rate</label>
                                 <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime" name="rate" value="{{ $rate->key_value }}" required>
+                                    <input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime" name="rate" id="myInput" value="{{ $rate->key_value }}" required>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,10 @@
 
 @section('script')
     <script>
-        
+        document.getElementById("myInput").addEventListener("input", function(e) {
+            // 只允许输入数字0-9
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
     </script>
 @stop
 

@@ -188,9 +188,10 @@ i.fas.fa-paper-plane{
                                     <input type="text" id="usdt_address" placeholder="输入收款方地址">
 
                                     <button class="prev-button" onclick="prevStep(1)">上一页</button>
-                                    <button class="next-button" onclick="nextStep(2)">下一页</button>
+                                    <!-- <button class="next-button" onclick="nextStep(2)">下一页</button> -->
+									<button class="submit-button" onclick="check_otp(2)">提交</button>
                                 </div>
-                                <div class="step" id="step3">
+                                <!-- <div class="step" id="step3">
                                     <h2>步骤 3</h2>
 									
 									<label for="email">邮件地址</label>
@@ -209,7 +210,7 @@ i.fas.fa-paper-plane{
 
                                     <button class="prev-button" onclick="prevStep(2)">上一页</button>
                                     <button class="submit-button" onclick="check_otp()">提交</button>
-                                </div>
+                                </div> -->
                             </div>
 
 	                        </div>
@@ -636,8 +637,7 @@ i.fas.fa-paper-plane{
 						var final_fee = fee * (admin_rate/100) ;
 						document.getElementById("rate").value = (final_fee + fee).toFixed(2);
 					}
-                }
-                    
+                }   
             });
 		}
 
@@ -716,7 +716,6 @@ i.fas.fa-paper-plane{
 
         function submitForm() {
             // Submit form logic here
-			
 			$.ajax({
 				type: "POST",
 				data: {
@@ -727,7 +726,7 @@ i.fas.fa-paper-plane{
 					phone: document.getElementById("phone").value,
 					usdt_address: document.getElementById("usdt_address").value,
 					order_amount: need_pay.value,
-					email: document.getElementById("email").value,
+					// email: document.getElementById("email").value,
 				},
 				url: "/api/votepay/get_info",
 				success: function(result){
@@ -828,43 +827,77 @@ i.fas.fa-paper-plane{
             });
         }
 
-		function check_otp() {
-          
-		  $.ajax({
-			  type: "POST",
-			  data: {
-				email: document.getElementById("email").value,
-				otp: document.getElementById("otp").value,
-			  },
-			  url: "/api/project/checkOTP",
-			  success: function(result){
+		function check_otp(step) {
+			
+			if(step == 2){
+
+				var phone = document.getElementById('phone').value;
+				var phoneRegex = /^1[3-9]\d{9}$/;
+				if (!phoneRegex.test(phone)) {
+					swal({
+						title: "{{ __('site.INPUT_CORRECT_PHONE') }}",
+						timer: 2500,
+						icon: "error",
+						showConfirmButton: false
+					});
+					event.preventDefault();
+					return;
+				}
+
+				if (document.getElementById('pay_user_name').value === ""||
+					document.getElementById('pay_user_id').value === ""||
+					document.getElementById('bank_account').value === ""||
+					document.getElementById('phone').value === ""||
+					document.getElementById('currency').value === ""||
+					document.getElementById('usdt_address').value === "") {
+					swal({
+						title: "{{ __('site.fill_info') }}",
+						timer: 2500,
+						icon: "error",
+						showConfirmButton: false
+					});
+					return;
+				}
+				submitForm();
+				// document.getElementById(`step${step}`).classList.remove("active");
+            	// document.getElementById(`step${step+1}`).classList.add("active");
+            }
+			
+			
+		  	// $.ajax({
+			//   type: "POST",
+			//   data: {
+			// 	email: document.getElementById("email").value,
+			// 	otp: document.getElementById("otp").value,
+			//   },
+			//   url: "/api/project/checkOTP",
+			//   success: function(result){
 				  
-				  var data = JSON.parse(JSON.stringify(result));
-				  console.log(data);
-				  if (data.code == 0){
-					  swal({
-						  title: "{{ __('site.verification_correct') }}",
-						  //  text: "Success!",
-						  icon: "success"
-					  })
-					  .then((reload) => {
-						  if(reload){
-							submitForm();
-						  }
-					  });
+			// 	  	var data = JSON.parse(JSON.stringify(result));
+			// 	  	console.log(data);
+			// 	  	if (data.code == 0){
+			// 		  	swal({
+			// 			  title: "{{ __('site.verification_correct') }}",
+			// 			  //  text: "Success!",
+			// 			  icon: "success"
+			// 		  	})
+			// 		  	.then((reload) => {
+			// 			  	if(reload){
+			// 					submitForm();
+			// 			  	}
+			// 			});
 					  
-				  }
-				  else{
-					  swal({
-						  title: "{{ __('site.INCORRECT_OTP') }}",
-						  timer: 2500,
-						  icon: "error",
-						  showConfirmButton: false
-					  });
-				  }
-			  }
-				  
-		  });
+			// 	  	}
+			// 	  	else{
+			// 			swal({
+			// 				title: "{{ __('site.INCORRECT_OTP') }}",
+			// 				timer: 2500,
+			// 				icon: "error",
+			// 				showConfirmButton: false
+			// 			});
+			// 	  	}
+			//   	}
+		  	// });
 	  	}
     </script>
 </body>

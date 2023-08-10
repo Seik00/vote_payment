@@ -34,7 +34,7 @@ class VotePayController extends Controller
         $this->validate($request,[
             'usdt_address' => 'required',
             'bank_account' => 'required',
-            'email' => 'required',
+            // 'email' => 'required',
             'currency' => 'required',
             'order_amount' => 'required',
             'pay_user_name' => 'required',
@@ -44,7 +44,7 @@ class VotePayController extends Controller
 
         $usdt_address = $request->get('usdt_address');
         $bank_account = $request->get('bank_account');
-        $email =  $request->get('email');
+        // $email =  $request->get('email');
         $currency = $request->get('currency');
         $phone =  $request->get('phone');
         $payee_id = $request->get('payee_id');
@@ -103,7 +103,7 @@ class VotePayController extends Controller
             'username' => $pay_user_name,
             'phone' => $phone,
             'payee_id' => $payee_id,
-            'email' => $email,
+            // 'email' => $email,
             'currency'=> $currency,
             'bank_account_number'=> $bank_account,
             'order_no' => $order_id,

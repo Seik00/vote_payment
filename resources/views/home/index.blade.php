@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
 
 </head>
@@ -107,6 +107,27 @@ i.fas.fa-paper-plane{
 	width: 100%;
 	margin-bottom: 10px;
 }
+#image{
+	width: 100%;
+    /* padding: 10px; */
+    border: 1px solid black;
+    border-radius: 6px;
+    /* height: 40px; */
+    font-size: 16px;
+    margin-bottom: 10px;
+	background: #fff;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration:line-through;
+    font-style: italic;
+	font-size: 30px;
+	-webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+/Edge */
+    user-select: none;
+}
 </style>
 <body class="is-boxed">
     <div class="body-wrap boxed-container">
@@ -130,7 +151,6 @@ i.fas.fa-paper-plane{
 </header>
 
 		@if (Session::get('success') == 'request_complete')
-   
 			<input type="hidden" id="trigger-alert" value="true">
 		@endif
         <main>
@@ -187,6 +207,26 @@ i.fas.fa-paper-plane{
 									<label>收款方地址</label>
                                     <input type="text" id="usdt_address" placeholder="输入收款方地址">
 
+
+									<label>提交认证码</label>
+									<input type="text" id="captcha" placeholder="输入认证码">
+
+									<div style="display: flex; justify-content: space-between;">
+										<div style="width: 48%;">
+											<label>认证码</label>
+											<div id="image" class="read"></div>
+										</div>
+										<div style="width: 48%; display: flex; justify-content: center; flex-direction: column-reverse;">
+											<div style="color: #fff;height: 15px;">
+												<i class="fas fa-sync" onclick="generate()"></i>
+											</div>
+										</div>
+									</div>
+									<!-- <input type="submit"
+										id="btn"
+										onclick="printmsg()" />
+								
+									<p id="key" style="color: #fff;"></p> -->
                                     <button class="prev-button" onclick="prevStep(1)">上一页</button>
                                     <!-- <button class="next-button" onclick="nextStep(2)">下一页</button> -->
 									<button class="submit-button" onclick="check_otp(2)">提交</button>
@@ -594,6 +634,7 @@ i.fas.fa-paper-plane{
 		var need_pay;
 		var admin_rate;
 		window.onload = function() {
+			generate();
 			var trigger = document.getElementById('trigger-alert').value;
 			if (trigger === 'true') {
 				swal({
@@ -858,7 +899,37 @@ i.fas.fa-paper-plane{
 					});
 					return;
 				}
-				submitForm();
+				if (document.getElementById('captcha').value === "") {
+					swal({
+						title: "请输入认证码",
+						timer: 2500,
+						icon: "error",
+						showConfirmButton: false
+					});
+					return;
+				}
+				const usr_input = document.getElementById("captcha").value;
+				if (usr_input == captcha.innerHTML) {
+
+					swal({
+						title: "认证码匹配",
+						timer: 2500,
+						icon: "success",
+						showConfirmButton: false
+					});
+					submitForm();
+				}
+				else {
+					swal({
+						title: "认证码不匹配",
+						timer: 2500,
+						icon: "error",
+						showConfirmButton: false
+					});
+					generate();
+					return;
+				}
+				
 				// document.getElementById(`step${step}`).classList.remove("active");
             	// document.getElementById(`step${step+1}`).classList.add("active");
             }
@@ -899,6 +970,32 @@ i.fas.fa-paper-plane{
 			//   	}
 		  	// });
 	  	}
+
+		  	let captcha;
+			function generate() {
+			
+				// Clear old input
+				document.getElementById("captcha").value = "";
+			
+				// Access the element to store
+				// the generated captcha
+				captcha = document.getElementById("image");
+				let uniquechar = "";
+			
+				const randomchar =
+					"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
+			
+				// Generate captcha for length of
+				// 5 with random character
+				for (let i = 1; i < 6; i++) {
+					uniquechar += randomchar.charAt(
+						Math.random() * randomchar.length)
+				}
+			
+				// Store generated input
+				captcha.innerHTML = uniquechar;
+			}
+			
     </script>
 </body>
 </html>

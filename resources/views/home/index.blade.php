@@ -200,7 +200,7 @@ i.fas.fa-paper-plane{
 										<option value="USDT (BEP20)">USDT (BEP20)</option>
 									</select>
 
-									<label>收款方 FIZZ ID</label>
+									<label>收款方 AIF ID</label>
 									<input type="text" id="pay_user_id" placeholder="输入收款方 ID">
 
 									

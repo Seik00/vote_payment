@@ -136,9 +136,9 @@ i.fas.fa-paper-plane{
         <div class="site-header-inner d-flex justify-content-between">
             <div class="brand header-brand">
                 <h1 class="m-0">
-                    <!-- <a href="/">
-                        <img src="{{ asset(config('sys_config.icon')) }}" alt="Logo" style="width:80px;">
-                    </a> -->
+                    <a href="/">
+                        <img src="{{ asset(config('sys_config.icon')) }}" alt="Logo" style="width:50px;">
+                    </a>
                 </h1>
             </div>
             <div class="navigation" style="z-index:99">
